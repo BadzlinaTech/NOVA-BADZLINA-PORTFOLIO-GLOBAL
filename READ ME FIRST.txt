@@ -1,0 +1,90 @@
+NOVA BADZLINA GLOBAL — WEBSITE
+==============================
+Ara Aranya · Kota Bharu, Kelantan, Malaysia
+Built in HTML and CSS only. No JavaScript anywhere.
+
+
+TO OPEN THE WEBSITE ON YOUR OWN COMPUTER
+----------------------------------------
+  Double-click  index.html
+
+  Everything works offline — all 28 videos, all 15 photos, all 22 voice
+  demos. This is also the version to submit for your assignment.
+
+
+WHAT IS IN HERE
+---------------
+
+  index.html            Home — hero, Meet Ara Aranya, why me, services, rates
+  pricing.html          Three packages + full feature comparison
+  work.html             28 videos and 15 photos
+  voice.html            22 voice demos
+  faq.html              17 questions answered
+  book.html             Full booking form
+  contact.html          Address, phone, email + validated enquiry form
+  payment.html          How clients pay you
+  contract.html         The booking agreement, readable online
+  invoice.html          Invoice template
+  receipt.html          Receipt template
+
+  Every one of those has a -bm.html twin in Bahasa Melayu. 24 pages total.
+
+  style.css             One stylesheet for the whole site
+  media/                Your videos, photos, audio and QR code
+
+  admin/                SSM registration fill-in sheet (private — not linked)
+  brand/                Bios, logo, business card, video scripts, 30-day calendar
+  catalog/              17-page business catalogue
+  documents/            Agreement, invoice, receipt — EN and BM, PDF + HTML
+  messages/             WhatsApp greeting, away message, 29 quick replies
+  outreach/             How to approach brands + your LinkedIn profile
+  ratecard/             9-page rate card, PDF + one image per page
+  services/             One sheet per service — 24 PDFs and 24 images
+  watermark/            6 transparent watermarks + how to use them
+
+
+TO PUT IT ON THE INTERNET
+-------------------------
+  The site itself is small. The videos are not — they are about 2 GB, and
+  free hosting rejects files that size. So there are two steps:
+
+  STEP 1 — Upload the videos to YouTube
+    Go to studio.youtube.com, upload everything in media/video/, and set
+    each one to UNLISTED (not Private — private blocks embedding).
+    Use the filenames as the titles.
+    Send the links to Claude and the players get swapped over.
+
+  STEP 2 — Deploy
+    Go to  app.netlify.com/drop
+    Drag this whole folder onto the page.
+    You get a live web address in about 30 seconds. No account needed.
+
+    For your own domain (novabadzlinaglobal.com, around RM 55/year),
+    buy it at Namecheap or Cloudflare, then point it in Netlify's
+    Domain settings.
+
+
+ONE THING TO FIX AFTER YOU HAVE A DOMAIN
+----------------------------------------
+  Every page has  <meta property="og:image" content="media/photo/profile.jpg">
+  That path only works locally. Once you have a real address it needs to be
+  the full URL, or WhatsApp and Instagram will not show your photo when
+  someone shares your link. Tell Claude the domain and it gets fixed on all
+  24 pages in one pass.
+
+
+YOUR DETAILS, AS THEY APPEAR ON THE SITE
+----------------------------------------
+  Public name    Ara Aranya
+  Alias          Arasselly Salsabella Mashel
+  Legal name     Nur Badzlina Razi binti Mohamed Gazali
+  Business       Nova Badzlina Global
+  Based          Kota Bharu, Kelantan, Malaysia
+  Phone          +60 18-278 0523
+  Email          badzlinaraziugc@gmail.com — UGC work
+                 novabadzlinaglobal@gmail.com — everything else
+  Social         @novabadzlinaglobal
+  Bank           Maybank · 1651 2543 2269
+
+  Tagline        Where creators become talent.
+  Motto          Scarred but sacred; a beautiful gift rising above the storm.

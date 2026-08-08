@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pembayaran — NOVA BADZLINA GLOBAL</title>
+<meta name="description" content="Kaedah pembayaran untuk tempahan Nova Badzlina Global — FPX / online banking dan kad debit ke Maybank, QR Pay melalui DuitNow, atau Stripe dan Payoneer yang diuruskan terus. Berpangkalan di Kota Bharu, Kelantan, Malaysia." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c0c21%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nova Badzlina Global" />
+<meta property="og:title" content="Pembayaran — NOVA BADZLINA GLOBAL" />
+<meta property="og:description" content="FPX, online banking, kad debit, QR Pay, Stripe dan Payoneer. Terma bil dan ketersediaan yang jelas." />
+<meta property="og:image" content="media/photo/profile.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2c0c21" />
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <a class="nav__brand" href="index-bm.html">
+    <span class="nav__mark">NB</span>
+    <span class="nav__name">NOVA BADZLINA <em>GLOBAL</em><small>Di mana kreator menjadi talent.</small></span>
+  </a>
+  <nav class="nav__links">
+    <a href="index-bm.html">Utama</a>
+    <a href="index-bm.html#services">Perkhidmatan</a>
+    <a href="voice-bm.html">Demo Suara</a>
+    <a href="work-bm.html">Portfolio</a>
+    <a href="pricing-bm.html">Harga</a>
+    <a class="is-active" href="payment-bm.html">Pembayaran</a>
+    <a href="contact-bm.html">Hubungi</a>
+    <span class="lang"><a href="payment.html">EN</a><a class="is-on" href="payment-bm.html">BM</a></span>
+    <a class="nav__cta" href="book-bm.html">Tempah Saya</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero hero--page">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="banner"><span class="banner__dot"></span> Langkah 2 tempahan · Bayar hanya selepas sebut harga dipersetujui</p>
+    <h1 class="hero__title hero__title--sm">Buat <span class="grad">pembayaran</span></h1>
+    <p class="hero__tag">Pilih kaedah yang anda pilih semasa menempah.</p>
+    <p class="hero__lede">
+      Pilih kaedah pembayaran anda di bawah dan butiran yang anda perlukan akan muncul.
+      Sila bayar hanya setelah kita bersetuju tentang sebut harga, deliverable dan tempoh masa secara bertulis.
+      <strong>Video tunggal dibayar berperingkat</strong> — setiap peringkat sebelum ia siap.
+      <strong>Bundle, kerja jangka panjang dan apa-apa yang berjalan sebulan</strong> mengikut
+      tetingkap pembayaran bulanan, dijelaskan sepenuhnya antara 28hb dan 31hb.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--ghost" href="book-bm.html">← Kembali ke borang tempahan</a>
+      <a class="btn btn--ghost" href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20ada%20soalan%20tentang%20pembayaran%20tempahan." target="_blank" rel="noopener noreferrer">Tanya saya tentang pembayaran ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KAEDAH PEMBAYARAN ================= -->
+<section class="section" id="methods">
+  <header class="section__head">
+    <p class="eyebrow">Kaedah pembayaran</p>
+    <h2>Pilih cara anda membayar</h2>
+    <p class="section__sub">Lima pilihan. Tiga boleh anda selesaikan sendiri sekarang; dua kita uruskan bersama.</p>
+  </header>
+
+  <div class="pay">
+    <input class="pay__radio" type="radio" name="paymethod" id="pay1" checked />
+    <input class="pay__radio" type="radio" name="paymethod" id="pay2" />
+    <input class="pay__radio" type="radio" name="paymethod" id="pay3" />
+    <input class="pay__radio" type="radio" name="paymethod" id="pay4" />
+    <input class="pay__radio" type="radio" name="paymethod" id="pay5" />
+
+    <div class="pay__tabs">
+      <label for="pay1">🏦 FPX / Online Banking</label>
+      <label for="pay2">💳 Kad Debit</label>
+      <label for="pay3">📱 QR Pay</label>
+      <label for="pay4">🌐 Stripe</label>
+      <label for="pay5">🌍 Payoneer</label>
+    </div>
+
+    <div class="pay__panels">
+
+      <!-- 1. FPX -->
+      <section class="pay__panel">
+        <div class="paycard">
+          <p class="eyebrow">Bayar sendiri · Serta-merta</p>
+          <h3>Pindahan FPX / Online Banking</h3>
+          <p>
+            Pindahkan terus ke akaun Maybank saya dari mana-mana bank Malaysia menggunakan
+            online banking atau FPX. Ini pilihan paling cepat dan paling murah untuk pembayaran MYR.
+          </p>
+
+          <dl class="bankrows">
+            <div class="bankrow"><dt>Bank</dt><dd>Maybank (Malayan Banking Berhad)</dd></div>
+            <div class="bankrow"><dt>Nama akaun</dt><dd>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</dd></div>
+            <div class="bankrow"><dt>Nombor akaun</dt><dd class="acct">1651 2543 2269</dd></div>
+            <div class="bankrow"><dt>Rujukan untuk digunakan</dt><dd>Nama anda atau nama brand</dd></div>
+          </dl>
+
+          <ol class="steps">
+            <li>Log masuk ke bank anda atau Maybank2u dan pilih <strong>Transfer / DuitNow / FPX</strong>.</li>
+            <li>Masukkan nombor akaun <strong>165125432269</strong> dan sahkan nama terpapar sebagai <strong>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</strong>.</li>
+            <li>Masukkan <strong>jumlah deposit</strong> yang dipersetujui (10%–50% daripada sebut harga).</li>
+            <li>Letakkan <strong>nama anda atau nama brand</strong> dalam ruangan rujukan supaya saya boleh padankan dengan tempahan anda.</li>
+            <li>Hantar saya <strong>resit atau tangkap layar</strong> di WhatsApp atau emel — itu yang mengesahkan slot anda.</li>
+          </ol>
+
+          <div class="contactpay">
+            <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20sudah%20buat%20pembayaran%20tempahan%20melalui%20FPX%20%2F%20online%20banking.%20Ini%20resit%20saya%3A" target="_blank" rel="noopener noreferrer">
+              <span>💬</span><span>Hantar resit saya di WhatsApp</span><span class="go">↗</span>
+            </a>
+            <a href="mailto:novabadzlinaglobal@gmail.com?subject=Resit%20pembayaran%20-%20tempahan">
+              <span>✉️</span><span>Emel resit saya</span><span class="go">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Kad debit -->
+      <section class="pay__panel">
+        <div class="paycard">
+          <p class="eyebrow">Bayar sendiri · Serta-merta</p>
+          <h3>Kad Debit</h3>
+          <p>
+            Pembayaran kad debit masuk ke akaun Maybank yang sama. Guna aplikasi bank atau
+            internet banking anda dengan kad debit untuk buat pindahan — butiran destinasi
+            sama seperti FPX.
+          </p>
+
+          <dl class="bankrows">
+            <div class="bankrow"><dt>Bank</dt><dd>Maybank (Malayan Banking Berhad)</dd></div>
+            <div class="bankrow"><dt>Nama akaun</dt><dd>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</dd></div>
+            <div class="bankrow"><dt>Nombor akaun</dt><dd class="acct">1651 2543 2269</dd></div>
+            <div class="bankrow"><dt>Rujukan untuk digunakan</dt><dd>Nama anda atau nama brand</dd></div>
+          </dl>
+
+          <ol class="steps">
+            <li>Buka aplikasi bank anda dan pilih <strong>Transfer</strong> menggunakan akaun kad debit anda.</li>
+            <li>Masukkan <strong>165125432269</strong> dan semak nama terpapar sebagai <strong>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</strong>.</li>
+            <li>Bayar <strong>deposit</strong> yang dipersetujui (10%–50%), baki semasa penghantaran.</li>
+            <li>Tambah <strong>nama anda atau brand</strong> sebagai rujukan.</li>
+            <li>Hantar saya <strong>resit</strong> untuk sahkan tempahan.</li>
+          </ol>
+
+          <div class="contactpay">
+            <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20sudah%20buat%20pembayaran%20tempahan%20melalui%20kad%20debit.%20Ini%20resit%20saya%3A" target="_blank" rel="noopener noreferrer">
+              <span>💬</span><span>Hantar resit saya di WhatsApp</span><span class="go">↗</span>
+            </a>
+            <a href="mailto:novabadzlinaglobal@gmail.com?subject=Resit%20pembayaran%20-%20tempahan">
+              <span>✉️</span><span>Emel resit saya</span><span class="go">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. QR Pay -->
+      <section class="pay__panel">
+        <div class="paycard">
+          <p class="eyebrow">Bayar sendiri · Serta-merta</p>
+          <h3>QR Pay</h3>
+          <p>
+            Imbas kod QR ini dengan Maybank, Touch 'n Go, Boost, GrabPay, ShopeePay atau
+            mana-mana aplikasi yang menyokong DuitNow. Ia masuk terus ke akaun Maybank yang sama.
+          </p>
+
+          <div class="qrwrap">
+            <img src="media/payment/maybank-qr.jpg" alt="Kod QR Maybank untuk Nur Badzlina Razi Binti M" />
+          </div>
+          <p class="qrnote">Imbas dengan mana-mana aplikasi bank atau e-wallet yang menyokong DuitNow</p>
+
+          <ol class="steps">
+            <li>Buka aplikasi bank atau e-wallet anda dan pilih <strong>Scan QR / DuitNow QR</strong>.</li>
+            <li>Imbas kod di atas dan pastikan nama terpapar sebagai <strong>Nur Badzlina Razi Binti M</strong>.</li>
+            <li>Masukkan <strong>jumlah deposit</strong> yang dipersetujui (10%–50%).</li>
+            <li>Tambah <strong>nama anda atau brand</strong> dalam ruangan nota atau rujukan.</li>
+            <li>Hantar saya <strong>resit</strong> di WhatsApp supaya saya boleh kunci slot anda.</li>
+          </ol>
+
+          <div class="contactpay">
+            <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20sudah%20buat%20pembayaran%20tempahan%20melalui%20QR%20Pay.%20Ini%20resit%20saya%3A" target="_blank" rel="noopener noreferrer">
+              <span>💬</span><span>Hantar resit saya di WhatsApp</span><span class="go">↗</span>
+            </a>
+            <a href="mailto:novabadzlinaglobal@gmail.com?subject=Resit%20pembayaran%20-%20tempahan">
+              <span>✉️</span><span>Emel resit saya</span><span class="go">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Stripe -->
+      <section class="pay__panel">
+        <div class="paycard paycard--plain">
+          <p class="eyebrow">Diuruskan bersama · Antarabangsa</p>
+          <h3>Stripe</h3>
+          <p>
+            Pembayaran Stripe disediakan mengikut tempahan, bukan melalui pautan checkout awam.
+            <strong>Mesej saya terus</strong> dan saya akan hantar pautan pembayaran atau invois
+            Stripe yang selamat mengikut jumlah dan mata wang yang dipersetujui (MYR, USD atau GBP).
+          </p>
+          <p style="color:var(--ink-soft)">
+            Ini biasanya laluan terbaik untuk brand antarabangsa yang membayar dengan kad, dan
+            ia memberi anda resit serta jejak invois yang kemas untuk pasukan kewangan anda.
+          </p>
+
+          <div class="contactpay">
+            <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20ingin%20bayar%20tempahan%20melalui%20Stripe.%20Sila%20hantar%20pautan%20pembayaran.%0A%0ANama%20%2F%20Brand%3A%20%0AJumlah%20%2F%20mata%20wang%3A%20" target="_blank" rel="noopener noreferrer">
+              <span>💬</span><span>Minta pautan Stripe di WhatsApp</span><span class="go">↗</span>
+            </a>
+            <a href="mailto:novabadzlinaglobal@gmail.com?subject=Permohonan%20pautan%20pembayaran%20Stripe">
+              <span>✉️</span><span>Minta pautan Stripe melalui emel</span><span class="go">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Payoneer -->
+      <section class="pay__panel">
+        <div class="paycard paycard--plain">
+          <p class="eyebrow">Diuruskan bersama · Antarabangsa</p>
+          <h3>Payoneer</h3>
+          <p>
+            Payoneer juga diuruskan mengikut tempahan. <strong>Mesej saya terus</strong> dan saya
+            akan hantar permintaan Payoneer untuk jumlah yang dipersetujui, atau butiran penerimaan
+            yang diperlukan oleh pasukan kewangan anda.
+          </p>
+          <p style="color:var(--ink-soft)">
+            Pilihan yang baik kalau syarikat anda sudah biasa membayar kreator melalui Payoneer
+            atau anda menjelaskan dalam USD atau GBP.
+          </p>
+
+          <div class="contactpay">
+            <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20ingin%20bayar%20tempahan%20melalui%20Payoneer.%20Sila%20hantar%20permintaan%20pembayaran.%0A%0ANama%20%2F%20Brand%3A%20%0AJumlah%20%2F%20mata%20wang%3A%20" target="_blank" rel="noopener noreferrer">
+              <span>💬</span><span>Minta invois Payoneer di WhatsApp</span><span class="go">↗</span>
+            </a>
+            <a href="mailto:novabadzlinaglobal@gmail.com?subject=Permohonan%20pembayaran%20Payoneer">
+              <span>✉️</span><span>Minta invois Payoneer melalui emel</span><span class="go">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>Sentiasa sahkan sebelum anda pindahkan wang.</strong> Satu-satunya akaun bank saya
+    ialah akaun Maybank yang tertera di halaman ini, atas nama
+    <strong>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</strong>. Saya tidak akan sesekali minta anda
+    hantar wang ke nama lain, bank lain, atau dompet mata wang kripto. Kalau ada apa-apa yang
+    kelihatan berbeza daripada apa yang ada di sini, berhenti dan sahkan dengan saya di WhatsApp
+    <strong>+60 18-278 0523</strong> dahulu.
+  </div>
+
+  <div class="alert">
+    <strong>PayPal belum tersedia</strong> — akan datang. Dan setelah tempahan disahkan dan
+    deposit dibayar, ia <strong>tidak boleh dikembalikan</strong>, jadi sila pastikan brief,
+    deliverable, tempoh masa dan hak penggunaan semuanya diselesaikan sebelum anda membayar.
+  </div>
+</section>
+
+<!-- ================= PENGEBILAN IKUT PERKHIDMATAN ================= -->
+<section class="section section--alt" id="billing">
+  <header class="section__head">
+    <p class="eyebrow">Bila anda membayar</p>
+    <h2>Pengebilan bergantung pada perkhidmatan</h2>
+    <p class="section__sub">Empat corak. Yang mana terpakai ditentukan oleh jenis kerja, bukan oleh kaedah pembayaran yang anda pilih.</p>
+  </header>
+
+  <div class="methods">
+    <article class="method method--wa">
+      <span class="method__icon">1&#65039;&#8419;</span>
+      <p class="method__label">Corak 1</p>
+      <p class="method__value">Bayar sebelum setiap langkah</p>
+      <p>
+        Setiap peringkat dijelaskan dahulu, kemudian saya teruskan. Tiada apa dihasilkan atau
+        dilepaskan atas hutang, dan tiada invois untuk dikejar di hujungnya.
+      </p>
+      <ul class="card__list" style="margin-bottom:1.3rem">
+        <li>Video tunggal</li><li>Editing video</li>
+      </ul>
+      <a class="btn btn--primary btn--full" href="#single">Lihat susunan langkah &#8595;</a>
+    </article>
+
+    <article class="method">
+      <span class="method__icon">&#128197;</span>
+      <p class="method__label">Corak 2</p>
+      <p class="method__value">Bayar penuh, 28hb&#8211;31hb</p>
+      <p>
+        Kerja berterusan dijelaskan bulan demi bulan, sepenuhnya, antara 28hb dan 31hb —
+        sebelum bulan berakhir. Tiada bulan dibawa ke hadapan tanpa bayaran.
+      </p>
+      <ul class="card__list" style="margin-bottom:1.3rem">
+        <li>Bundle</li><li>Canvas UGC</li><li>Ambassadorship</li><li>Retainer</li>
+        <li>Paid review</li><li>Review filem</li>
+      </ul>
+      <a class="btn btn--ghost btn--full" href="#monthly">Lihat tetingkap bayaran &#8595;</a>
+    </article>
+
+    <article class="method">
+      <span class="method__icon">&#127897;&#65039;</span>
+      <p class="method__label">Corak 3</p>
+      <p class="method__value">50% deposit + 50%</p>
+      <p>
+        Separuh untuk mula merakam. Anda terima draf bertanda suara untuk diluluskan, dan
+        master bersih dilepaskan setelah baki dijelaskan.
+      </p>
+      <ul class="card__list" style="margin-bottom:1.3rem">
+        <li>Voice-over</li><li>Voice artist</li><li>Voice talent</li>
+      </ul>
+      <a class="btn btn--ghost btn--full" href="#voicebilling">Lihat cara bil suara &#8595;</a>
+    </article>
+
+    <article class="method">
+      <span class="method__icon">&#128248;</span>
+      <p class="method__label">Corak 4</p>
+      <p class="method__value">Kadar harian, diinvois selepas</p>
+      <p>
+        Kadar harian dipersetujui sebelum kita mula. Saya invois setelah hari atau hari-hari
+        itu selesai, dan fail akhir menyusul selepas invois.
+      </p>
+      <ul class="card__list" style="margin-bottom:1.3rem">
+        <li>Fotografi produk</li><li>Commercial talent</li><li>Lakonan pendek</li><li>Canvas makeup</li><li>Travel</li><li>Wedding</li>
+      </ul>
+      <a class="btn btn--ghost btn--full" href="#dayrate">Lihat terma kadar harian &#8595;</a>
+    </article>
+  </div>
+</section>
+
+<!-- ================= VIDEO TUNGGAL ================= -->
+<section class="section" id="single">
+  <header class="section__head">
+    <p class="eyebrow">Corak 1</p>
+    <h2>Bayar sebelum setiap langkah</h2>
+    <p class="section__sub">Video tunggal · Editing video — mudah, berperingkat, dan tiada baki tertunggak di hujung.</p>
+  </header>
+
+  <div class="paycard" style="max-width:var(--maxw);margin-inline:auto">
+    <p class="eyebrow">Peraturan video tunggal</p>
+    <h3>Setiap langkah dibayar sebelum ia siap</h3>
+    <p>
+      Untuk video sekali sahaja, setiap peringkat dibayar dahulu kemudian dihantar — bukan
+      sebaliknya. Anda sentiasa tahu tepat apa yang anda sudah bayar, dan saya tidak perlu
+      menanggung kerja yang belum dibayar.
+    </p>
+
+    <ol class="steps">
+      <li><strong>Sebelum produksi bermula</strong> — deposit anda (10%–50%) dibayar. Penggambaran dan editing bermula sebaik ia masuk.</li>
+      <li><strong>Sebelum watermark ditanggalkan</strong> — baki dijelaskan sepenuhnya. Anda sudah melihat draf berwatermark, jadi anda tahu tepat apa yang anda beli.</li>
+      <li><strong>Sebelum ia disiarkan di sosial saya</strong> — kalau anda tambah pilihan post +10%, bahagian itu dibayar sebelum post naik.</li>
+      <li><strong>Kemudian penghantaran</strong> — fail bersih dihantar melalui WeTransfer, Blip atau Google Drive.</li>
+    </ol>
+
+    <dl class="bankrows">
+      <div class="bankrow"><dt>Terpakai untuk</dt><dd>Video tunggal · Editing video</dd></div>
+      <div class="bankrow"><dt>Peraturan</dt><dd>Bayar dahulu, kemudian langkah disiapkan</dd></div>
+      <div class="bankrow"><dt>Tiada baki di hujung</dt><dd>Selesai sepenuhnya semasa penghantaran</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= BULANAN ================= -->
+<section class="section section--alt" id="monthly">
+  <header class="section__head">
+    <p class="eyebrow">Corak 2</p>
+    <h2>Bundle, jangka panjang, kerja bulanan &amp; review</h2>
+    <p class="section__sub">Kerja berterusan dan review berjalan mengikut tetingkap pembayaran bulanan.</p>
+  </header>
+
+  <div class="paycard" style="max-width:var(--maxw);margin-inline:auto">
+    <p class="eyebrow">Peraturan bulanan</p>
+    <h3>Bayaran penuh perlu dibuat antara 28hb dan 31hb</h3>
+    <p>
+      Untuk bundle pelbagai video, pembinaan Canvas UGC 30 hari, ambassadorship brand, retainer,
+      atau <strong>mana-mana projek yang berjalan selama sebulan</strong> — bulan itu mesti
+      <strong>dibayar sepenuhnya antara 28hb dan 31hb</strong>, sebelum bulan berakhir.
+      Tiada bulan yang dibawa ke bulan berikutnya tanpa bayaran.
+    </p>
+
+    <dl class="bankrows">
+      <div class="bankrow"><dt>Tetingkap bayaran</dt><dd>28hb – 31hb setiap bulan</dd></div>
+      <div class="bankrow"><dt>Jumlah</dt><dd>Yuran penuh bulan tersebut</dd></div>
+      <div class="bankrow"><dt>Terpakai untuk</dt><dd>Bundle · Canvas UGC · Ambassadorship · Retainer · Mana-mana projek 1 bulan · Paid review · Review filem</dd></div>
+      <div class="bankrow"><dt>Jika tidak dibayar</dt><dd>Penyiaran dihentikan sementara sehingga dijelaskan</dd></div>
+    </dl>
+
+    <ol class="steps">
+      <li>Saya hantar <strong>invois bulanan</strong> beberapa hari sebelum 28hb supaya anda ada masa memprosesnya.</li>
+      <li>Anda bayar <strong>bulan penuh</strong> antara <strong>28hb dan 31hb</strong> menggunakan mana-mana kaedah di halaman ini.</li>
+      <li>Hantar saya <strong>resit</strong> dan bulan berikutnya diteruskan tanpa gangguan.</li>
+      <li>Kalau sesuatu bulan tidak dijelaskan dalam tetingkap itu, <strong>penyiaran dan produksi dihentikan sementara</strong> sehingga ia dijelaskan — akaun kekal hidup, cuma berhenti dikemas kini.</li>
+    </ol>
+
+    <div class="contactpay">
+      <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20sudah%20bayar%20invois%20bulanan%20saya.%20Ini%20resit%20saya%3A" target="_blank" rel="noopener noreferrer">
+        <span>💬</span><span>Hantar resit bulanan saya di WhatsApp</span><span class="go">↗</span>
+      </a>
+      <a href="mailto:novabadzlinaglobal@gmail.com?subject=Resit%20pembayaran%20bulanan">
+        <span>✉️</span><span>Emel resit bulanan saya</span><span class="go">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>Kenapa tetingkap 28hb–31hb?</strong> Kerja bulanan bermakna saya menghasilkan dan
+    menyiarkan setiap hari dalam bulan tersebut. Menutup setiap bulan sebelum ia berakhir
+    memastikan akaun berjalan tanpa jurang, dan bermakna tiada siapa antara kita perlu mengejar
+    baki lama sedangkan kerja baharu sudah bermula.
+  </div>
+</section>
+
+<!-- ================= BIL SUARA ================= -->
+<section class="section" id="voicebilling">
+  <header class="section__head">
+    <p class="eyebrow">Corak 3</p>
+    <h2>Kerja suara — 50% deposit, 50% sebelum master bersih</h2>
+    <p class="section__sub">Voice-over · Voice artist · Voice talent</p>
+  </header>
+
+  <div class="paycard" style="max-width:var(--maxw);margin-inline:auto">
+    <p class="eyebrow">Peraturan suara</p>
+    <h3>Separuh untuk merakam, separuh untuk melepaskan</h3>
+    <p>
+      Kerja suara dibahagi dua. Deposit membolehkan saya masuk merakam; baki melepaskan master
+      bersih. Di antaranya anda terima <strong>draf bertanda suara</strong> — persembahan penuh,
+      panjang penuh, dengan tanda suara di atasnya — supaya anda boleh luluskan bacaan itu
+      sebelum membayar bakinya.
+    </p>
+
+    <ol class="steps">
+      <li><strong>Deposit 50%</strong> — saya rakam sebaik ia masuk. Skrip, bahasa dan nada disahkan dahulu.</li>
+      <li><strong>Draf bertanda</strong> — anda dengar bacaan penuh dengan tanda suara di atasnya dan minta pickup anda.</li>
+      <li><strong>Baki 50%</strong> — dijelaskan setelah anda berpuas hati dengan bacaan itu.</li>
+      <li><strong>Master bersih</strong> — tanda ditanggalkan, dihantar sebagai audio sedia siar pada hari yang sama.</li>
+    </ol>
+
+    <dl class="bankrows">
+      <div class="bankrow"><dt>Terpakai untuk</dt><dd>Voice-over · Voice artist · Voice talent</dd></div>
+      <div class="bankrow"><dt>Pembahagian</dt><dd>50% untuk mula · 50% sebelum dilepaskan</dd></div>
+      <div class="bankrow"><dt>Pickup</dt><dd>Termasuk dalam skrip yang dipersetujui</dd></div>
+      <div class="bankrow"><dt>Skrip baharu</dt><dd>Disebut harga sebagai sesi baharu</dd></div>
+      <div class="bankrow"><dt>Bahasa</dt><dd>Bahasa Melayu · Inggeris · Kedua-duanya</dd></div>
+    </dl>
+
+    <div class="contactpay">
+      <a href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20sudah%20bayar%20deposit%20sesi%20suara%20saya.%20Ini%20resit%20saya%3A" target="_blank" rel="noopener noreferrer">
+        <span>&#128172;</span><span>Hantar resit deposit suara saya</span><span class="go">&#8599;</span>
+      </a>
+      <a href="voice-bm.html"><span>&#127911;</span><span>Dengar 22 demo dahulu</span><span class="go">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KADAR HARIAN ================= -->
+<section class="section section--alt" id="dayrate">
+  <header class="section__head">
+    <p class="eyebrow">Corak 4</p>
+    <h2>Perkhidmatan penggambaran — kadar harian, diinvois selepas</h2>
+    <p class="section__sub">Fotografi produk · Editing gambar · Commercial talent · Lakonan pendek · Canvas makeup · Travel · Wedding</p>
+  </header>
+
+  <div class="paycard" style="max-width:var(--maxw);margin-inline:auto">
+    <p class="eyebrow">Peraturan kadar harian</p>
+    <h3>Kita persetujui kadar dahulu. Saya invois bila hari itu selesai.</h3>
+    <p>
+      Apa-apa yang mengambil satu hari penuh masa saya dibilkan mengikut hari dan bukan mengikut
+      karya. Kadar, bilangan hari dan apa yang termasuk semuanya dipersetujui secara bertulis
+      sebelum kita mula — kemudian saya invois setelah hari atau hari-hari itu selesai, dan fail
+      akhir yang telah diedit menyusul selepas invois.
+    </p>
+
+    <ol class="steps">
+      <li><strong>Persetujui kadar harian</strong> — berapa hari, apa yang dirakam, dan apa deliverable-nya.</li>
+      <li><strong>Tempah tarikh</strong> — hari itu disimpan untuk anda dan saya tolak kerja lain untuknya.</li>
+      <li><strong>Rakam hari itu</strong> — fotografi, persembahan depan kamera, makeup, atau gabungan.</li>
+      <li><strong>Saya invois</strong> — setelah hari atau hari-hari itu selesai.</li>
+      <li><strong>Fail akhir</strong> — diedit dan dihantar setelah invois dijelaskan.</li>
+    </ol>
+
+    <dl class="bankrows">
+      <div class="bankrow"><dt>Terpakai untuk</dt><dd>Fotografi produk · Editing gambar · Commercial talent · Lakonan pendek · Canvas makeup · Travel · Wedding</dd></div>
+      <div class="bankrow"><dt>Dibil mengikut</dt><dd>Hari, bukan karya</dd></div>
+      <div class="bankrow"><dt>Diinvois</dt><dd>Selepas hari atau hari-hari itu selesai</dd></div>
+      <div class="bankrow"><dt>Hadir sendiri di Malaysia</dt><dd>Caj perjalanan dikenakan di atasnya</dd></div>
+      <div class="bankrow"><dt>Kerja lebih masa</dt><dd>Melebihi waktu dipersetujui, disebut harga berasingan</dd></div>
+    </dl>
+
+    <div class="warn">
+      <strong>Kadar harian dipersetujui sebelum tarikh disimpan.</strong> Hari yang ditempah
+      adalah hari yang tidak boleh saya jual kepada orang lain, jadi kadar, waktu dan deliverable
+      ditulis dahulu — dan terma pembatalan di halaman tempahan terpakai dari saat tarikh itu
+      disahkan.
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARA HARGA DIKIRA ================= -->
+<section class="section" id="pricing">
+  <header class="section__head">
+    <p class="eyebrow">Cara harga berfungsi</p>
+    <h2>Bagaimana harga anda dibina</h2>
+    <p class="section__sub">Harga asas, kemudian caj tambahan yang anda pilih. Setiap angka di bawah adalah peratusan daripada harga asas.</p>
+  </header>
+
+  <div class="paycard paycard--plain" style="max-width:var(--maxw);margin-inline:auto">
+    <p class="eyebrow">Langkah 1</p>
+    <h3>Harga asas</h3>
+    <p>
+      Ditentukan oleh perkhidmatan, panjang dan kuantiti. Setiap video antara
+      <strong>15 hingga 120 saat</strong>. Kerja suara dihargai mengikut skrip. Perkhidmatan
+      penggambaran dihargai mengikut hari. Beritahu saya brief anda dan saya sebut harga asasnya.
+    </p>
+  </div>
+
+  <div class="subhead"><h3>Langkah 2 — caj tambahan</h3><span>Setiap satu adalah peratusan daripada harga asas</span></div>
+  <dl class="terms">
+    <div>
+      <dt>Footage mentah / tanpa edit</dt>
+      <dd>+50%<small>Bahan mentah tanpa editing saya. Hak penggunaan termasuk dalam caj ini.</small></dd>
+    </div>
+    <div>
+      <dt>Kerja segera</dt>
+      <dd>+30% – 60%<small>Ditetapkan mengikut betapa ketatnya tarikh akhir dan apa yang sedia ada dalam giliran.</small></dd>
+    </div>
+    <div>
+      <dt>Saya post di sosial saya</dt>
+      <dd>+10% pendahuluan<small>Dibayar sebelum post naik, sebab post yang sudah disiarkan tidak boleh ditarik balik.</small></dd>
+    </div>
+    <div>
+      <dt>Akaun baharu yang saya ambil alih</dt>
+      <dd>+15%<small>Canvas UGC dan mana-mana akaun baharu yang saya bina, uruskan dan serahkan.</small></dd>
+    </div>
+    <div>
+      <dt>Hadir sendiri — Semenanjung</dt>
+      <dd>+50% – 80%<small>Semenanjung Malaysia sahaja, untuk event 1–2 hari.</small></dd>
+    </div>
+    <div>
+      <dt>Hadir sendiri — Kelantan &amp; KL</dt>
+      <dd>+30–50%<small>Kota Bharu, Kelantan dan Kuala Lumpur — tiada penerbangan diperlukan.</small></dd>
+    </div>
+    <div>
+      <dt>Kehadiran saat akhir</dt>
+      <dd>+10% – 15%<small>Tempahan di lokasi dalam notis singkat, di atas caj di atas.</small></dd>
+    </div>
+    <div>
+      <dt>Hak penggunaan paid ads</dt>
+      <dd>Disebut harga<small>Mengikut tempoh (3, 6 atau 12 bulan) dan wilayah. Penggunaan organik di channel anda sendiri termasuk percuma.</small></dd>
+    </div>
+  </dl>
+
+  <div class="subhead"><h3>Langkah 3 — deposit, mata wang &amp; terma</h3><span>Diselesaikan sebelum apa-apa bermula</span></div>
+  <dl class="terms">
+    <div>
+      <dt>Deposit</dt>
+      <dd>10% – 50% pendahuluan<small>Anda pilih kadarnya. Terpakai untuk corak pengebilan yang menggunakan deposit.</small></dd>
+    </div>
+    <div>
+      <dt>Mata wang</dt>
+      <dd>MYR RM · USD $ · GBP £<small>Sebut harga dikeluarkan dalam mata wang yang anda pilih semasa menempah.</small></dd>
+    </div>
+    <div>
+      <dt>Penghantaran</dt>
+      <dd>WeTransfer · Blip · Google Drive<small>Draf berwatermark dahulu, fail bersih selepas bayaran penuh.</small></dd>
+    </div>
+    <div>
+      <dt>Setelah disahkan</dt>
+      <dd>Tidak boleh dikembalikan<small>Tanya apa sahaja sebelum anda sahkan — perubahan pada peringkat itu percuma.</small></dd>
+    </div>
+  </dl>
+
+  <div class="warn">
+    <strong>Contoh bagaimana ia disusun.</strong> Ambil harga asas untuk perkhidmatan itu. Tambah
+    <strong>50%</strong> kalau anda mahu footage mentah. Tambah <strong>30–60%</strong> kalau ia
+    kerja segera. Tambah <strong>50–80%</strong> kalau anda perlukan saya hadir sendiri, tambah
+    lagi <strong>10%</strong> kalau ia di luar Kelantan atau Kuala Lumpur, dan <strong>10–15%</strong> lagi kalau ia
+    saat akhir. Anda tidak akan meneka — pecahan penuh ditulis dalam sebut harga yang anda luluskan.
+  </div>
+</section>
+
+<!-- ================= KETERSEDIAAN ================= -->
+<section class="section" id="inperson">
+  <header class="section__head">
+    <p class="eyebrow">Ketersediaan</p>
+    <h2>Remote seluruh dunia · Hadir sendiri di Malaysia</h2>
+    <p class="section__sub">Remote adalah standard dan tiada kos tambahan. Kehadiran sendiri adalah caj tambahan yang disebut harga berasingan.</p>
+  </header>
+
+  <div class="cards cards--four">
+    <article class="card">
+      <span class="card__icon">🌍</span>
+      <span class="card__flag">Tiada caj tambahan</span>
+      <h3>Remote — ke mana-mana</h3>
+      <p>Semua perkhidmatan berjalan secara remote dari studio rumah saya. Kalau brand anda <strong>di luar Malaysia</strong>, ini satu-satunya pilihan — dan tiada apa yang hilang, sebab deliverable-nya sama sahaja.</p>
+      <ul class="card__list"><li>Seluruh dunia</li><li>Tiada yuran perjalanan</li><li>Kadar standard</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">🚗</span>
+      <span class="card__flag">+50% – 80%</span>
+      <h3>Hadir sendiri — Semenanjung</h3>
+      <p>Semenanjung Malaysia, untuk event <strong>1–2 hari</strong>. Caj tambahan meliputi perjalanan, masa saya di lokasi, dan hari produksi yang terjejas daripada jadual saya.</p>
+      <ul class="card__list"><li>1–2 hari</li><li>Semenanjung sahaja</li><li>Sebut harga setiap event</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">✈️</span>
+      <span class="card__flag">+10% tambahan</span>
+      <h3>Hadir sendiri — Kelantan &amp; Kuala Lumpur</h3>
+      <p><strong>Kota Bharu, Kelantan dan Kuala Lumpur.</strong> Kelantan rumah saya dan Kuala Lumpur bandar universiti saya, jadi kedua-duanya tidak perlukan penerbangan — ini kadar hadir sendiri paling berpatutan saya pada <strong>+30%–50%</strong>. Saya membawa anak perempuan saya, jadi mana-mana lokasi yang perlukan penerbangan melibatkan dua set kos, bukan satu.</p>
+      <ul class="card__list"><li>Kelantan &amp; KL</li><li>Tiada penerbangan</li><li>1–2 hari</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">⏱️</span>
+      <span class="card__flag">+10% – 15%</span>
+      <h3>Saat akhir, hadir sendiri</h3>
+      <p>Bila tempahan di lokasi masuk pada saat akhir, ini meliputi penyusunan semula segala yang sudah ada dalam jadual.</p>
+      <ul class="card__list"><li>Notis singkat</li><li>Di lokasi sahaja</li><li>Di atas caj di atas</li></ul>
+    </article>
+  </div>
+
+  <div class="warn">
+    <strong>Bagaimana caj kehadiran disusun.</strong> Mulakan dengan harga projek. Tambah
+    <strong>50%–80%</strong> kalau anda perlukan saya hadir sendiri. Kalau event di
+    <strong>di luar Kelantan atau Kuala Lumpur</strong>, tambah lagi <strong>10%</strong> untuk penerbangan dan
+    penginapan. Kalau ia <strong>saat akhir</strong>, tambah <strong>10%–15%</strong> lagi di
+    atas itu. Di luar Malaysia adalah remote sahaja — saya tidak melakukan perjalanan antarabangsa.
+  </div>
+</section>
+
+<!-- ================= PENGHANTARAN ================= -->
+<section class="section section--alt" id="delivery">
+  <header class="section__head">
+    <p class="eyebrow">Penghantaran</p>
+    <h2>Watermark dahulu, fail bersih selepas bayaran penuh</h2>
+    <p class="section__sub">Amalan biasa, dan ia melindungi kita berdua — anda nampak tepat apa yang anda bayar sebelum menjelaskan baki.</p>
+  </header>
+
+  <div class="cards cards--four">
+    <article class="card">
+      <span class="card__icon">🔖</span>
+      <span class="card__flag">Sebelum bayaran penuh</span>
+      <h3>Draf berwatermark</h3>
+      <p>Anda terima kerja siap dengan watermark saya di atasnya. Panjang penuh, kualiti penuh, bunyi penuh — anda boleh semak dengan betul dan minta pembetulan.</p>
+      <ul class="card__list"><li>Semak</li><li>Betulkan</li><li>Luluskan</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">💰</span>
+      <span class="card__flag">Kemudian</span>
+      <h3>Bayaran penuh</h3>
+      <p>Setelah anda berpuas hati dengan draf, jelaskan baki menggunakan mana-mana kaedah di halaman ini. Versi berwatermark kekal dengan anda sementara itu.</p>
+      <ul class="card__list"><li>Baki perlu dibayar</li><li>Mana-mana kaedah</li><li>Hantar resit</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">📦</span>
+      <span class="card__flag">Selepas bayaran penuh</span>
+      <h3>Fail akhir yang bersih</h3>
+      <p>Watermark ditanggalkan dan fail akhir dihantar pada hari yang sama saya sahkan bayaran anda — dalam setiap nisbah dan format yang kita persetujui.</p>
+      <ul class="card__list"><li>Tiada watermark</li><li>Semua nisbah</li><li>Hari yang sama</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">📲</span>
+      <span class="card__flag">Pilihan · +10% pendahuluan</span>
+      <h3>Saya post di sosial saya</h3>
+      <p>Kalau anda mahu kandungan disiarkan di TikTok, Instagram atau Threads <strong>saya</strong> dan bukan sekadar diserahkan kepada anda, itu tambahan <strong>10% dibayar pendahuluan</strong> — sebelum ia naik.</p>
+      <ul class="card__list"><li>+10% pendahuluan</li><li>Bayar sebelum post</li><li>Pilihan</li></ul>
+    </article>
+
+    <article class="card">
+      <span class="card__icon">🆕</span>
+      <span class="card__flag">Pilihan · +15%</span>
+      <h3>Akaun baharu saya ambil alih</h3>
+      <p>Kalau kerja itu perlukan <strong>akaun baharu yang saya bina, uruskan dan ambil alih</strong> — iaitu Canvas UGC — itu tambahan <strong>15%</strong>. Anda membayar untuk pengurusan akaun dan penyiaran harian, bukan sekadar kandungan siap.</p>
+      <ul class="card__list"><li>+15%</li><li>Bina akaun</li><li>Saya uruskan</li></ul>
+    </article>
+  </div>
+
+  <div class="subhead"><h3>Pilih cara anda terima fail akhir</h3><span>Pilihan anda · Beritahu semasa menempah</span></div>
+
+  <div class="methods">
+    <article class="method">
+      <span class="method__icon">📨</span>
+      <p class="method__label">Pilihan 1</p>
+      <p class="method__value">WeTransfer</p>
+      <p>Pautan muat turun terus ke emel anda. Tidak perlu akaun, tidak perlu pasang apa-apa — sesuai kalau anda cuma mahu fail dengan cepat. Pautan ada tempoh luput, jadi muat turun segera.</p>
+    </article>
+
+    <article class="method">
+      <span class="method__icon">⚡</span>
+      <p class="method__label">Pilihan 2</p>
+      <p class="method__value">Blip</p>
+      <p>Pemindahan peer-to-peer yang pantas tanpa had saiz fail dan tanpa pemampatan. Sesuai untuk kumpulan fail yang besar atau bila anda mahu master berkualiti tertinggi kekal utuh.</p>
+    </article>
+
+    <article class="method">
+      <span class="method__icon">☁️</span>
+      <p class="method__label">Pilihan 3</p>
+      <p class="method__value">Google Drive</p>
+      <p>Folder dikongsi yang tidak luput. Sesuai kalau pasukan anda perlukan akses berterusan, atau anda mahu aset disimpan di tempat kekal dari hari pertama.</p>
+    </article>
+  </div>
+
+  <div class="warn">
+    <strong>Kenapa watermark dan caj tambahan ini?</strong> Draf berwatermark bermakna anda tidak
+    pernah membayar untuk sesuatu yang anda belum lihat, dan saya tidak pernah melepaskan kerja
+    siap yang belum dibayar. Caj 10% pendahuluan untuk penyiaran di akaun saya adalah idea yang
+    sama secara terbalik — setelah post naik di halaman saya, ia tidak boleh ditarik balik, jadi
+    bahagian itu dijelaskan sebelum ia disiarkan. Caj 15% untuk akaun baharu yang saya ambil alih
+    pula meliputi pembinaan, penyiaran harian dan pengurusan berterusan sesebuah channel — itu
+    perkhidmatan yang berjalan setiap hari, bukan satu fail yang saya serahkan sekali.
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section">
+  <div class="cta">
+    <p class="eyebrow">Soalan tentang pembayaran?</p>
+    <h2>Tak pasti kaedah mana yang sesuai?</h2>
+    <p>
+      Brand Malaysia biasanya guna FPX, online banking atau QR Pay. Brand antarabangsa
+      biasanya guna Stripe atau Payoneer. Kalau anda tak pasti, tanya sahaja — saya akan
+      beritahu yang mana paling murah dan paling cepat untuk keadaan anda.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20ada%20soalan%20tentang%20pembayaran%20tempahan." target="_blank" rel="noopener noreferrer">Tanya saya di WhatsApp ↗</a>
+      <a class="btn btn--ghost" href="contact-bm.html">Semua pilihan hubungan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <p class="footer__brand">NOVA BADZLINA <em>GLOBAL</em></p>
+      <p class="footer__line">Di mana kreator menjadi talent. · Remote seluruh dunia · Hadir sendiri di Malaysia</p>
+      <p class="footer__motto">Scarred but sacred; a beautiful gift rising above the storm.</p>
+      <p class="footer__loc" itemscope itemtype="https://schema.org/Place"><span class="pin">✦</span> Berpangkalan di <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">Kota Bharu</span>, <span itemprop="addressRegion">Kelantan</span>, <span itemprop="addressCountry">Malaysia</span></span></p>
+    </div>
+    <nav class="footer__nav">
+      <a href="index-bm.html">Utama</a>
+      <a href="index-bm.html#services">Perkhidmatan</a>
+      <a href="voice-bm.html">Demo Suara</a>
+      <a href="work-bm.html">Portfolio</a>
+      <a href="index-bm.html#rates">Kadar Harga</a>
+      <a href="faq-bm.html">FAQ</a>
+    <a href="payment-bm.html">Pembayaran</a>
+      <a href="contract-bm.html">Perjanjian</a>
+      <a href="invoice-bm.html">Invois</a>
+      <a href="receipt-bm.html">Resit</a>
+      <a href="contact-bm.html">Hubungi</a>
+      <a href="book-bm.html">Tempah Saya</a>
+      <a href="payment.html">English</a>
+    </nav>
+    <p class="footer__copy">© 2026 Nova Badzlina Global. Hak cipta terpelihara. · Tempahan tidak boleh dikembalikan setelah disahkan.</p>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a class="totop" href="#top" aria-label="Kembali ke atas">↑</a>
+<a class="wa-float" href="https://wa.me/60182780523?text=Hi%20Ara!%20Saya%20jumpa%20laman%20web%20portfolio%20anda%20dan%20ingin%20bertanya%20tentang%20perkhidmatan%20anda." target="_blank" rel="noopener noreferrer">
+  <span class="wa-float__icon">💬</span><span class="wa-float__text">WhatsApp saya</span>
+</a>
+
+</body>
+</html>

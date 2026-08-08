@@ -1,0 +1,89 @@
+═══════════════════════════════════════════════════════════════════════
+  NOVA BADZLINA GLOBAL — WHERE EVERY FILE LIVES
+  Ara Aranya · Kota Bharu, Kelantan, Malaysia
+═══════════════════════════════════════════════════════════════════════
+
+Open any .html or .css file with Notepad, Notepad++ or VS Code to read and
+edit the code. Double-clicking opens it in the browser instead — to edit,
+right-click the file and choose "Open with".
+
+There is no JavaScript anywhere in this project. HTML and CSS only.
+
+
+───────────────────────────────────────────────────────────────────────
+  1. THE WEBSITE — 22 pages, all sitting in this main folder
+───────────────────────────────────────────────────────────────────────
+
+Every page has an English version and a Bahasa Melayu twin (-bm).
+
+  index.html        index-bm.html       Home
+  pricing.html      pricing-bm.html     Packages and prices
+  voice.html        voice-bm.html       Voice-over demos
+  work.html         work-bm.html        Portfolio — videos and photos
+  faq.html          faq-bm.html         Questions and answers
+  book.html         book-bm.html        Booking form
+  contact.html      contact-bm.html     Contact Us + validated form
+  payment.html      payment-bm.html     How to pay
+  contract.html     contract-bm.html    Booking agreement
+  invoice.html      invoice-bm.html     Invoice template
+  receipt.html      receipt-bm.html     Receipt template
+
+  style.css   ←──  THE ONE STYLESHEET FOR ALL 22 PAGES
+
+    This single file controls how the whole website looks. The colours
+    are at the very top in the :root block — change one value there and
+    it updates on every page at once. About 1,700 lines.
+
+  style-midnight-BACKUP.css     Old theme, kept in case you want it back
+  style-celestial-BACKUP.css    Older theme, same reason
+    ↑ these two do nothing unless you link them. Safe to ignore.
+
+
+───────────────────────────────────────────────────────────────────────
+  2. THE BRAND PORTFOLIO DECK — for showing brands
+───────────────────────────────────────────────────────────────────────
+
+  deck\deck.html          The 11 slides — the words and the layout
+  deck\deck.css           How the slides look — colours, fonts, spacing
+  deck\img\               The photos used in the deck (smaller copies)
+
+  deck\Ara Aranya - Brand Portfolio Deck.pdf    ← send this one
+  deck\slides\*.png                             ← one image per slide
+
+To change a slide: open deck\deck.html, edit the words, save, then open
+it in Chrome and press Ctrl+P → A4 Landscape → margins None → tick
+Background graphics → Save as PDF.
+
+
+───────────────────────────────────────────────────────────────────────
+  3. EVERYTHING ELSE — each folder has its own .html source
+───────────────────────────────────────────────────────────────────────
+
+  ratecard\     Rate Card 2026 — 9 pages, PDF + images
+  services\     One sheet per service — 24 of them, HTML + PDF + PNG
+  catalog\      The WhatsApp catalogue, PDF + page images
+  brand\        Bios, logo, business card, video script, content calendar
+  outreach\     How to approach brands — email, TikTok, IG, WhatsApp,
+                LinkedIn, and reply templates
+  presentation\ The assignment report (Word) and lecturer script (Word)
+  documents\    Contract, invoice and receipt as standalone documents
+  watermark\    Watermark files for draft delivery
+  messages\     Ready-to-send message templates
+  admin\        Business records
+  media\photo\  All 15 photographs, full size
+  media\video\  All 27 videos, full HD
+
+
+───────────────────────────────────────────────────────────────────────
+  4. IF YOU BREAK SOMETHING
+───────────────────────────────────────────────────────────────────────
+
+This whole folder is inside OneDrive, so OneDrive keeps old versions of
+every file. Right-click the file → Version history → pick a version from
+before you edited it → Restore. Nothing you do here is permanent.
+
+Before a big edit, copy the file first. style.css becomes style-COPY.css
+and you always have a way back.
+
+
+═══════════════════════════════════════════════════════════════════════
