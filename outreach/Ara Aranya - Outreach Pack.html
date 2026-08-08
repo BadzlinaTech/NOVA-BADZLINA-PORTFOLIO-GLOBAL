@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outreach Pack — How to Approach a Brand · NOVA BADZLINA GLOBAL</title>
+<meta name="description" content="Email, TikTok, Instagram, WhatsApp and LinkedIn templates for approaching brands, plus a LinkedIn profile written out in full." />
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230b1233%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9pt; line-height:1.55; }
+.page{
+  position:relative; overflow:hidden;
+  width:210mm; min-height:297mm; margin:0 auto 8mm; padding:14mm 15mm 24mm 18mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+  page-break-after:always; break-after:page;
+}
+.page:last-of-type{ page-break-after:auto; break-after:auto; margin-bottom:0; }
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+.top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6mm; }
+.brand{ display:flex; align-items:center; gap:3mm; }
+.mark{ display:inline-grid; place-items:center; width:11mm; height:11mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:8pt; }
+.brand b{ font-family:var(--serif); font-size:9.4pt; letter-spacing:.1em; color:var(--deep); display:block; }
+.brand span{ font-family:var(--script); font-size:9.5pt; color:var(--rose); }
+.no{ font-size:6.2pt; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-deep); text-align:right; }
+h1{ font-family:var(--serif); font-size:25pt; line-height:1.06; margin:0; color:var(--deep); }
+h2{ font-family:var(--sans); font-size:6.5pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); margin:6mm 0 2.5mm; }
+h3{ font-family:var(--serif); font-size:11.5pt; margin:5mm 0 1.5mm; color:var(--deep); }
+h3:first-of-type{ margin-top:3mm; }
+.script{ font-family:var(--script); font-size:14pt; color:var(--rosegold); margin:0 0 1mm; }
+.lede{ font-size:9.5pt; color:var(--ink-soft); margin:3mm 0 0; max-width:66ch; }
+.note{ font-size:8pt; color:var(--ink-faint); margin:0 0 2mm; }
+p{ margin:0 0 2.5mm; }
+.rule{ height:1px; margin:4mm 0;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+.msg{
+  border:1px dashed var(--rosegold); border-radius:2mm; background:#fff;
+  padding:3mm 4mm; margin:0 0 3mm; font-size:8.5pt; white-space:pre-wrap; color:var(--ink);
+  line-height:1.6;
+}
+.msg .cap{ display:block; font-family:var(--sans); font-size:6pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  margin-bottom:1.5mm; white-space:normal; }
+.msg em{ font-style:normal; background:rgba(194,68,122,.14); color:var(--rose-deep);
+  padding:0 .6mm; border-radius:1mm; font-weight:600; }
+.box{ border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rosegold);
+  background:var(--wash); border-radius:2mm; padding:3mm 4mm; margin:3mm 0 0;
+  font-size:8.3pt; color:var(--ink-soft); }
+.box--rose{ border-left-color:var(--rose); }
+.box strong{ color:var(--deep); } .box p{ margin:0 } .box p+p{ margin-top:2mm }
+ol,ul{ margin:0 0 0 5mm; padding:0 }
+li{ margin-bottom:2mm; font-size:8.6pt; color:var(--ink-soft) }
+li strong{ color:var(--deep) }
+table{ width:100%; border-collapse:collapse; font-size:8.4pt; }
+thead th{ text-align:left; padding:1.8mm 2.5mm; font-size:6pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); }
+tbody td{ padding:1.8mm 2.5mm; border-bottom:1px solid var(--wash); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+td.k{ width:44mm; font-weight:700; color:var(--deep); }
+.pagefoot{ position:absolute; left:18mm; right:15mm; bottom:9mm;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:6.2pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint);
+  border-top:1px solid var(--wash); padding-top:2.5mm; }
+.pagefoot .mk{ display:inline-grid; place-items:center; width:5mm; height:5mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-size:4.4pt;
+  font-weight:700; margin-right:2mm; vertical-align:middle; }
+.printhint{ max-width:210mm; margin:8mm auto 4mm; padding:3mm 4mm; border-radius:2mm;
+  background:#fffdfb; border:1px dashed var(--rosegold); font-size:8.5pt;
+  color:var(--ink-soft); text-align:center; }
+.printhint kbd{ font-weight:700; background:#fff; border:1px solid var(--rosegold-soft);
+  border-bottom-width:2px; border-radius:1.4mm; padding:.4mm 1.6mm; color:var(--deep); }
+@media print{
+  @page{ size:A4; margin:0 }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important }
+  html,body{ background:#fff } .printhint{ display:none !important }
+  .page{ margin:0; box-shadow:none }
+}
+</style>
+</head>
+<body>
+
+<div class="printhint">
+  Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to save as PDF. A4, margins <strong>None</strong>,
+  tick <strong>Background graphics</strong>. Anything <em>highlighted</em> is a blank you fill in.
+</div>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="mark">NB</span>
+      <div><b>NOVA BADZLINA GLOBAL</b><span>Where creators become talent.</span></div>
+    </div>
+    <div class="no">Outreach pack<br />For your own use</div>
+  </div>
+
+  <p class="script">How to approach a brand</p>
+  <h1>Getting the first yes</h1>
+  <p class="lede">
+    Every message below is written and ready. Swap in the highlighted parts and send.
+    The templates are short on purpose &mdash; a brand manager reads the first two lines and
+    decides. Everything after that only matters if those two lines worked.
+  </p>
+  <div class="rule"></div>
+
+  <h2>Six rules that decide whether you get a reply</h2>
+  <ol>
+    <li><strong>Lead with them, not you.</strong> "I've been using your cleanser for three weeks"
+    beats "I am a UGC creator with a passion for beauty." One proves you know them; the other could
+    have been sent to anyone.</li>
+    <li><strong>Never open with your rate.</strong> Price answers a question they have not asked
+    yet. Get them interested first, quote second.</li>
+    <li><strong>One ask per message.</strong> Not "let me know if you want UGC, live hosting,
+    photography or a collab." Pick the one thing that fits them and ask for that.</li>
+    <li><strong>Say where you are.</strong> Kota Bharu is an advantage, not an apology. Local brands
+    want someone who can actually turn up; remote brands want someone whose rates are not KL rates.</li>
+    <li><strong>Show, do not describe.</strong> One link to your work beats a paragraph about your
+    style.</li>
+    <li><strong>Follow up once, then stop.</strong> One nudge after five working days. If nothing,
+    move on &mdash; and try again in three months when their campaign cycle turns over.</li>
+  </ol>
+
+  <div class="box box--rose">
+    <p><strong>Send 10 a week, not 50 in one night.</strong> Ten researched messages beat fifty
+    copy-pastes, and a burst of identical DMs is how accounts get flagged as spam. Ten a week is
+    forty a month &mdash; at a normal reply rate that is a handful of real conversations, which is
+    all you need.</p>
+  </div>
+
+  <h2>What to attach, and when</h2>
+  <table>
+    <thead><tr><th>Stage</th><th>Send this</th></tr></thead>
+    <tbody>
+      <tr><td class="k">First message</td>
+          <td>Nothing attached. Just your website link. Attachments in a cold email get filtered to spam.</td></tr>
+      <tr><td class="k">They replied and are interested</td>
+          <td>The <strong>service sheet</strong> for the one thing they asked about &mdash; a single page, not everything.</td></tr>
+      <tr><td class="k">They asked "what are your rates?"</td>
+          <td>The <strong>rate card</strong> PDF, plus one line naming the likely package so they are not lost in nine pages.</td></tr>
+      <tr><td class="k">A bigger brand or an agency</td>
+          <td>The <strong>business catalogue</strong> &mdash; 17 pages, for someone who has to justify you to a manager.</td></tr>
+      <tr><td class="k">They said yes</td>
+          <td>The <strong>agreement summary</strong>, then the full booking agreement and invoice.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>01</span></div>
+</section>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<section class="page">
+  <p class="script">By email</p>
+  <h1>The cold email</h1>
+  <div class="rule"></div>
+  <p class="note">Use for brands with a real marketing address, agencies, hotels, restaurants and
+  anything with a website. Keep it under 150 words.</p>
+
+  <div class="msg"><span class="cap">Subject line — pick one</span>UGC for <em>Brand</em> — Ara Aranya, Kota Bharu
+Short-form video for <em>Brand</em>, in BM and English
+<em>Brand</em> × Ara Aranya — a quick idea</div>
+
+  <div class="msg"><span class="cap">The email itself</span>Hi <em>name</em>,
+
+I'm Ara Aranya, a UGC creator and live host based in Kota Bharu, Kelantan. I make short-form video for brands — the kind that looks like a real person talking, not an advert.
+
+I've been using <em>product</em> for <em>how long</em>, and I noticed <em>one specific, true observation — a gap in their content, a comment they keep getting, something a competitor does that they don't</em>.
+
+I film, perform and edit everything myself, in Bahasa Melayu and English, and deliver in 3–5 days. My work is here: novabadzlinaglobal.com
+
+Would it be useful if I sent over two concepts for <em>product</em>?
+
+Ara Aranya
+Nova Badzlina Global · Kota Bharu, Kelantan
++60 18-278 0523</div>
+
+  <div class="box">
+    <p><strong>The third paragraph is the whole email.</strong> Anyone can write the rest. Spend
+    your five minutes finding one true, specific thing about their brand &mdash; that is what
+    separates you from the fifty other creators in their inbox this week.</p>
+  </div>
+
+  <h3>The one follow-up</h3>
+  <p class="note">Five working days later. Reply on your original email so the thread stays together.</p>
+
+  <div class="msg"><span class="cap">Follow-up</span>Hi <em>name</em>, bringing this back up in case it got buried.
+
+Still happy to put together a couple of concepts for <em>product</em> — no charge for the ideas, and no obligation.
+
+If it's not the right time, just say and I'll check back after <em>month</em>.
+
+Ara</div>
+
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>02</span></div>
+</section>
+
+<!-- ══════════ PAGE 3 ══════════ -->
+<section class="page">
+  <p class="script">By DM</p>
+  <h1>TikTok, Instagram &amp; WhatsApp</h1>
+  <div class="rule"></div>
+  <p class="note">A DM is not a short email. Three lines maximum, no formatting, no attachments.
+  If the first line does not land, nothing else gets read.</p>
+
+  <h3>TikTok DM</h3>
+  <div class="msg"><span class="cap">English</span>Hi! I'm Ara — UGC creator based in Kota Bharu 🤍
+
+I've been using <em>product</em> and I have an idea for a video that would suit your page. Made, filmed and edited by me, BM or English.
+
+Want me to send the concept? No obligation 🌿</div>
+
+  <div class="msg"><span class="cap">Bahasa Melayu</span>Hai! Saya Ara — UGC creator dari Kota Bharu 🤍
+
+Saya guna <em>produk</em> dan ada satu idea video yang sesuai untuk page anda. Saya shoot dan edit sendiri, BM atau English.
+
+Nak saya hantar konsepnya? Tiada obligasi 🌿</div>
+
+  <h3>Instagram DM</h3>
+  <p class="note">Reply to a Story instead of opening a cold DM where you can &mdash; a Story reply
+  lands in their main inbox, a cold DM often lands in Requests and is never seen.</p>
+
+  <div class="msg"><span class="cap">English</span>Hi <em>name</em>! Ara here — creator and live host from Kota Bharu.
+
+Loved <em>the specific post or product</em>. I make short-form UGC for brands and I think <em>product</em> would work really well as <em>the specific format — a get-ready-with-me, a problem-solution hook, an unboxing</em>.
+
+Portfolio: novabadzlinaglobal.com — would you like the concept?</div>
+
+  <h3>WhatsApp — for local businesses</h3>
+  <p class="note">Cafes, salons, homestays and shops in Kelantan. Warmer register. Introduce
+  yourself as a person before a service.</p>
+
+  <div class="msg"><span class="cap">Bahasa Melayu</span>Assalamualaikum / Hi <em>nama</em> 🤍
+
+Saya Ara Aranya, content creator dan photographer di Kota Bharu. Saya buat video pendek dan gambar untuk business — UGC, live host TikTok/Shopee, dan fotografi makanan.
+
+Saya nampak <em>business anda</em> dan rasa gambar menu / video pendek boleh bantu tarik lebih ramai pelanggan.
+
+Boleh saya hantar contoh kerja saya? Percuma untuk tengok dulu 🌿</div>
+
+  <div class="box box--rose">
+    <p><strong>Do not send the same DM twice on the same platform.</strong> If they do not reply,
+    leave it. Following up in a DM reads as pressure in a way that an email follow-up does not
+    &mdash; a DM arrives on their phone, personally.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>03</span></div>
+</section>
+
+<!-- ══════════ PAGE 4 ══════════ -->
+<section class="page">
+  <p class="script">LinkedIn</p>
+  <h1>Your profile, written out</h1>
+  <div class="rule"></div>
+  <p class="note">LinkedIn is where agencies, brand managers and tourism boards look you up after
+  they have met you elsewhere. It does not need to bring you traffic &mdash; it needs to make you
+  look real when someone checks.</p>
+
+  <h3>Headline &mdash; the line under your name</h3>
+  <div class="msg"><span class="cap">Copy this</span>UGC Creator &amp; Live Host · Content Creation, Voice-Over &amp; Photography | Nova Badzlina Global | Kota Bharu, Malaysia</div>
+
+  <h3>About section</h3>
+  <div class="msg"><span class="cap">Copy this</span>I create short-form content that brands can actually use.
+
+I'm Ara Aranya, the creator behind Nova Badzlina Global. I work across UGC, live commerce hosting on TikTok and Shopee, voice-over, product and food photography, and commercial talent work — in Bahasa Melayu and English.
+
+Everything is written, filmed, performed and edited by me from my own home studio in Kota Bharu, Kelantan. That means fast turnaround, no agency mark-up, and a consistent voice across a whole campaign instead of five freelancers who have never spoken.
+
+What I'm known for:
+
+• Canvas UGC — I build a brand-new TikTok or Instagram account from zero, run it daily for 30 days, then hand the whole channel over.
+• Live selling — TikTok Live and Shopee Live, in focused 30-minute slots.
+• Two languages, one voice — BM and English, on camera and on mic.
+
+I'm also an IT student and a solo mother. That isn't a footnote — it's why the work converts. When I film a Mom UGC piece, I'm not playing a role.
+
+Rate card and portfolio: novabadzlinaglobal.com
+Bookings: novabadzlinaglobal@gmail.com · +60 18-278 0523</div>
+
+  <h3>Experience entry</h3>
+  <div class="msg"><span class="cap">Copy this</span>Founder &amp; Creator — Nova Badzlina Global
+Self-employed · Kota Bharu, Kelantan, Malaysia · <em>start month and year</em> – Present
+
+Content production business serving brands in Malaysia and internationally. Services span UGC and short-form video, live commerce hosting, voice-over, product and food photography, photo editing, KOL/KOC campaigns, brand ambassadorship and commercial talent work.
+
+• Produce ad-ready vertical video end to end — concept, script, filming, performance and edit
+• Host live selling sessions on TikTok Live and Shopee Live
+• Deliver in Bahasa Melayu and English for both local and international brands
+• Operate written contracts, invoicing and usage licensing on every booking</div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>04</span></div>
+</section>
+
+<!-- ══════════ PAGE 5 ══════════ -->
+<section class="page">
+  <p class="script">LinkedIn, continued</p>
+  <h1>Reaching out there</h1>
+  <div class="rule"></div>
+
+  <h3>Connection request</h3>
+  <p class="note">Always add a note. A bare request from a stranger gets ignored. 300 characters
+  maximum, so this is close to the limit.</p>
+  <div class="msg"><span class="cap">Copy this</span>Hi <em>name</em> — I'm a UGC creator and live host based in Kota Bharu, working with beauty and lifestyle brands in BM and English. I follow what <em>company</em> is doing and would like to stay connected.</div>
+
+  <h3>The message after they accept</h3>
+  <p class="note">Wait a day. Connecting and pitching in the same minute is transparent.</p>
+  <div class="msg"><span class="cap">Copy this</span>Thanks for connecting, <em>name</em>.
+
+I make short-form UGC and host live selling sessions for brands — everything filmed and edited in-house, in Bahasa Melayu and English, from Kota Bharu.
+
+I had a look at <em>company</em>'s recent content and had one idea I think would work for <em>product or campaign</em>. Would it be useful if I sent it over? No obligation either way.
+
+Portfolio and rate card: novabadzlinaglobal.com</div>
+
+  <h2>Where to find brands worth approaching</h2>
+  <table>
+    <thead><tr><th>Where</th><th>What to look for</th></tr></thead>
+    <tbody>
+      <tr><td class="k">TikTok Shop &amp; Shopee</td>
+          <td>Sellers with good products but weak video. If their listing has only stills, they need you.</td></tr>
+      <tr><td class="k">Instagram, local tags</td>
+          <td>#kotabharu #kelantanfood #kedaikelantan — small businesses with real customers and bad photos.</td></tr>
+      <tr><td class="k">Your own purchases</td>
+          <td>Anything already in your house. You can honestly say you use it, which is the strongest opener there is.</td></tr>
+      <tr><td class="k">New product launches</td>
+          <td>A brand launching something has budget allocated and a deadline. Both work in your favour.</td></tr>
+      <tr><td class="k">Brands using other creators</td>
+          <td>If they already pay creators, they do not need convincing that UGC works &mdash; only that you are worth adding.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box">
+    <p><strong>Keep a simple list.</strong> Brand, who you contacted, which platform, the date, and
+    what happened. After a month you will see which platform actually replies to you &mdash; and
+    then you can stop wasting evenings on the ones that do not.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>05</span></div>
+</section>
+
+<!-- ══════════ PAGE 6 ══════════ -->
+<section class="page">
+  <p class="script">When they reply</p>
+  <h1>Talking about money</h1>
+  <div class="rule"></div>
+  <p class="note">These are the replies that decide what you actually get paid. Having the words
+  ready is the difference between holding your rate and agreeing to something at midnight you
+  regret in the morning.</p>
+
+  <h3>"What are your rates?"</h3>
+  <div class="msg"><span class="cap">Attach the rate card with this</span>Hi <em>name</em>, thanks for coming back to me.
+
+My full rate card is attached. For what you've described, the closest fit is <em>package or line item — name it</em>, at <em>RM figure</em>.
+
+That covers concept, script, filming, editing and captions, with organic usage included. Paid advertising usage is licensed separately, so tell me if you need it and I'll fold it into the quote.
+
+Happy to put a firm number in writing once I know the deliverables and the deadline.
+
+Ara</div>
+
+  <div class="box">
+    <p><strong>Always name one line from the card.</strong> Sending nine pages and letting them
+    guess is how a quote turns into a negotiation. Point at the number you want.</p>
+  </div>
+
+  <h3>"We only do barter / gifting"</h3>
+  <div class="msg"><span class="cap">Copy this</span>Thanks for coming back to me.
+
+I do take gifted collaborations occasionally, but only where I approached the brand — because then the product was my choice and the risk is mine.
+
+For briefs that come from a brand, the content is paid work: you choose the product, set the price and hold the stock, and none of those are things I control.
+
+My single video starts at RM 400, and gifted product can come off that. If the budget genuinely isn't there this quarter, tell me when it is and I'll keep the door open.
+
+Ara</div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Outreach Pack</span><span>06</span></div>
+</section>
+
+<!-- ══════════ PAGE 7 ══════════ -->
+<section class="page">
+  <p class="script">When they reply</p>
+  <h1>Holding your ground</h1>
+  <div class="rule"></div>
+
+  <h3>"Can you do it cheaper?"</h3>
+  <div class="msg"><span class="cap">Copy this</span>I can work to most budgets — but by changing the scope, not the rate.
+
+For <em>their budget</em> I could do <em>a smaller deliverable — one video instead of three, 30 seconds instead of 60, organic usage only instead of paid</em>.
+
+Which matters more to you: the number of videos, or the usage rights? Tell me and I'll shape it around that.</div>
+
+  <div class="box box--rose">
+    <p><strong>Never just lower the number.</strong> The moment you discount without removing
+    something, your rate card becomes a suggestion &mdash; and that brand will open at the discount
+    every time after. Cut scope, hold price.</p>
+  </div>
+
+  <h3>"Send us your portfolio"</h3>
+  <div class="msg"><span class="cap">Copy this</span>Of course — everything is here: novabadzlinaglobal.com
+
+The Work page has my video and photography, and there's a voice demo page if audio is relevant. I've attached my rate card too so you have the numbers in front of you.
+
+If you tell me the product and roughly when you'd need it, I'll come back with a firm quote rather than a range.</div>
+
+  <h3>They said yes, then went quiet</h3>
+  <div class="msg"><span class="cap">Copy this</span>Hi <em>name</em> — just checking in on <em>project</em>.
+
+I have <em>date</em> held for you at the moment. If the timeline has moved, no problem at all — just let me know so I can open the slot up.
+
+Ara</div>
+
+  <div class="box">
+    <p><strong>That last one does real work.</strong> It is polite, it is not needy, and it quietly
+    tells them the date is worth something. Most silences are internal delays rather than rejections
+    &mdash; but the slot is still yours to lose.</p>
+  </div>
+
+  <div class="pagefoot">
+    <span><span class="mk">NB</span>Ara Aranya &middot; +60 18-278 0523 &middot; novabadzlinaglobal@gmail.com</span>
+    <span>07</span>
+  </div>
+</section>
+
+</body>
+</html>

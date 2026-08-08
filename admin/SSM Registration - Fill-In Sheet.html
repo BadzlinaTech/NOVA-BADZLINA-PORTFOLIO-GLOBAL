@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SSM Registration — Fill-In Sheet · NOVA BADZLINA GLOBAL</title>
+<meta name="description" content="A prepared fill-in sheet for registering Nova Badzlina Global as a sole proprietorship with SSM via EzBiz Online." />
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230b1233%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9.2pt; line-height:1.55; }
+.page{
+  position:relative; overflow:hidden;
+  width:210mm; min-height:297mm; margin:0 auto 8mm; padding:14mm 15mm 24mm 18mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+  page-break-after:always; break-after:page;
+}
+.page:last-of-type{ page-break-after:auto; break-after:auto; margin-bottom:0; }
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+.top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6mm; }
+.brand{ display:flex; align-items:center; gap:3mm; }
+.mark{ display:inline-grid; place-items:center; width:11mm; height:11mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:8pt; }
+.brand b{ font-family:var(--serif); font-size:9.4pt; letter-spacing:.1em; color:var(--deep); display:block; }
+.brand span{ font-family:var(--script); font-size:9.5pt; color:var(--rose); }
+.no{ font-size:6.4pt; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-deep); text-align:right; }
+h1{ font-family:var(--serif); font-size:25pt; line-height:1.06; margin:0; color:var(--deep); }
+h2{ font-family:var(--sans); font-size:6.6pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); margin:6mm 0 2.5mm; }
+h3{ font-family:var(--serif); font-size:11.5pt; margin:5mm 0 1.5mm; color:var(--deep); }
+.script{ font-family:var(--script); font-size:14pt; color:var(--rosegold); margin:0 0 1mm; }
+.lede{ font-size:9.6pt; color:var(--ink-soft); margin:3mm 0 0; max-width:64ch; }
+.note{ font-size:8.2pt; color:var(--ink-faint); margin:0 0 2mm; }
+p{ margin:0 0 2.5mm; }
+.rule{ height:1px; margin:4mm 0;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+table{ width:100%; border-collapse:collapse; font-size:8.6pt; }
+thead th{ text-align:left; padding:1.8mm 2.5mm; font-size:6.2pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); }
+tbody td{ padding:1.8mm 2.5mm; border-bottom:1px solid var(--wash); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+td.f{ width:52mm; font-weight:700; color:var(--deep); }
+.type{ font-family:"Consolas","Courier New",monospace; font-size:8.4pt;
+  background:#fff; border:1px dashed var(--rosegold); border-radius:1.5mm;
+  padding:1mm 2mm; display:inline-block; color:var(--deep); }
+.copyblock{ border:1px dashed var(--rosegold); border-radius:2mm; background:#fff;
+  padding:3mm 4mm; margin:0 0 3mm; font-size:8.7pt; white-space:pre-wrap; color:var(--ink); }
+.copyblock .cap{ display:block; font-size:6.2pt; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold-deep); margin-bottom:1.5mm; white-space:normal; }
+.box{ border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rosegold);
+  background:var(--wash); border-radius:2mm; padding:3mm 4mm; margin:3mm 0 0;
+  font-size:8.4pt; color:var(--ink-soft); }
+.box--warn{ border-left-color:var(--rose); }
+.box strong{ color:var(--deep); } .box p{ margin:0 } .box p+p{ margin-top:2mm }
+ol{ margin:0 0 0 5mm; padding:0 } li{ margin-bottom:2mm; font-size:8.8pt; color:var(--ink-soft) }
+li strong{ color:var(--deep) }
+.pagefoot{ position:absolute; left:18mm; right:15mm; bottom:9mm;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:6.4pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint);
+  border-top:1px solid var(--wash); padding-top:2.5mm; }
+.pagefoot .mk{ display:inline-grid; place-items:center; width:5mm; height:5mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-size:4.6pt;
+  font-weight:700; margin-right:2mm; vertical-align:middle; }
+.printhint{ max-width:210mm; margin:8mm auto 4mm; padding:3mm 4mm; border-radius:2mm;
+  background:#fffdfb; border:1px dashed var(--rosegold); font-size:8.6pt;
+  color:var(--ink-soft); text-align:center; }
+.printhint kbd{ font-weight:700; background:#fff; border:1px solid var(--rosegold-soft);
+  border-bottom-width:2px; border-radius:1.4mm; padding:.4mm 1.6mm; color:var(--deep); }
+@media print{
+  @page{ size:A4; margin:0 }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important }
+  html,body{ background:#fff } .printhint{ display:none !important }
+  .page{ margin:0; box-shadow:none }
+}
+</style>
+</head>
+<body>
+
+<div class="printhint">
+  Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to save as PDF. A4, margins <strong>None</strong>,
+  tick <strong>Background graphics</strong>.
+</div>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="mark">NB</span>
+      <div><b>NOVA BADZLINA GLOBAL</b><span>Where creators become talent.</span></div>
+    </div>
+    <div class="no">Admin<br />For your own use</div>
+  </div>
+
+  <p class="script">Before you start</p>
+  <h1>Registering with SSM</h1>
+  <p class="lede">
+    Everything you will be asked for, with the wording already written. Keep this open in one
+    window and EzBiz in the other, and copy across.
+  </p>
+  <div class="rule"></div>
+
+  <div class="box box--warn">
+    <p><strong>Check the live figures before you pay.</strong> Fees, forms and the MSIC code list
+    are set by SSM and do change. Everything here is a preparation aid so you are not writing your
+    business description in a panic at 1am &mdash; the numbers on
+    <strong>ezbiz.ssm.com.my</strong> are the ones that count. If anything in the form contradicts
+    this sheet, the form is right.</p>
+  </div>
+
+  <h2>What you are registering as</h2>
+  <p>A <strong>sole proprietorship</strong> (Perniagaan Milik Tunggal) &mdash; one owner, registered
+  under the Registration of Businesses Act. It is the right shape for you now: cheapest, fastest,
+  no company secretary, no audited accounts. You can convert to an Sdn Bhd later if you ever need
+  to take on a partner or limit liability.</p>
+
+  <h3>Two ways to register the name</h3>
+  <table>
+    <thead><tr><th>Option</th><th>What it means</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td class="f">Personal name<br /><span style="font-weight:400;color:var(--ink-faint)">Nama sendiri</span></td>
+          <td>The business trades under your own name exactly as it appears on your IC &mdash;
+          <em>Nur Badzlina Razi binti Mohamed Gazali</em>.</td>
+          <td>Cheaper, and no name approval needed. But it is not your brand.</td></tr>
+      <tr><td class="f">Trade name<br /><span style="font-weight:400;color:var(--ink-faint)">Nama tred</span></td>
+          <td>The business trades as <strong>NOVA BADZLINA GLOBAL</strong>.</td>
+          <td>Costs more per year and needs name approval first. <strong>This is the one you want</strong>
+          &mdash; it matches your website, invoices, contracts and bank account.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box">
+    <p><strong>Why the trade name matters for you specifically.</strong> Every document you already
+    have &mdash; the booking agreement, invoices, receipts, rate card &mdash; says NOVA BADZLINA
+    GLOBAL. A brand paying you wants the name on the invoice to match the name on the bank account.
+    Registering the personal name only would mean redoing all of it.</p>
+  </div>
+
+  <h2>Have these ready before you open the form</h2>
+  <ol>
+    <li><strong>Your MyKad</strong> &mdash; number and full name exactly as printed.</li>
+    <li><strong>An EzBiz account</strong> &mdash; register at ezbiz.ssm.com.my first. First-time
+    users must verify their identity; check the current method on the site, as it has changed
+    before (counter verification has been required in the past).</li>
+    <li><strong>Your business address</strong> in Kota Bharu, Kelantan, with postcode.</li>
+    <li><strong>A start date</strong> for the business &mdash; see page 2.</li>
+    <li><strong>Online banking or a card</strong> to pay the fee.</li>
+    <li><strong>Two or three backup names</strong> in case the first is rejected &mdash; see page 2.</li>
+  </ol>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>SSM Fill-In Sheet</span><span>01</span></div>
+</section>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<section class="page">
+  <p class="script">Field by field</p>
+  <h1>What to type</h1>
+  <div class="rule"></div>
+
+  <h2>The name</h2>
+  <div class="copyblock"><span class="cap">Business name — type exactly this</span>NOVA BADZLINA GLOBAL</div>
+
+  <div class="box box--warn">
+    <p><strong>Have backups ready.</strong> SSM restricts certain words in business names, and
+    approval is not guaranteed. If <em>GLOBAL</em> is queried, do not panic and do not accept a name
+    you dislike just to get through &mdash; you would be stuck with it on every invoice. Try, in
+    this order:</p>
+    <p>&nbsp;&nbsp;<strong>1.</strong> NOVA BADZLINA GLOBAL<br />
+    &nbsp;&nbsp;<strong>2.</strong> NOVA BADZLINA STUDIO<br />
+    &nbsp;&nbsp;<strong>3.</strong> NOVA BADZLINA CREATIVE<br />
+    &nbsp;&nbsp;<strong>4.</strong> ARA ARANYA STUDIO</p>
+    <p>Anything except the first would mean updating your website and documents &mdash; tell me and
+    I will sweep every file in one pass.</p>
+  </div>
+
+  <h2>Dates and address</h2>
+  <table>
+    <thead><tr><th>Field</th><th>What to enter</th></tr></thead>
+    <tbody>
+      <tr><td class="f">Business commencement date<br /><span style="font-weight:400;color:var(--ink-faint)">Tarikh mula perniagaan</span></td>
+          <td>The date you actually started taking work. Do not backdate it far &mdash; you are
+          declaring you were trading from then.</td></tr>
+      <tr><td class="f">Registration period</td>
+          <td>You choose 1 to 5 years. <strong>Take at least 2 or 3</strong> &mdash; it costs less
+          per year and it is one less renewal to forget while you are studying.</td></tr>
+      <tr><td class="f">Business address</td>
+          <td>Your address in <strong>Kota Bharu, Kelantan</strong>, with postcode. This is where
+          the business operates.</td></tr>
+      <tr><td class="f">Mailing address</td>
+          <td>Same as above, unless you want post elsewhere.</td></tr>
+      <tr><td class="f">Business type</td>
+          <td>Sole proprietorship &mdash; owner only, no partners.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box">
+    <p><strong>On using a home address.</strong> Whatever you enter becomes searchable on SSM's
+    business register. If you would rather your home address not be public &mdash; a fair concern
+    given your situation &mdash; ask SSM what alternatives they accept before you submit, rather
+    than after.</p>
+  </div>
+
+  <h2>Nature of business — the description</h2>
+  <p class="note">Most people leave this vague and regret it, because banks read it when you open
+  a business account. Keep it specific and recognisable.</p>
+
+  <div class="copyblock"><span class="cap">Short version — if the field is tight</span>Content creation, user-generated content (UGC) production, video editing, product photography, voice-over services, affiliate marketing and live commerce hosting.</div>
+
+  <div class="copyblock"><span class="cap">Longer version — if there is room</span>Production of user-generated content (UGC) and short-form video for brands; video editing; product photography and photo editing; voice-over and voice acting; live commerce hosting on e-commerce and social platforms; affiliate marketing; influencer marketing and brand ambassador services; sponsored reviews.</div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>SSM Fill-In Sheet</span><span>02</span></div>
+</section>
+
+<!-- ══════════ PAGE 3 ══════════ -->
+<section class="page">
+  <p class="script">The fiddly part</p>
+  <h1>MSIC codes</h1>
+  <div class="rule"></div>
+
+  <p>EzBiz asks you to pick <strong>MSIC codes</strong> &mdash; standard classification numbers for
+  what your business does. You normally select more than one. This is the field people get wrong,
+  and a wrong code can cause questions later when you open a bank account.</p>
+
+  <div class="box box--warn">
+    <p><strong>Do not copy code numbers from anywhere, including this page.</strong> MSIC codes are
+    revised, and quoting a stale number is worse than searching properly. Use the search box inside
+    EzBiz and pick from what it actually returns.</p>
+  </div>
+
+  <h3>Search these words in the MSIC picker</h3>
+  <table>
+    <thead><tr><th>Type this in the search</th><th>What you are looking for</th></tr></thead>
+    <tbody>
+      <tr><td class="f">advertising</td><td>Advertising services &mdash; usually the closest fit for UGC and brand content work.</td></tr>
+      <tr><td class="f">motion picture / video</td><td>Video production activities.</td></tr>
+      <tr><td class="f">post-production</td><td>Video editing.</td></tr>
+      <tr><td class="f">photographic</td><td>Photography activities &mdash; covers product photography.</td></tr>
+      <tr><td class="f">sound recording</td><td>Voice-over and audio production.</td></tr>
+      <tr><td class="f">retail / electronic</td><td>Online and e-commerce related selling &mdash; relevant to live commerce hosting.</td></tr>
+      <tr><td class="f">creative / arts</td><td>Creative and performing arts &mdash; commercial talent work.</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:4mm">Pick the <strong>advertising</strong> one as your primary if the form
+  asks for a main activity. It is the broadest umbrella for what you actually sell, and it is the
+  one a bank will recognise immediately as a real trade.</p>
+
+  <h2>Roughly what it costs</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="f">Trade name registration</td><td>Charged per year. Multiply by the number of years you choose.</td></tr>
+      <tr><td class="f">Personal name registration</td><td>Cheaper per year, but not your brand.</td></tr>
+      <tr><td class="f">Business Info printout</td><td>A small extra fee. <strong>Buy this</strong> &mdash; the bank will ask for it.</td></tr>
+      <tr><td class="f">Branch registration</td><td>Only if you register additional premises. You do not need this.</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:2mm">Exact amounts are on EzBiz at the payment step. It is an
+  inexpensive registration &mdash; budget under a couple of hundred ringgit for several years plus
+  the printout.</p>
+
+  <h2>After it is approved</h2>
+  <ol>
+    <li><strong>Download the certificate and the Business Info printout.</strong> Keep both in the
+    same folder as your contracts.</li>
+    <li><strong>Open a business bank account</strong> in the business name. Maybank will want the
+    certificate, the printout and your IC. This is the real prize &mdash; a client paying
+    <em>NOVA BADZLINA GLOBAL</em> rather than a personal account looks materially more serious.</li>
+    <li><strong>Send me the registration number</strong> and I will add it to your invoices,
+    receipts, booking agreement, rate card and website footer. Brands and agencies often ask for it
+    before they can raise a purchase order.</li>
+    <li><strong>Diarise the renewal</strong> before it expires. A lapsed registration is a
+    re-registration.</li>
+  </ol>
+
+  <div class="box">
+    <p><strong>One thing to be aware of.</strong> A sole proprietorship is not a separate legal
+    person &mdash; the business and you are the same in law, so business debts are personal debts.
+    At your scale that is normally fine, and it is what almost every creator starts with. It is only
+    worth revisiting if you ever take on staff, sign a large liability, or bring in a partner.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>SSM Fill-In Sheet</span><span>03</span></div>
+</section>
+
+</body>
+</html>

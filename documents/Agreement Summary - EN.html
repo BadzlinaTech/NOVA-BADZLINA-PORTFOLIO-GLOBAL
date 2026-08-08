@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Booking Agreement — At A Glance · NOVA BADZLINA GLOBAL</title>
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9.2pt; line-height:1.55; }
+.page{
+  position:relative; overflow:hidden;
+  width:210mm; min-height:297mm; margin:0 auto; padding:14mm 15mm 24mm 18mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+}
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+.page::after{
+  content:""; position:absolute; right:-30mm; top:-30mm; width:90mm; height:90mm;
+  border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(109,40,217,.10), rgba(194,68,122,.05) 55%, transparent 72%);
+}
+.top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:7mm; }
+.brand{ display:flex; align-items:center; gap:3mm; }
+.mark{ display:inline-grid; place-items:center; width:11mm; height:11mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:8pt; }
+.brand b{ font-family:var(--serif); font-size:9.4pt; letter-spacing:.1em; color:var(--deep); display:block; }
+.brand span{ font-family:var(--script); font-size:9.5pt; color:var(--rose); }
+.no{ font-size:6.4pt; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-deep); text-align:right; }
+h1{ font-family:var(--serif); font-size:26pt; line-height:1.06; margin:0; color:var(--deep); }
+.script{ font-family:var(--script); font-size:14pt; color:var(--rosegold); margin:0 0 1mm; }
+.lede{ font-size:9.6pt; color:var(--ink-soft); margin:3mm 0 0; max-width:64ch; }
+.rule{ height:1px; margin:4mm 0;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+h2{ font-family:var(--sans); font-size:6.6pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); margin:0 0 2.5mm; }
+table{ width:100%; border-collapse:collapse; font-size:8.7pt; }
+thead th{ text-align:left; padding:1.8mm 2.5mm; font-size:6.2pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); }
+tbody td{ padding:1.7mm 2.5mm; border-bottom:1px solid var(--wash); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+td.k{ width:44mm; font-weight:700; color:var(--deep); }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:4mm; }
+.box{ border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rosegold);
+  background:var(--wash); border-radius:2mm; padding:3mm 4mm; font-size:8.4pt; color:var(--ink-soft); }
+.box--rose{ border-left-color:var(--rose); }
+.box strong{ color:var(--deep); } .box p{ margin:0; } .box p+p{ margin-top:2mm; }
+.foot{ position:absolute; left:18mm; right:15mm; bottom:9mm;
+  border-top:1px solid var(--wash); padding-top:3mm;
+  display:flex; justify-content:space-between; align-items:flex-end; gap:5mm; }
+.foot .c{ font-size:8pt; color:var(--ink-soft); }
+.foot .c b{ color:var(--deep); display:block; font-size:8.5pt; }
+.foot .t{ font-family:var(--script); font-size:10.5pt; color:var(--rose); text-align:right; white-space:nowrap; }
+.printhint{ max-width:210mm; margin:8mm auto 4mm; padding:3mm 4mm; border-radius:2mm;
+  background:#fffdfb; border:1px dashed var(--rosegold); font-size:8.6pt;
+  color:var(--ink-soft); text-align:center; }
+.printhint kbd{ font-weight:700; background:#fff; border:1px solid var(--rosegold-soft);
+  border-bottom-width:2px; border-radius:1.4mm; padding:.4mm 1.6mm; color:var(--deep); }
+@media print{
+  @page{ size:A4; margin:0; }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important; }
+  html,body{ background:#fff; }
+  .printhint{ display:none !important; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="printhint">
+  Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to save as PDF. A4, margins <strong>None</strong>,
+  tick <strong>Background graphics</strong>.
+</div>
+
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="mark">NB</span>
+      <div><b>NOVA BADZLINA GLOBAL</b><span>Where creators become talent.</span></div>
+    </div>
+    <div class="no">Summary only<br />Full agreement is 6 pages</div>
+  </div>
+
+  <p class="script">Before we start</p>
+  <h1>The agreement, at a glance</h1>
+  <p class="lede">
+    This is a plain-English summary of the booking agreement we both sign. It is here so nothing
+    in the full document surprises you. <strong>The signed agreement is what governs the job</strong>
+    &mdash; this page does not replace it.
+  </p>
+  <div class="rule"></div>
+
+  <h2>The short version</h2>
+  <table>
+    <tbody>
+      <tr><td class="k">What you are buying</td>
+          <td>A written scope &mdash; service, number of deliverables, length, language, and exactly where you may use the content. If it is not written down, it is not included.</td></tr>
+      <tr><td class="k">What it costs</td>
+          <td>A base price plus any add-ons you tick. The total is written on the agreement before either of us signs.</td></tr>
+      <tr><td class="k">When you pay</td>
+          <td>One of four patterns depending on the service: before each step, in the 28th&ndash;31st monthly window, half and half, or a deposit with the balance invoiced after the day.</td></tr>
+      <tr><td class="k">What confirms the booking</td>
+          <td>A deposit of 10&ndash;50% &mdash; you choose within that range. <strong>Once confirmed the deposit is non-refundable</strong>, because the date and the queue slot are held for you.</td></tr>
+      <tr><td class="k">How you receive it</td>
+          <td>You see the work watermarked first. Once the balance is settled the clean files go over by Blip, WeTransfer or Google Drive.</td></tr>
+      <tr><td class="k">Revisions</td>
+          <td>Two rounds inside the agreed scope are included. A change of concept after filming is new work, not a revision.</td></tr>
+      <tr><td class="k">Usage rights</td>
+          <td>Organic usage on your own channels is included. Paid advertising is licensed separately by term and territory.</td></tr>
+      <tr><td class="k">If you cancel</td>
+          <td>The deposit is not returned. If filming has started, the work done so far is payable.</td></tr>
+      <tr><td class="k">In person</td>
+          <td>1&ndash;2 day events across Peninsular Malaysia. Kelantan and Kuala Lumpur +30&ndash;50%; elsewhere in the Peninsula +50&ndash;80%. Sabah and Sarawak quoted separately.</td></tr>
+      <tr><td class="k">Governing law</td>
+          <td>Malaysia.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2">
+    <div class="box">
+      <p><strong>Why there is a contract at all.</strong> Not because I expect a problem &mdash;
+      because a written scope protects you as much as it protects me. You know exactly what arrives
+      and when; I know exactly what I am making. Most disputes in this industry are simply two
+      people who never wrote it down.</p>
+    </div>
+    <div class="box box--rose">
+      <p><strong>Read it before you commit.</strong> Ask me about any clause you are not comfortable
+      with. Terms can be adjusted before signing &mdash; that is what the blanks are for. Nothing is
+      fixed until both signatures are on it.</p>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:4mm">
+    <p><strong>Payment goes to one account only.</strong> Maybank &mdash; Nur Badzlina Razi binti
+    Mohamed Gazali &middot; 1651 2543 2269. Confirm the details with me on +60 18-278 0523 before you
+    transfer anything. I will never ask you to send payment to a different name or account number.</p>
+  </div>
+
+  <div class="foot">
+    <div class="c">
+      <b>Ara Aranya &middot; Nova Badzlina Global</b>
+      +60 18-278 0523 &middot; novabadzlinaglobal@gmail.com &middot; @novabadzlinaglobal<br />
+      Summary only. The signed six-page Booking Agreement is the binding document.
+    </div>
+    <div class="t">Scarred but sacred.</div>
+  </div>
+</section>
+
+</body>
+</html>

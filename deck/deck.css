@@ -1,0 +1,165 @@
+/* =========================================================
+   ARA ARANYA - BRAND PORTFOLIO DECK
+   Nova Badzlina Global - Kota Bharu, Kelantan, Malaysia
+
+   This file controls how the deck LOOKS.
+   deck.html controls what the deck SAYS.
+
+   Colours all live in the :root block below - change one
+   value there and it updates on every slide at once.
+   No JavaScript anywhere. HTML and CSS only.
+   ========================================================= */
+
+:root{
+  --midnight:#060a1f; --deep:#0b1233; --deep2:#141d47;
+  --orchid:#a855f7; --orchid-deep:#6d28d9;
+  --pink:#f8cddd; --pink-soft:#ffe6ee; --pink-deep:#e58aad; --pink-dark:#c2447a;
+  --rosegold:#e9b8a4;
+  --gold:#e8d5a3; --gold-deep:#c9ad6a;
+  --white:#fff; --white-soft:rgba(255,255,255,.82); --white-mute:rgba(255,255,255,.55);
+  --line:rgba(248,205,221,.24); --line-strong:rgba(248,205,221,.46);
+  --foil:linear-gradient(100deg,#b99b5e 0%,#f0e2bd 16%,#fffdf5 30%,#d9c48d 44%,
+          #b99b5e 58%,#f5ead0 74%,#fffdf5 88%,#c9ad6a 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#1a1330; }
+body{ font-family:var(--sans); color:var(--white-soft); font-size:11pt; line-height:1.5; }
+
+.page{
+  position:relative; overflow:hidden;
+  width:297mm; height:210mm; margin:0 auto 8mm; padding:15mm 17mm;
+  background:
+    radial-gradient(60% 70% at 8% 0%, rgba(168,85,247,.26), transparent 62%),
+    radial-gradient(55% 60% at 96% 8%, rgba(109,40,217,.30), transparent 62%),
+    radial-gradient(50% 60% at 60% 100%, rgba(194,68,122,.16), transparent 66%),
+    linear-gradient(160deg, var(--deep) 0%, var(--midnight) 55%, var(--deep2) 100%);
+  box-shadow:0 8px 34px rgba(0,0,0,.45);
+  page-break-after:always; break-after:page;
+  display:flex; flex-direction:column;
+}
+.page:last-of-type{ page-break-after:auto; break-after:auto; margin-bottom:0; }
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:5mm;
+  background:linear-gradient(180deg, var(--pink-dark) 0%, var(--pink) 26%,
+    var(--rosegold) 58%, var(--gold) 100%);
+}
+
+h1,h2,h3{ font-family:var(--serif); margin:0; color:var(--white); }
+h1{ font-size:34pt; line-height:1.04; letter-spacing:-.01em; }
+h2{ font-size:24pt; line-height:1.1; margin-bottom:4mm; }
+h3{ font-size:13pt; margin:0 0 1.5mm; }
+.grad{ background:var(--foil); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.script{ font-family:var(--script); font-size:16pt; color:var(--rosegold); margin:0 0 2mm; }
+.eyebrow{ font-size:7.5pt; font-weight:700; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--gold); margin:0 0 3mm; }
+p{ margin:0 0 3mm; }
+.lede{ font-size:12.5pt; color:var(--white-soft); max-width:68ch; font-weight:300; }
+.rule{ height:1px; margin:4mm 0 6mm; background:linear-gradient(90deg,
+  var(--pink-dark), var(--rosegold) 30%, var(--gold) 58%, rgba(0,0,0,0)); }
+
+.foot{ margin-top:auto; padding-top:4mm; border-top:1px solid rgba(255,255,255,.10);
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:7.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--white-mute); }
+.foot .mk{ display:inline-grid; place-items:center; width:6mm; height:6mm; border-radius:50%;
+  background:var(--foil); color:#2a1d05; font-family:var(--serif); font-size:5pt;
+  font-weight:700; margin-right:2.5mm; vertical-align:middle; }
+
+/* cover */
+.cover{ justify-content:center; }
+.mark{ display:inline-grid; place-items:center; width:22mm; height:22mm; border-radius:50%;
+  background:var(--foil); color:#2a1d05; font-family:var(--serif); font-weight:700; font-size:15pt;
+  box-shadow:0 0 0 4px rgba(248,205,221,.4), 0 0 50px -6px rgba(232,213,163,.6); }
+.cover h1{ font-size:52pt; margin:8mm 0 0; }
+.cover__tag{ font-family:var(--script); font-size:22pt; color:var(--pink); margin:5mm 0 0; }
+.cover__motto{ font-family:var(--script); font-size:15pt; color:var(--rosegold); margin:1mm 0 0; }
+.cover__meta{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--gold); margin-top:9mm; }
+
+/* generic split */
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:12mm; align-items:center; flex:1; }
+.split--wide{ grid-template-columns:1.25fr 1fr; }
+.split--narrow{ grid-template-columns:.85fr 1fr; }
+
+/* portrait */
+.shot{ margin:0; border-radius:6mm; overflow:hidden; border:1px solid var(--line-strong);
+  box-shadow:0 0 60px -12px rgba(168,85,247,.7), 0 20px 50px -24px #000; }
+.shot img{ display:block; width:100%; height:100%; object-fit:cover; }
+.shot--tall{ aspect-ratio:3/4; }
+.shot--arch{ border-radius:60mm 60mm 6mm 6mm; aspect-ratio:3/4; }
+
+/* photo strips */
+.strip{ display:grid; gap:4mm; flex:1; align-content:center; }
+.strip--5{ grid-template-columns:repeat(5,1fr); }
+.strip--4{ grid-template-columns:repeat(4,1fr); }
+.strip figure{ margin:0; border-radius:4mm; overflow:hidden; aspect-ratio:3/4;
+  border:1px solid var(--line); box-shadow:0 12px 30px -18px #000; }
+.strip img{ display:block; width:100%; height:100%; object-fit:cover; }
+.strip figcaption{ display:none; }
+
+/* service columns */
+.cols3{ display:grid; grid-template-columns:repeat(3,1fr); gap:8mm; flex:1; align-content:start; }
+.svc{ border:1px solid var(--line); border-radius:4mm; padding:6mm 6mm 5mm;
+  background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02)); position:relative; }
+.svc::after{ content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, var(--pink-dark), var(--rosegold) 55%, var(--gold));
+  opacity:.7; }
+.svc h3{ color:var(--white); }
+.svc ul{ margin:2mm 0 0; padding:0; list-style:none; }
+.svc li{ position:relative; padding-left:5mm; margin-bottom:1.4mm; font-size:9.5pt;
+  color:var(--white-soft); font-weight:300; }
+.svc li::before{ content:"❦"; position:absolute; left:0; color:var(--rosegold); font-size:8pt; }
+
+/* stat row */
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:5mm; margin-top:5mm; }
+.stat{ border:1px solid var(--line); border-radius:3mm; padding:4mm 5mm;
+  background:rgba(255,255,255,.05); }
+.stat b{ display:block; font-family:var(--serif); font-size:20pt; color:var(--white); line-height:1; }
+.stat span{ display:block; margin-top:1.5mm; font-size:7.5pt; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gold); }
+
+/* numbered steps */
+.steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:6mm; flex:1; align-content:center; }
+.step{ position:relative; padding-top:12mm; }
+.step b{ position:absolute; top:0; left:0; font-family:var(--serif); font-size:26pt;
+  background:var(--foil); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.step h3{ font-size:11.5pt; }
+.step p{ font-size:9.5pt; font-weight:300; color:var(--white-soft); }
+
+/* rate table */
+table{ width:100%; border-collapse:collapse; font-size:10pt; }
+thead th{ text-align:left; padding:2.5mm 3mm; font-size:7.5pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold);
+  border-bottom:1.5px solid var(--gold-deep); }
+thead th:not(:first-child){ text-align:right; }
+tbody td{ padding:2.4mm 3mm; border-bottom:1px solid rgba(255,255,255,.08); color:var(--white-soft); }
+tbody td:not(:first-child){ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+tbody td:first-child{ color:var(--white); }
+tbody tr:last-child td{ border-bottom:none; }
+.myr{ font-weight:700; color:var(--white) !important; }
+
+.note{ border:1px solid var(--line); border-left:3mm solid var(--rosegold); border-radius:3mm;
+  padding:4mm 5mm; background:rgba(255,255,255,.05); font-size:9.5pt; color:var(--white-soft); }
+.note strong{ color:var(--white); }
+
+.contact{ display:grid; grid-template-columns:repeat(2,1fr); gap:5mm 10mm; margin-top:5mm; }
+.contact dt{ font-size:7.5pt; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1mm; }
+.contact dd{ margin:0; color:var(--white); font-size:11.5pt; }
+
+.printhint{ max-width:297mm; margin:8mm auto 4mm; padding:4mm 5mm; border-radius:3mm;
+  background:#0b1233; border:1px dashed var(--rosegold); color:var(--white-soft);
+  font-size:10pt; text-align:center; }
+.printhint kbd{ font-weight:700; background:#141d47; border:1px solid var(--line-strong);
+  border-bottom-width:2px; border-radius:2mm; padding:.6mm 2mm; color:var(--white); }
+
+@media print{
+  @page{ size:A4 landscape; margin:0; }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important; }
+  html,body{ background:#fff; }
+  .printhint{ display:none !important; }
+  .page{ margin:0; box-shadow:none; }
+}

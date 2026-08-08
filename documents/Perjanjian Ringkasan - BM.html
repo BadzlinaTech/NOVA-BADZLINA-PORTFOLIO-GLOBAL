@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Surat Perjanjian — Ringkasan · NOVA BADZLINA GLOBAL</title>
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9.2pt; line-height:1.55; }
+.page{
+  position:relative; overflow:hidden;
+  width:210mm; min-height:297mm; margin:0 auto; padding:14mm 15mm 24mm 18mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+}
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+.page::after{
+  content:""; position:absolute; right:-30mm; top:-30mm; width:90mm; height:90mm;
+  border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(109,40,217,.10), rgba(194,68,122,.05) 55%, transparent 72%);
+}
+.top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:7mm; }
+.brand{ display:flex; align-items:center; gap:3mm; }
+.mark{ display:inline-grid; place-items:center; width:11mm; height:11mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:8pt; }
+.brand b{ font-family:var(--serif); font-size:9.4pt; letter-spacing:.1em; color:var(--deep); display:block; }
+.brand span{ font-family:var(--script); font-size:9.5pt; color:var(--rose); }
+.no{ font-size:6.4pt; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-deep); text-align:right; }
+h1{ font-family:var(--serif); font-size:26pt; line-height:1.06; margin:0; color:var(--deep); }
+.script{ font-family:var(--script); font-size:14pt; color:var(--rosegold); margin:0 0 1mm; }
+.lede{ font-size:9.6pt; color:var(--ink-soft); margin:3mm 0 0; max-width:64ch; }
+.rule{ height:1px; margin:4mm 0;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+h2{ font-family:var(--sans); font-size:6.6pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); margin:0 0 2.5mm; }
+table{ width:100%; border-collapse:collapse; font-size:8.7pt; }
+thead th{ text-align:left; padding:1.8mm 2.5mm; font-size:6.2pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); }
+tbody td{ padding:1.7mm 2.5mm; border-bottom:1px solid var(--wash); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+td.k{ width:44mm; font-weight:700; color:var(--deep); }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:4mm; }
+.box{ border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rosegold);
+  background:var(--wash); border-radius:2mm; padding:3mm 4mm; font-size:8.4pt; color:var(--ink-soft); }
+.box--rose{ border-left-color:var(--rose); }
+.box strong{ color:var(--deep); } .box p{ margin:0; } .box p+p{ margin-top:2mm; }
+.foot{ position:absolute; left:18mm; right:15mm; bottom:9mm;
+  border-top:1px solid var(--wash); padding-top:3mm;
+  display:flex; justify-content:space-between; align-items:flex-end; gap:5mm; }
+.foot .c{ font-size:8pt; color:var(--ink-soft); }
+.foot .c b{ color:var(--deep); display:block; font-size:8.5pt; }
+.foot .t{ font-family:var(--script); font-size:10.5pt; color:var(--rose); text-align:right; white-space:nowrap; }
+.printhint{ max-width:210mm; margin:8mm auto 4mm; padding:3mm 4mm; border-radius:2mm;
+  background:#fffdfb; border:1px dashed var(--rosegold); font-size:8.6pt;
+  color:var(--ink-soft); text-align:center; }
+.printhint kbd{ font-weight:700; background:#fff; border:1px solid var(--rosegold-soft);
+  border-bottom-width:2px; border-radius:1.4mm; padding:.4mm 1.6mm; color:var(--deep); }
+@media print{
+  @page{ size:A4; margin:0; }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important; }
+  html,body{ background:#fff; }
+  .printhint{ display:none !important; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="printhint">
+  Tekan <kbd>Ctrl</kbd> + <kbd>P</kbd> untuk simpan sebagai PDF. A4, margin <strong>None</strong>,
+  tandakan <strong>Background graphics</strong>.
+</div>
+
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="mark">NB</span>
+      <div><b>NOVA BADZLINA GLOBAL</b><span>Di mana kreator menjadi talent.</span></div>
+    </div>
+    <div class="no">Ringkasan sahaja<br />Perjanjian penuh 6 halaman</div>
+  </div>
+
+  <p class="script">Sebelum kita mula</p>
+  <h1>Ringkasan surat perjanjian</h1>
+  <p class="lede">
+    Ini ringkasan mudah bagi surat perjanjian yang kita berdua tandatangan. Ia ada di sini supaya
+    tiada apa dalam dokumen penuh yang mengejutkan anda. <strong>Perjanjian yang ditandatangani
+    itulah yang mengikat kerja ini</strong> &mdash; halaman ini tidak menggantikannya.
+  </p>
+  <div class="rule"></div>
+
+  <h2>Versi ringkas</h2>
+  <table>
+    <tbody>
+      <tr><td class="k">Apa yang anda beli</td>
+          <td>Skop bertulis &mdash; perkhidmatan, bilangan deliverable, panjang, bahasa, dan di mana tepatnya anda boleh guna kandungan itu. Kalau tidak ditulis, ia tidak termasuk.</td></tr>
+      <tr><td class="k">Berapa kosnya</td>
+          <td>Harga asas campur mana-mana add-on yang anda tandakan. Jumlahnya ditulis pada perjanjian sebelum kita berdua tandatangan.</td></tr>
+      <tr><td class="k">Bila anda bayar</td>
+          <td>Salah satu daripada empat corak bergantung perkhidmatan: sebelum setiap langkah, dalam tetingkap bulanan 28hb&ndash;31hb, separuh-separuh, atau deposit dengan baki diinvois selepas hari kerja.</td></tr>
+      <tr><td class="k">Apa yang sahkan tempahan</td>
+          <td>Deposit 10&ndash;50% &mdash; anda pilih dalam julat itu. <strong>Setelah disahkan, deposit tidak dikembalikan</strong>, kerana tarikh dan slot giliran ditahan untuk anda.</td></tr>
+      <tr><td class="k">Bagaimana anda terima</td>
+          <td>Anda lihat kerja berwatermark dahulu. Setelah baki dijelaskan, fail bersih dihantar melalui Blip, WeTransfer atau Google Drive.</td></tr>
+      <tr><td class="k">Pembetulan</td>
+          <td>Dua pusingan dalam skop yang dipersetujui adalah termasuk. Perubahan konsep selepas penggambaran adalah kerja baharu, bukan pembetulan.</td></tr>
+      <tr><td class="k">Hak penggunaan</td>
+          <td>Penggunaan organik di channel anda sendiri adalah termasuk. Pengiklanan berbayar dilesenkan berasingan mengikut tempoh dan wilayah.</td></tr>
+      <tr><td class="k">Jika anda batalkan</td>
+          <td>Deposit tidak dikembalikan. Jika penggambaran sudah bermula, kerja yang telah dilakukan setakat itu perlu dibayar.</td></tr>
+      <tr><td class="k">Hadir sendiri</td>
+          <td>Event 1&ndash;2 hari di seluruh Semenanjung Malaysia. Kelantan dan Kuala Lumpur +30&ndash;50%; tempat lain di Semenanjung +50&ndash;80%. Sabah dan Sarawak diquote berasingan.</td></tr>
+      <tr><td class="k">Undang-undang</td>
+          <td>Malaysia.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2">
+    <div class="box">
+      <p><strong>Kenapa ada kontrak.</strong> Bukan kerana saya jangkakan masalah &mdash; tetapi
+      kerana skop bertulis melindungi anda sama seperti ia melindungi saya. Anda tahu tepat apa yang
+      akan sampai dan bila; saya tahu tepat apa yang saya hasilkan. Kebanyakan pertikaian dalam
+      industri ini hanyalah dua orang yang tidak pernah menulisnya.</p>
+    </div>
+    <div class="box box--rose">
+      <p><strong>Baca sebelum anda komited.</strong> Tanya saya tentang mana-mana klausa yang anda
+      tidak selesa. Terma boleh diselaraskan sebelum tandatangan &mdash; itulah gunanya ruang kosong.
+      Tiada apa yang muktamad sehingga kedua-dua tandatangan ada di atasnya.</p>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:4mm">
+    <p><strong>Pembayaran hanya ke satu akaun.</strong> Maybank &mdash; Nur Badzlina Razi binti
+    Mohamed Gazali &middot; 1651 2543 2269. Sahkan butiran dengan saya di +60 18-278 0523 sebelum anda
+    membuat pemindahan. Saya tidak akan sesekali minta anda hantar bayaran ke nama atau nombor akaun
+    yang berbeza.</p>
+  </div>
+
+  <div class="foot">
+    <div class="c">
+      <b>Ara Aranya &middot; Nova Badzlina Global</b>
+      +60 18-278 0523 &middot; novabadzlinaglobal@gmail.com &middot; @novabadzlinaglobal<br />
+      Ringkasan sahaja. Surat Perjanjian enam halaman yang ditandatangani adalah dokumen yang mengikat.
+    </div>
+    <div class="t">Scarred but sacred.</div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nova Badzlina Global — Project Presentation</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c0c21%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffbf8; --deep:#0b1233; --deep2:#141d47;
+  --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --orchid:#6d28d9; --rosegold:#c88a72; --orchid:#6d28d9; --rosegold:#c88a72; --gold:#bf8f2c; --gold-deep:#856013; --gold-light:#f0d9a0;
+  --dusty:#c88a72; --dusty-wash:#f7e8e0;
+  --foil:linear-gradient(100deg,#a97b23 0%,#e0bd6a 14%,#fff3d0 28%,#d9b25f 42%,#a97b23 56%,#f2d896 72%,#fff8e4 84%,#c79a3e 100%);
+  --foil-text:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,#6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{ background:#d8cdd4; font-family:var(--sans); color:var(--ink); }
+
+.slide{
+  position:relative; overflow:hidden;
+  width:338mm; height:190mm;
+  margin:0 auto 8mm; padding:18mm 20mm;
+  background:
+    radial-gradient(60% 60% at 8% 0%, rgba(201,143,155,.30), transparent 65%),
+    radial-gradient(55% 55% at 95% 8%, rgba(216,196,232,.34), transparent 65%),
+    radial-gradient(50% 50% at 55% 100%, rgba(240,217,160,.32), transparent 65%),
+    linear-gradient(170deg,var(--cream),var(--dusty-wash) 55%,var(--cream));
+  display:flex; flex-direction:column;
+  page-break-after:always; break-after:page;
+}
+.slide::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 20%, rgba(191,143,44,.5), transparent 60%),
+    radial-gradient(1.3px 1.3px at 88% 30%, rgba(229,71,127,.45), transparent 60%),
+    radial-gradient(1.8px 1.8px at 70% 82%, rgba(191,143,44,.42), transparent 60%);
+}
+.slide:last-child{ page-break-after:auto; }
+
+/* deep variant */
+.slide--deep{
+  background:
+    radial-gradient(60% 52% at 12% 6%, rgba(201,143,155,.40), transparent 68%),
+    radial-gradient(56% 48% at 90% 14%, rgba(156,98,112,.46), transparent 68%),
+    radial-gradient(52% 46% at 55% 98%, rgba(191,143,44,.32), transparent 70%),
+    linear-gradient(170deg,var(--deep2) 0%,#341124 40%,var(--deep) 70%,#250b1c 100%);
+  color:#fdf2f7;
+}
+.slide--deep .eyebrow{ color:var(--gold-light); }
+.slide--deep h2,.slide--deep h1{ color:#fdf2f7; }
+.slide--deep p,.slide--deep li{ color:#dcbcd0; }
+.slide--deep .card{ background:rgba(255,255,255,.07); border-color:rgba(240,217,160,.28); }
+.slide--deep .card h3{ color:#fdf2f7; }
+.slide--deep .stat b{ color:var(--gold-light); }
+.slide--deep .num{ color:#fdf2f7; }
+
+.eyebrow{
+  font-size:9pt; font-weight:800; letter-spacing:.28em;
+  text-transform:uppercase; color:var(--rose-deep); margin-bottom:6mm;
+}
+.eyebrow::before{ content:"✦ "; color:var(--gold); }
+h1{ font-family:var(--serif); font-size:44pt; line-height:1.05; letter-spacing:-.02em; }
+h2{ font-family:var(--serif); font-size:30pt; line-height:1.12; margin-bottom:5mm; }
+h3{ font-family:var(--serif); font-size:15pt; margin-bottom:2mm; }
+p,li{ font-size:12pt; line-height:1.65; color:var(--ink-soft); }
+strong{ color:var(--ink); }
+.slide--deep strong{ color:#fff; }
+.grad{ background:var(--foil-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.slide--deep .grad{ background-image:var(--foil); }
+
+.rule{
+  width:60mm; height:1px; margin:5mm 0;
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+.slide--deep .rule{ background:linear-gradient(90deg,var(--gold-light),transparent); }
+
+.body{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+.cols{ display:grid; grid-template-columns:repeat(2,1fr); gap:8mm; }
+.cols--3{ grid-template-columns:repeat(3,1fr); }
+.cols--4{ grid-template-columns:repeat(4,1fr); }
+
+.card{
+  padding:6mm 6mm; border-radius:5mm;
+  border:1px solid rgba(191,143,44,.32);
+  background:rgba(255,255,255,.72);
+}
+.card h3{ font-size:13pt; }
+.card p{ font-size:10.5pt; line-height:1.5; }
+.card .ico{ font-size:20pt; display:block; margin-bottom:2mm; }
+
+ul.tick{ list-style:none; }
+ul.tick li{ position:relative; padding-left:8mm; margin-bottom:3mm; }
+ul.tick li::before{ content:"✦"; position:absolute; left:0; color:var(--gold); }
+
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:6mm; margin-top:6mm; }
+.stat{ text-align:center; padding:5mm 3mm; border-radius:4mm; border:1px solid rgba(191,143,44,.3); background:rgba(255,255,255,.6); }
+.slide--deep .stat{ background:rgba(255,255,255,.07); }
+.stat b{ display:block; font-family:var(--serif); font-size:26pt; color:var(--rose-deep); line-height:1; }
+.stat span{ display:block; margin-top:2mm; font-size:9pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); font-weight:700; }
+
+code{
+  font-family:Consolas,monospace; font-size:10.5pt;
+  background:rgba(191,143,44,.16); color:var(--gold-deep);
+  padding:.5mm 2mm; border-radius:2mm;
+}
+pre{
+  margin-top:4mm; padding:5mm 6mm; border-radius:4mm;
+  background:var(--deep); color:#f0d9a0;
+  font-family:Consolas,monospace; font-size:10pt; line-height:1.6;
+  overflow:hidden;
+}
+pre .c{ color:#a8879c; }
+pre .k{ color:#f0b3c9; }
+
+.num{ font-family:var(--serif); font-size:20pt; color:var(--rose-deep); }
+
+.foot{
+  position:absolute; left:20mm; right:20mm; bottom:9mm;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-faint); font-weight:700;
+}
+.slide--deep .foot{ color:#a98ea0; }
+.foot .mark{
+  display:inline-grid; place-items:center; width:7mm; height:7mm;
+  border-radius:50%; background:var(--foil); color:#3d2a08;
+  font-family:var(--serif); font-size:8pt; font-weight:700; margin-right:2mm;
+}
+
+.title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+.badge{
+  display:inline-block; padding:2mm 5mm; border-radius:20mm;
+  border:1px solid rgba(240,217,160,.5); background:rgba(255,255,255,.1);
+  font-size:9pt; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold-light); margin-bottom:8mm;
+}
+
+@page{ size:338mm 190mm; margin:0; }
+@media print{
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  body{ background:none; }
+  .slide{ margin:0; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1 TITLE -->
+<section class="slide slide--deep">
+  <div class="title-wrap">
+    <span class="badge">Web Development Project · 2026</span>
+    <h1>NOVA BADZLINA<br /><span class="grad">GLOBAL</span></h1>
+    <div class="rule" style="width:90mm;height:2px"></div>
+    <p style="font-size:15pt;font-style:italic;font-family:var(--serif);color:#f9aecb">
+      A bilingual creator portfolio and booking platform
+    </p>
+    <p style="margin-top:8mm;font-size:12pt">
+      Built with <strong>HTML and CSS only</strong> — no JavaScript, no frameworks, no libraries.
+    </p>
+    <p style="margin-top:10mm;font-size:12pt">
+      <strong>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</strong><br />
+      <span style="font-size:10.5pt">known professionally as Ara Aranya</span>
+    </p>
+    <p style="margin-top:4mm;font-size:11pt">
+      Matric number &nbsp;<strong style="letter-spacing:.06em">MC251139118</strong>
+    </p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Nova Badzlina Global</span><span>01</span></div>
+</section>
+
+<!-- 2 OBJECTIVE -->
+<section class="slide">
+  <p class="eyebrow">The brief</p>
+  <div class="body">
+    <h2>What I set out to build</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p><strong>The problem.</strong> As a content creator I was answering the same questions in
+        every enquiry — what do you charge, what's included, when do I pay, what do I get. Each
+        conversation started from zero.</p>
+        <p style="margin-top:4mm"><strong>The goal.</strong> A single website that presents my work,
+        states my terms clearly, and lets a brand book me without a single back-and-forth message.</p>
+      </div>
+      <div>
+        <ul class="tick">
+          <li>Show the portfolio — video, photography and voice</li>
+          <li>Explain services and pricing without ambiguity</li>
+          <li>Capture a complete brief in one submission</li>
+          <li>Serve both English and Malay speakers</li>
+          <li>Work on any device, for any level of ability</li>
+          <li>Use <strong>no JavaScript whatsoever</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Objective</span><span>02</span></div>
+</section>
+
+<!-- 3 SCOPE -->
+<section class="slide slide--deep">
+  <p class="eyebrow">Scope</p>
+  <div class="body">
+    <h2>The finished project</h2>
+    <div class="rule"></div>
+    <div class="stats">
+      <div class="stat"><b>18</b><span>HTML pages</span></div>
+      <div class="stat"><b>2</b><span>Languages</span></div>
+      <div class="stat"><b>1,925</b><span>Lines of CSS</span></div>
+      <div class="stat"><b>0</b><span>Lines of JS</span></div>
+    </div>
+    <div class="stats" style="margin-top:6mm">
+      <div class="stat"><b>22</b><span>Audio players</span></div>
+      <div class="stat"><b>26</b><span>Media slots</span></div>
+      <div class="stat"><b>32</b><span>Form fields</span></div>
+      <div class="stat"><b>6</b><span>Business docs</span></div>
+    </div>
+    <p style="margin-top:7mm;text-align:center;font-size:11pt">
+      Nine pages in English, nine mirrored in Bahasa Melayu, plus printable contract, invoice and receipt.
+    </p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Scope</span><span>03</span></div>
+</section>
+
+<!-- 4 SITE MAP -->
+<section class="slide">
+  <p class="eyebrow">Structure</p>
+  <div class="body">
+    <h2>Site map</h2>
+    <div class="rule"></div>
+    <div class="cols cols--3">
+      <div class="card">
+        <span class="ico">🏠</span>
+        <h3>Public pages</h3>
+        <p><strong>Home</strong> — hero, why me, services, UGC types, slider, rates, accounts, about<br />
+        <strong>Voice Demos</strong> — 22 audio tracks<br />
+        <strong>Work</strong> — video and photo gallery<br />
+        <strong>Contact</strong> — four direct channels</p>
+      </div>
+      <div class="card">
+        <span class="ico">📝</span>
+        <h3>Transaction pages</h3>
+        <p><strong>Book Me</strong> — 32-field brief form, terms, usage rights, revisions, cancellation<br />
+        <strong>Payment</strong> — five methods, four billing patterns, availability, delivery</p>
+      </div>
+      <div class="card">
+        <span class="ico">📄</span>
+        <h3>Printable documents</h3>
+        <p><strong>Agreement</strong> — 13-clause contract with two-party signature blocks<br />
+        <strong>Invoice</strong> — line items, totals, embedded QR<br />
+        <strong>Receipt</strong> — paid stamp, balance tracking</p>
+      </div>
+    </div>
+    <p style="margin-top:6mm;text-align:center"><strong>Every page exists twice</strong> — once in English, once in Bahasa Melayu.</p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Structure</span><span>04</span></div>
+</section>
+
+<!-- 5 CONSTRAINT -->
+<section class="slide slide--deep">
+  <p class="eyebrow">The core constraint</p>
+  <div class="body">
+    <h2>Why <span class="grad">no JavaScript</span>?</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p>The requirement was HTML and CSS only. Rather than treat that as a limitation, I used it
+        as a design discipline.</p>
+        <ul class="tick" style="margin-top:4mm">
+          <li><strong>Faster</strong> — nothing to download, parse or execute</li>
+          <li><strong>More reliable</strong> — no script can fail and break the page</li>
+          <li><strong>More accessible</strong> — works with scripting disabled</li>
+          <li><strong>More secure</strong> — no script means no script-based attack surface</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>What still had to work:</strong></p>
+        <ul class="tick" style="margin-top:3mm">
+          <li>An image carousel</li>
+          <li>Tabbed content panels</li>
+          <li>Scroll-triggered animation</li>
+          <li>A validated multi-field form</li>
+          <li>Language switching</li>
+        </ul>
+        <p style="margin-top:4mm">Every one was solved in pure CSS.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Constraint</span><span>05</span></div>
+</section>
+
+<!-- 6 SLIDER TECHNIQUE -->
+<section class="slide">
+  <p class="eyebrow">Technique 01</p>
+  <div class="body">
+    <h2>Carousel without JavaScript</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p>Hidden radio buttons hold the state. Clicking a <code>&lt;label&gt;</code> checks its
+        radio, and the CSS sibling combinator <code>~</code> slides the track.</p>
+        <p style="margin-top:4mm">Six slides, previous and next arrows that rebind at each position,
+        and an indicator that tracks the active slide — all from one CSS property changing.</p>
+      </div>
+      <div>
+<pre><span class="c">/* the radio holds the state */</span>
+#s2:checked ~ .track {
+  <span class="k">transform</span>: translateX(-16.67%);
+}
+
+<span class="c">/* the label becomes the button */</span>
+&lt;label for="s2"&gt;&lt;/label&gt;</pre>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Technique</span><span>06</span></div>
+</section>
+
+<!-- 7 TABS -->
+<section class="slide">
+  <p class="eyebrow">Technique 02</p>
+  <div class="body">
+    <h2>Tabbed panels without JavaScript</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p>The payment page needs five methods — FPX, debit card, QR Pay, Stripe, Payoneer —
+        each with different instructions.</p>
+        <p style="margin-top:4mm">Same radio principle: only the panel matching the checked radio
+        is set to <code>display:block</code>. The rest stay hidden. The active tab is highlighted
+        with the same selector.</p>
+      </div>
+      <div>
+<pre><span class="c">/* show only the matching panel */</span>
+#pay3:checked ~ .panels
+  .panel:nth-child(3) {
+  <span class="k">display</span>: block;
+}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Technique</span><span>07</span></div>
+</section>
+
+<!-- 8 SCROLL ANIMATION -->
+<section class="slide slide--deep">
+  <p class="eyebrow">Technique 03</p>
+  <div class="body">
+    <h2>Scroll-driven animation</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p>Content fades and rises as it enters the viewport, and grid items stagger so cards
+        arrive in a wave.</p>
+        <p style="margin-top:4mm">This uses <code>animation-timeline: view()</code> — a modern CSS
+        feature that drives an animation from scroll position rather than from a timer. Historically
+        this required JavaScript.</p>
+      </div>
+      <div>
+<pre><span class="c">/* progress driven by scroll */</span>
+.card {
+  <span class="k">animation</span>: revealUp linear both;
+  <span class="k">animation-timeline</span>: view();
+  <span class="k">animation-range</span>: entry 4% cover 26%;
+}</pre>
+        <p style="margin-top:4mm;font-size:10.5pt"><strong>Safety:</strong> wrapped in
+        <code>@supports</code> so unsupporting browsers show content normally, and in
+        <code>prefers-reduced-motion</code> so it respects accessibility settings.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Technique</span><span>08</span></div>
+</section>
+
+<!-- 9 DESIGN -->
+<section class="slide">
+  <p class="eyebrow">Design</p>
+  <div class="body">
+    <h2>"Celestial Atelier"</h2>
+    <div class="rule"></div>
+    <div class="cols cols--4">
+      <div class="card"><span class="ico">🎨</span><h3>Palette</h3>
+        <p>Cream and dusty rose base, deep aubergine bands, gold as the metal. Alternating light and dark sections create rhythm.</p></div>
+      <div class="card"><span class="ico">✒️</span><h3>Typography</h3>
+        <p>High-contrast serif for headings (authority), clean sans for body (readability). The split prevents it becoming too decorative.</p></div>
+      <div class="card"><span class="ico">✦</span><h3>Ornament</h3>
+        <p>Gold corner brackets, rule-and-diamond dividers, scalloped section edges, a subtle sparkle field.</p></div>
+      <div class="card"><span class="ico">☁️</span><h3>Atmosphere</h3>
+        <p>Layered cloud gradients that drift slowly, and a gold-foil text effect that sweeps across headings.</p></div>
+    </div>
+    <p style="margin-top:6mm;text-align:center">The brief was <em>elegant, dreamy, girly, sparkly, gold</em> — balanced against <em>professional and credible</em>, since this page has to close business.</p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Design</span><span>09</span></div>
+</section>
+
+<!-- 10 BILINGUAL -->
+<section class="slide slide--deep">
+  <p class="eyebrow">Localisation</p>
+  <div class="body">
+    <h2>Bilingual — English &amp; Bahasa Melayu</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p><strong>The decision.</strong> A CSS show/hide toggle was possible, but it would reset to
+        English on every page change. Instead each page has a full translated twin.</p>
+        <p style="margin-top:4mm">The switcher links to the <em>matching</em> page, so language
+        persists as the visitor browses.</p>
+        <p style="margin-top:4mm">Each page declares <code>lang="en"</code> or <code>lang="ms"</code>
+        so screen readers pronounce correctly.</p>
+      </div>
+      <div>
+        <p><strong>Translation approach:</strong></p>
+        <ul class="tick" style="margin-top:3mm">
+          <li>Full translation, not just headings — forms, terms, contracts included</li>
+          <li>Industry terms kept in English where Malaysian creators use them: <em>UGC, KOL, hook, deliverable</em></li>
+          <li>Everything needed to make a decision is in Malay: pricing, percentages, terms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Localisation</span><span>10</span></div>
+</section>
+
+<!-- 11 ACCESSIBILITY -->
+<section class="slide">
+  <p class="eyebrow">Accessibility</p>
+  <div class="body">
+    <h2>Designed to be usable by everyone</h2>
+    <div class="rule"></div>
+    <div class="cols cols--3">
+      <div class="card"><span class="ico">👁️</span><h3>Contrast</h3>
+        <p>Form fields measured at <strong>19.3:1</strong>, labels at <strong>7.6:1</strong>. WCAG AAA requires 7:1 — both exceed it.</p></div>
+      <div class="card"><span class="ico">⌨️</span><h3>Keyboard</h3>
+        <p>Visible 3px focus ring on every interactive element. The whole site is navigable by keyboard alone.</p></div>
+      <div class="card"><span class="ico">🎬</span><h3>Motion</h3>
+        <p><code>prefers-reduced-motion</code> disables all animation for users who experience motion sickness.</p></div>
+    </div>
+    <p style="margin-top:6mm"><strong>A real problem I found and fixed:</strong> the booking form sat on a dark
+    background, but native dropdown lists are drawn by the operating system and do not inherit page
+    styling — producing dark text on a dark list. The fix was giving the form its own light card,
+    guaranteeing dark-on-white for every option.</p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Accessibility</span><span>11</span></div>
+</section>
+
+<!-- 12 BUSINESS LOGIC -->
+<section class="slide slide--deep">
+  <p class="eyebrow">Content design</p>
+  <div class="body">
+    <h2>Turning a business into a system</h2>
+    <div class="rule"></div>
+    <div class="cols cols--4">
+      <div class="card"><h3>Services</h3><p>UGC Creator, Canvas UGC, Tech UGC, Mom UGC, KOL, KOC, lifestyle, travel and wedding lanes, video editing, product photography, photo editing, voice-over, reviews, brand ambassador, commercial talent.</p></div>
+      <div class="card"><h3>Billing</h3><p>Four patterns mapped to service type — pay-per-step, monthly window, 50/50 split, and day rate.</p></div>
+      <div class="card"><h3>Pricing</h3><p>Base price plus transparent add-ons: raw footage, rush, posting, account takeover, travel.</p></div>
+      <div class="card"><h3>Protection</h3><p>Watermarked draft first, clean files only after full payment. Cancellation terms that work both ways.</p></div>
+    </div>
+    <p style="margin-top:6mm;text-align:center">The hardest part was not the code — it was making complex commercial terms
+    simple enough that a client understands them without asking.</p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Content</span><span>12</span></div>
+</section>
+
+<!-- 13 DOCUMENTS -->
+<section class="slide">
+  <p class="eyebrow">Beyond the website</p>
+  <div class="body">
+    <h2>Printable business documents</h2>
+    <div class="rule"></div>
+    <div class="cols cols--3">
+      <div class="card"><span class="ico">📄</span><h3>Booking Agreement</h3>
+        <p>13 clauses covering scope, price, payment, delivery, usage rights, revisions, cancellation and governing law — with signature blocks for both parties.</p></div>
+      <div class="card"><span class="ico">🧾</span><h3>Invoice</h3>
+        <p>Letterhead, line items, totals, add-on checklist and payment instructions with the QR code embedded directly in the file.</p></div>
+      <div class="card"><span class="ico">✅</span><h3>Receipt</h3>
+        <p>Paid stamp, amount received, balance remaining, and a checklist of what happens next in the project.</p></div>
+    </div>
+    <p style="margin-top:6mm">All three use a dedicated <code>@media print</code> stylesheet with
+    <code>print-color-adjust:exact</code> to preserve the brand colours, and page-break rules so
+    signature blocks never split across pages.</p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Documents</span><span>13</span></div>
+</section>
+
+<!-- 14 CHALLENGES -->
+<section class="slide slide--deep">
+  <p class="eyebrow">Problems solved</p>
+  <div class="body">
+    <h2>Challenges along the way</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p><strong>1 · Invisible content risk.</strong> Scroll animations start elements at zero
+        opacity. If the animation never completes, content stays invisible. I tested all 163
+        animated elements across every page and found one stuck at 68% — an element in the hero
+        that never fully traversed its range. Fixed by excluding above-the-fold content.</p>
+        <p style="margin-top:4mm"><strong>2 · A transparent colour.</strong> A mistyped 8-digit hex
+        value made a gradient 28% transparent, washing out the dark sections. Caught by inspecting
+        computed styles rather than trusting the eye.</p>
+      </div>
+      <div>
+        <p><strong>3 · Dropdowns on dark backgrounds.</strong> Native form controls are rendered by
+        the operating system and ignore page styling — solved by restructuring rather than fighting it.</p>
+        <p style="margin-top:4mm"><strong>4 · Print stripping colour.</strong> Browsers discard
+        backgrounds when printing by default. Solved with <code>print-color-adjust:exact</code>.</p>
+        <p style="margin-top:4mm"><strong>5 · Language persistence.</strong> Solved architecturally
+        with mirrored pages rather than a toggle.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Challenges</span><span>14</span></div>
+</section>
+
+<!-- 15 LEARNED -->
+<section class="slide">
+  <p class="eyebrow">Reflection</p>
+  <div class="body">
+    <h2>What I learned</h2>
+    <div class="rule"></div>
+    <div class="cols cols--3">
+      <div class="card"><h3>CSS is more capable than expected</h3>
+        <p>State management, tabs, carousels and scroll animation are all achievable declaratively. The constraint pushed me toward techniques I would not otherwise have found.</p></div>
+      <div class="card"><h3>Test what you cannot see</h3>
+        <p>The 68%-opacity bug and the transparent hex were both invisible to casual inspection. Measuring computed values caught what looking could not.</p></div>
+      <div class="card"><h3>Design serves the business</h3>
+        <p>The prettiest version of the booking form was unusable. Accessibility and clarity had to outrank aesthetics where the two conflicted.</p></div>
+    </div>
+    <p style="margin-top:6mm;text-align:center;font-style:italic;font-family:var(--serif);font-size:14pt;color:var(--rose-deep)">
+      "A website that looks beautiful but loses a booking has failed."
+    </p>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Reflection</span><span>15</span></div>
+</section>
+
+<!-- 16 FUTURE -->
+<section class="slide">
+  <p class="eyebrow">Limitations</p>
+  <div class="body">
+    <h2>Honest limitations &amp; future work</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p><strong>Current limitations</strong></p>
+        <ul class="tick" style="margin-top:3mm">
+          <li>The booking form opens the visitor's email client rather than submitting to a server — the only option without JavaScript or a backend</li>
+          <li>Portfolio media slots are prepared but not yet populated</li>
+          <li>Scroll animation requires a recent browser, though it degrades safely</li>
+          <li>Two languages must be maintained in parallel</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>If developed further</strong></p>
+        <ul class="tick" style="margin-top:3mm">
+          <li>A form service so submissions arrive reliably in an inbox</li>
+          <li>A booking calendar showing real availability</li>
+          <li>Automatic invoice numbering</li>
+          <li>A content management layer so pages can be edited without touching code</li>
+          <li>Analytics to see which services attract enquiries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Limitations</span><span>16</span></div>
+</section>
+
+<!-- 17 CLOSE -->
+<section class="slide slide--deep">
+  <div class="title-wrap">
+    <span class="badge">Thank you</span>
+    <h2 style="font-size:34pt">A portfolio that does more<br />than <span class="grad">display work</span></h2>
+    <div class="rule" style="width:90mm;height:2px"></div>
+    <p style="font-size:12.5pt;max-width:200mm">
+      It explains the service, states the price, protects both parties, takes the booking, issues
+      the contract, sends the invoice and confirms the payment — in two languages, on any device,
+      without a single line of JavaScript.
+    </p>
+    <div class="stats" style="margin-top:9mm;max-width:230mm">
+      <div class="stat"><b>18</b><span>Pages</span></div>
+      <div class="stat"><b>2</b><span>Languages</span></div>
+      <div class="stat"><b>0</b><span>JavaScript</span></div>
+      <div class="stat"><b>AAA</b><span>Contrast</span></div>
+    </div>
+  </div>
+  <div class="foot"><span><span class="mark">NB</span>Nova Badzlina Global · Ara Aranya</span><span>17</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nova Badzlina Global — Project Report</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c0c21%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233;
+  --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c;
+  --orchid:#6d28d9; --rosegold:#c88a72; --orchid:#6d28d9; --rosegold:#c88a72; --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --dusty-wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,#6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  background:#ddd4d9; font-family:var(--sans);
+  color:var(--ink); font-size:9.6pt; line-height:1.5;
+}
+.page{
+  width:210mm; min-height:291mm;
+  margin:0 auto 8mm; padding:15mm 17mm 15mm;
+  background:var(--cream);
+  position:relative;
+  page-break-after:always; break-after:page;
+}
+.page:last-child{ page-break-after:auto; }
+
+h1{ font-family:var(--serif); font-size:24pt; line-height:1.15; margin-bottom:3mm; }
+h2{
+  font-family:var(--serif); font-size:14pt; margin:5.5mm 0 2mm;
+  padding-bottom:2mm; border-bottom:1.5px solid var(--gold);
+  display:flex; gap:4mm; align-items:baseline;
+}
+h2 .n{
+  font-family:var(--sans); font-size:10pt; font-weight:800;
+  color:#3d2a08; background:var(--foil);
+  padding:1mm 3mm; border-radius:10mm; flex:none;
+}
+h2:first-of-type{ margin-top:0; }
+h3{ font-family:var(--sans); font-size:10pt; font-weight:800; color:var(--rose-deep); margin:3.5mm 0 1.5mm; }
+p{ margin-bottom:2.2mm; text-align:justify; }
+strong{ color:var(--ink); }
+em{ color:var(--ink-soft); }
+
+ul,ol{ margin:0 0 3mm 0; padding-left:0; list-style:none; }
+li{ position:relative; padding-left:6mm; margin-bottom:1.4mm; }
+ul li::before{ content:"✦"; position:absolute; left:0; color:var(--gold); font-size:9pt; }
+ol{ counter-reset:o; }
+ol li::before{ counter-increment:o; content:counter(o) "."; position:absolute; left:0; color:var(--gold); font-weight:800; }
+
+code{
+  font-family:Consolas,monospace; font-size:9.5pt;
+  background:rgba(191,143,44,.15); color:var(--gold-deep);
+  padding:.3mm 1.5mm; border-radius:1.5mm;
+}
+pre{
+  margin:2mm 0 3mm; padding:3mm 4mm; border-radius:3mm;
+  background:var(--deep); color:#f0d9a0;
+  font-family:Consolas,monospace; font-size:8pt; line-height:1.45;
+  page-break-inside:avoid;
+}
+pre .c{ color:#a8879c; }
+pre .k{ color:#f0b3c9; }
+
+table{ width:100%; border-collapse:collapse; margin:2mm 0 3mm; font-size:8.6pt; page-break-inside:avoid; }
+th{
+  text-align:left; padding:2mm 2.5mm; font-size:7.8pt;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.5px solid var(--gold); font-weight:800;
+}
+td{ padding:1.7mm 2.5mm; border-bottom:.5px solid rgba(191,143,44,.3); vertical-align:top; }
+
+.note{
+  margin:3mm 0; padding:3mm 4mm; border-radius:3mm;
+  border-left:3px solid var(--gold); background:rgba(255,247,228,.7);
+  font-size:9pt; page-break-inside:avoid;
+}
+.note strong{ color:var(--gold-deep); }
+
+.pagefoot{
+  position:absolute; left:20mm; right:20mm; bottom:8mm;
+  display:flex; justify-content:space-between;
+  font-size:8pt; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-faint); font-weight:700;
+  border-top:.5px solid rgba(191,143,44,.4); padding-top:2mm;
+}
+
+/* cover */
+.cover{
+  background:
+    radial-gradient(58% 50% at 12% 6%, rgba(201,143,155,.42), transparent 68%),
+    radial-gradient(54% 46% at 90% 14%, rgba(156,98,112,.48), transparent 68%),
+    radial-gradient(50% 44% at 55% 98%, rgba(191,143,44,.34), transparent 70%),
+    linear-gradient(170deg,#141d47 0%,#341124 40%,var(--deep) 70%,#250b1c 100%);
+  color:#fdf2f7;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.cover h1{ font-size:38pt; color:#fdf2f7; }
+.cover .grad{ background:linear-gradient(100deg,#a97b23,#e0bd6a 14%,#fff3d0 28%,#d9b25f 42%,#a97b23 56%,#f2d896 72%,#fff8e4 84%,#c79a3e); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.cover p{ color:#dcbcd0; text-align:left; }
+.cover .badge{
+  display:inline-block; align-self:flex-start;
+  padding:2mm 5mm; margin-bottom:8mm; border-radius:20mm;
+  border:1px solid rgba(240,217,160,.5); background:rgba(255,255,255,.08);
+  font-size:9pt; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-light);
+}
+.cover .rule{ width:80mm; height:2px; margin:6mm 0; background:linear-gradient(90deg,var(--gold-light),transparent); }
+.cover dl{ margin-top:14mm; display:grid; grid-template-columns:36mm 1fr; gap:3mm 6mm; font-size:11pt; }
+.cover dt{ font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:800; padding-top:1mm; }
+.cover dd{ color:#fdf2f7; }
+
+.toc li{ padding-left:0; margin-bottom:2.5mm; display:flex; gap:3mm; align-items:baseline; }
+.toc li::before{ content:none; }
+.toc .tn{ color:var(--gold-deep); font-weight:800; min-width:9mm; }
+.toc .td{ flex:1; border-bottom:1px dotted rgba(191,143,44,.5); }
+
+@page{ size:A4; margin:0; }
+@media print{
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  body{ background:none; }
+  .page{ margin:0; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <span class="badge">Web Development Project Report</span>
+  <h1>NOVA BADZLINA<br /><span class="grad">GLOBAL</span></h1>
+  <div class="rule"></div>
+  <p style="font-size:14pt;font-family:var(--serif);font-style:italic;color:#f9aecb">
+    A bilingual creator portfolio and booking platform<br />built entirely in HTML and CSS
+  </p>
+  <dl>
+    <dt>Name</dt><dd><strong>NUR BADZLINA RAZI BINTI MOHAMED GAZALI</strong><br />known professionally as Ara Aranya</dd>
+    <dt>Matric number</dt><dd><strong>MC251139118</strong></dd>
+    <dt>Project</dt><dd>Nova Badzlina Global</dd>
+    <dt>Technology</dt><dd>HTML5 and CSS3 only — no JavaScript, frameworks or libraries</dd>
+    <dt>Deliverable</dt><dd>18 web pages · 6 printable business documents · 2 languages</dd>
+    <dt>Year</dt><dd>2026</dd>
+  </dl>
+</section>
+
+<!-- TOC -->
+<section class="page">
+  <h1 style="font-size:22pt">Contents</h1>
+  <div class="rule" style="width:60mm;height:1.5px;background:linear-gradient(90deg,var(--gold),transparent);margin:4mm 0 8mm"></div>
+  <ul class="toc">
+    <li><span class="tn">1</span><span class="td">Introduction</span><span>3</span></li>
+    <li><span class="tn">2</span><span class="td">Target audience</span><span>3</span></li>
+    <li><span class="tn">3</span><span class="td">Tools and technology</span><span>4</span></li>
+    <li><span class="tn">4</span><span class="td">Site structure</span><span>4</span></li>
+    <li><span class="tn">5</span><span class="td">Design decisions</span><span>5</span></li>
+    <li><span class="tn">6</span><span class="td">Technical implementation</span><span>6</span></li>
+    <li><span class="tn">7</span><span class="td">Bilingual architecture</span><span>8</span></li>
+    <li><span class="tn">8</span><span class="td">Accessibility</span><span>9</span></li>
+    <li><span class="tn">9</span><span class="td">Content and business logic</span><span>10</span></li>
+    <li><span class="tn">10</span><span class="td">Printable business documents</span><span>11</span></li>
+    <li><span class="tn">11</span><span class="td">Testing and verification</span><span>11</span></li>
+    <li><span class="tn">12</span><span class="td">Challenges and solutions</span><span>12</span></li>
+    <li><span class="tn">13</span><span class="td">Limitations</span><span>14</span></li>
+    <li><span class="tn">14</span><span class="td">Future enhancements</span><span>14</span></li>
+    <li><span class="tn">15</span><span class="td">Conclusion</span><span>14</span></li>
+    <li><span class="tn">—</span><span class="td">Appendix A · File inventory</span><span>15</span></li>
+  </ul>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 2</span></div>
+</section>
+
+<!-- 1-2 -->
+<section class="page">
+  <h2><span class="n">1</span> Introduction</h2>
+  <h3>1.1 Background</h3>
+  <p>Nova Badzlina Global is the working identity of a Malaysian content creator operating across
+  user-generated content (UGC), influencer marketing, video production, photography and voice-over
+  work. The business serves brands who need social-media content produced quickly and delivered
+  ready to publish.</p>
+
+  <h3>1.2 Problem statement</h3>
+  <p>Before this project, every client enquiry began from nothing. The same questions were answered
+  repeatedly — what services are offered, what they cost, what is included, when payment is due, and
+  what the client receives at the end. This consumed time, produced inconsistent answers, and
+  occasionally led to disagreements after work had already begun because terms had never been
+  written down.</p>
+  <p>A secondary problem was reach. A significant share of potential clients are more comfortable
+  reading Bahasa Melayu than English, and an English-only site risked losing them at first contact.</p>
+
+  <h3>1.3 Objectives</h3>
+  <ol>
+    <li>Present the portfolio across three media types — video, photography and audio.</li>
+    <li>State services, pricing structure and terms clearly enough to remove ambiguity.</li>
+    <li>Capture a complete project brief in a single submission.</li>
+    <li>Serve English and Bahasa Melayu speakers equally.</li>
+    <li>Provide printable contract, invoice and receipt documents.</li>
+    <li>Achieve all of the above using <strong>only HTML and CSS</strong>.</li>
+  </ol>
+
+  <h3>1.4 Scope</h3>
+  <p>The project delivers eighteen web pages — nine in English and nine mirrored in Bahasa Melayu —
+  together with six printable business documents. It is a static site: it requires no server-side
+  processing, no database and no runtime scripting.</p>
+
+  <h2><span class="n">2</span> Target audience</h2>
+  <p>The site addresses three distinct visitors, each needing something different:</p>
+  <table>
+    <thead><tr><th>Visitor</th><th>What they need</th><th>How the site serves them</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Brand marketing manager</strong></td><td>Proof of quality, clear pricing, professional terms</td><td>Portfolio pages, rates table, usage-rights and cancellation clauses</td></tr>
+      <tr><td><strong>Small business owner</strong></td><td>Plain explanation, low friction, reassurance</td><td>Bahasa Melayu pages, WhatsApp contact, plain-language terms</td></tr>
+      <tr><td><strong>Agency producer</strong></td><td>Technical specifications, availability, formats</td><td>Video length ranges, export ratios, delivery methods, in-person availability</td></tr>
+    </tbody>
+  </table>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 3</span></div>
+</section>
+
+<!-- 3-4 -->
+<section class="page">
+  <h2><span class="n">3</span> Tools and technology</h2>
+  <table>
+    <thead><tr><th>Component</th><th>Choice</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Markup</td><td>HTML5</td><td>Semantic elements improve accessibility and search indexing</td></tr>
+      <tr><td>Styling</td><td>CSS3, single stylesheet</td><td>One file controls all 18 pages; a change propagates everywhere</td></tr>
+      <tr><td>Scripting</td><td><strong>None</strong></td><td>Project requirement, adopted as a design discipline</td></tr>
+      <tr><td>Typography</td><td>System font stack</td><td>No external font requests; nothing to fail or slow the page</td></tr>
+      <tr><td>Icons</td><td>Unicode and emoji</td><td>No icon library or image sprites required</td></tr>
+      <tr><td>Media</td><td>Native <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code></td><td>Built-in browser controls; no player library</td></tr>
+      <tr><td>Favicon</td><td>Inline SVG data URI</td><td>No separate image file needed</td></tr>
+    </tbody>
+  </table>
+  <p>The project has <strong>zero external dependencies</strong>. Every asset is either written by
+  hand or owned by the business. This means the site cannot break because a third-party service
+  changed, expired or went offline.</p>
+
+  <h2><span class="n">4</span> Site structure</h2>
+  <p>Pages fall into three functional groups.</p>
+
+  <h3>4.1 Public-facing pages</h3>
+  <ul>
+    <li><strong>Home</strong> — hero, reasons to hire, twelve services, four UGC specialisms, portfolio carousel, rates and terms, social accounts, about section</li>
+    <li><strong>Voice Demos</strong> — twenty-two audio tracks organised into ten read styles across two languages</li>
+    <li><strong>Work</strong> — twenty video slots and twelve photography slots, grouped by category</li>
+    <li><strong>Contact</strong> — four direct channels with guidance on which to use</li>
+  </ul>
+
+  <h3>4.2 Transaction pages</h3>
+  <ul>
+    <li><strong>Book Me</strong> — a thirty-two field brief form, preceded by terms at a glance and followed by usage rights, revision policy, cancellation terms and client obligations</li>
+    <li><strong>Payment</strong> — five payment methods as tabbed panels, four billing patterns, availability and travel surcharges, delivery process</li>
+  </ul>
+
+  <h3>4.3 Printable documents</h3>
+  <ul>
+    <li><strong>Booking Agreement</strong> — thirteen clauses with two-party signature blocks</li>
+    <li><strong>Invoice</strong> — line items, totals, payment instructions with embedded QR code</li>
+    <li><strong>Receipt</strong> — paid confirmation with balance tracking</li>
+  </ul>
+
+  <div class="note"><strong>Navigation principle.</strong> A visitor should never be more than two
+  clicks from booking. The primary call to action appears in the navigation bar of every page, and
+  a floating WhatsApp button remains visible while scrolling.</div>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 4</span></div>
+</section>
+
+<!-- 5 -->
+<section class="page">
+  <h2><span class="n">5</span> Design decisions</h2>
+
+  <h3>5.1 Visual identity</h3>
+  <p>The design brief called for a site that felt <em>elegant, dreamy, feminine, sparkling and
+  gold</em>, while remaining credible enough to close commercial deals. These pull in opposite
+  directions: softness suggests approachability, structure suggests authority. The resolution —
+  named <strong>Celestial Atelier</strong> — keeps the atmosphere soft but the structure disciplined.</p>
+
+  <h3>5.2 Colour</h3>
+  <p>A light cream and dusty-rose base carries the dreamy quality, since cloud and light effects
+  require a pale ground. Deep aubergine bands alternate with the light sections to create rhythm and
+  contrast down the page. Gold functions as the metal throughout — it reads as expensive against the
+  dark bands in a way it cannot against cream.</p>
+  <table>
+    <thead><tr><th>Role</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>Ink</td><td><code>#0d1435</code></td><td>Headings and body text</td></tr>
+      <tr><td>Rose</td><td><code>#c2447a</code></td><td>Accents, focus states, calls to action</td></tr>
+      <tr><td>Gold</td><td><code>#bf8f2c</code></td><td>Rules, ornament, primary buttons</td></tr>
+      <tr><td>Dusty rose</td><td><code>#c88a72</code></td><td>Background warmth</td></tr>
+      <tr><td>Deep band</td><td><code>#0b1233</code></td><td>Alternating sections</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.3 Typography</h3>
+  <p>Headings use a high-contrast serif stack (Didot, Bodoni MT, Playfair Display, with Georgia as
+  fallback). The thick-to-thin stroke contrast conveys elegance and authority simultaneously. Body
+  text uses a clean sans-serif for readability. This split is deliberate: dramatic headline paired
+  with plain paragraph prevents the design from becoming decorative at the expense of legibility.</p>
+
+  <h3>5.4 Layout and responsiveness</h3>
+  <p>Layout uses CSS Grid with <code>auto-fit</code> and <code>minmax()</code>, so columns reflow
+  according to available width without media queries for every breakpoint. Two breakpoints handle
+  structural changes: at 900 pixels the carousel stacks vertically and the about section becomes a
+  single column; at 640 pixels navigation centres and the floating button reduces to its icon.</p>
+  <pre><span class="c">/* columns adapt without fixed breakpoints */</span>
+.cards {
+  <span class="k">display</span>: grid;
+  <span class="k">grid-template-columns</span>: repeat(auto-fit, minmax(280px, 1fr));
+  <span class="k">gap</span>: 1.6rem;
+}</pre>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 5</span></div>
+</section>
+
+<!-- 6 -->
+<section class="page">
+  <h2><span class="n">6</span> Technical implementation</h2>
+
+  <h3>6.1 The no-JavaScript constraint</h3>
+  <p>Several features conventionally require scripting: an image carousel, tabbed panels,
+  scroll-triggered animation and a multi-field form. Each was implemented declaratively in CSS.
+  The general principle is that <strong>a hidden form control holds the state</strong>, a
+  <code>&lt;label&gt;</code> acts as the button that changes it, and CSS sibling selectors respond
+  to the change.</p>
+
+  <h3>6.2 Carousel</h3>
+  <p>Six radio inputs share a name, so only one can be checked. Each label is bound to a radio by
+  <code>for</code>. When a radio is checked, the general sibling combinator <code>~</code> targets
+  the track and translates it horizontally. Previous and next arrows are duplicated for each
+  position and shown or hidden by the same mechanism, so they always point to the correct
+  neighbouring slide.</p>
+  <pre><span class="c">/* one property changes; the carousel moves */</span>
+#s2:checked ~ .slider__viewport .slider__track {
+  <span class="k">transform</span>: translateX(-16.6667%);
+}
+#s2:checked ~ .slider__dots .dot:nth-child(2) {
+  <span class="k">background</span>: var(--foil);
+  <span class="k">width</span>: 50px;
+}</pre>
+
+  <h3>6.3 Tabbed panels</h3>
+  <p>The payment page presents five methods, each with different instructions. All five panels
+  exist in the markup; only the one matching the checked radio receives
+  <code>display: block</code>. The same selector highlights the active tab, so the two never
+  disagree.</p>
+
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 6</span></div>
+</section>
+
+<section class="page">
+  <h3>6.4 Scroll-driven animation</h3>
+  <p>Content fades and rises as it enters the viewport, with grid items staggered so cards arrive in
+  sequence rather than simultaneously. This uses <code>animation-timeline: view()</code>, which
+  drives animation progress from scroll position rather than elapsed time.</p>
+  <pre>.card {
+  <span class="k">animation</span>: revealUp linear both;
+  <span class="k">animation-timeline</span>: view();
+  <span class="k">animation-range</span>: entry 4% cover 26%;
+}
+<span class="c">/* later grid children start slightly later */</span>
+.cards > .card:nth-child(3n+2) { <span class="k">animation-range</span>: entry 9% cover 33%; }</pre>
+  <p>Because the technique sets elements to zero opacity initially, an unsupporting browser would
+  leave content permanently invisible. The entire block is therefore wrapped in
+  <code>@supports (animation-timeline: view())</code>, so browsers without support never receive
+  the hidden starting state. It is additionally wrapped in
+  <code>@media (prefers-reduced-motion: no-preference)</code> so that users who have requested
+  reduced motion are excluded entirely.</p>
+
+  <h3>6.5 Form implementation</h3>
+  <p>The booking form uses native HTML validation — <code>required</code>, <code>type="email"</code>
+  and <code>type="date"</code> — which the browser enforces without scripting. Two submit buttons
+  use the <code>formaction</code> attribute to route to different email addresses, separating UGC
+  enquiries from all other work. This is standard HTML5 and needs no script.</p>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 7</span></div>
+</section>
+
+<!-- 6 cont + 7 + 8 -->
+<section class="page">
+  <h3>6.6 Print stylesheet</h3>
+  <p>The three business documents are designed to be printed or saved as PDF. A dedicated
+  <code>@media print</code> block hides site navigation, footer and interactive elements, then
+  applies page-break rules so that clauses and signature blocks are never split across pages.</p>
+  <p>A subtle but important detail: browsers discard background colours when printing by default,
+  as an ink-saving measure. The property <code>print-color-adjust: exact</code> overrides this,
+  preserving the brand identity in the printed document.</p>
+  <pre>@media print {
+  *, *::before, *::after {
+    <span class="k">-webkit-print-color-adjust</span>: exact !important;
+    <span class="k">print-color-adjust</span>: exact !important;
+  }
+  .clause, .sign { <span class="k">break-inside</span>: avoid; }
+}</pre>
+
+  <h2><span class="n">7</span> Bilingual architecture</h2>
+  <p>Two approaches were considered. The first was a CSS toggle holding both languages in one
+  document and hiding one. This was rejected: without scripting, the choice cannot persist across
+  navigation, so a Malay-speaking visitor would be returned to English on every page change.</p>
+  <p>The approach adopted instead gives each page a fully translated counterpart, with the switcher
+  linking to the <em>corresponding</em> page rather than to the home page. Language therefore
+  persists throughout the visit, and either version can be shared directly by URL. Each document
+  declares its language in the <code>&lt;html lang&gt;</code> attribute so assistive technology
+  pronounces content correctly.</p>
+  <p>Translation was complete rather than partial — forms, terms, contract clauses and payment
+  instructions are all rendered in Malay. Industry vocabulary that Malaysian creators use in English
+  (<em>UGC, KOL, KOC, hook, deliverable</em>) was deliberately retained, as translating it would
+  read less naturally to the intended audience than leaving it.</p>
+
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 8</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">8</span> Accessibility</h2>
+  <p>Accessibility was treated as a functional requirement rather than an afterthought, on the
+  reasoning that a visitor who cannot read the form cannot make a booking.</p>
+  <table>
+    <thead><tr><th>Area</th><th>Measure</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>Text contrast</td><td>Form fields and dropdown options</td><td><strong>19.3:1</strong> (WCAG AAA requires 7:1)</td></tr>
+      <tr><td>Label contrast</td><td>Field labels against card background</td><td><strong>7.6:1</strong> (passes AAA)</td></tr>
+      <tr><td>Keyboard</td><td>3px focus ring with offset on all controls</td><td>Fully keyboard navigable</td></tr>
+      <tr><td>Motion</td><td><code>prefers-reduced-motion</code> honoured</td><td>All animation disabled on request</td></tr>
+      <tr><td>Semantics</td><td>Landmark elements, alt text, label association</td><td>Screen-reader compatible</td></tr>
+      <tr><td>Target size</td><td>Checkboxes enlarged to 24px</td><td>Easier for motor impairment</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><strong>A problem discovered in testing.</strong> The booking form originally sat
+  on a deep-coloured band. Native dropdown lists are rendered by the operating system and do not
+  inherit page styling, which produced dark text on a dark list — effectively unreadable. Rather
+  than fight the browser, the form was restructured to sit on its own light card, guaranteeing dark
+  text on white for every option regardless of surrounding design.</div>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 9</span></div>
+</section>
+
+<!-- 9 -->
+<section class="page">
+  <h2><span class="n">9</span> Content and business logic</h2>
+  <p>The most demanding part of the project was not technical. It was converting an informally run
+  freelance practice into a set of rules a stranger could read once and understand.</p>
+
+  <h3>9.1 Services</h3>
+  <p>Twelve services are presented, with four UGC specialisms distinguished separately: standard UGC
+  Creator work, Canvas UGC (building and running a new social account for a brand for thirty days),
+  Tech UGC and Mom UGC.</p>
+
+  <h3>9.2 Billing patterns</h3>
+  <p>Different services carry different risk profiles, so a single payment rule would be either
+  unfair to the client or unsafe for the creator. Four patterns were defined and mapped to service
+  type:</p>
+  <table>
+    <thead><tr><th>Pattern</th><th>Applies to</th><th>Reasoning</th></tr></thead>
+    <tbody>
+      <tr><td>Pay before each step</td><td>Single video, video editing, photo editing</td><td>Small discrete jobs; nothing is produced on credit</td></tr>
+      <tr><td>Paid in full, 28th–31st</td><td>Bundles, Canvas UGC, ambassadorship, retainers, reviews</td><td>Ongoing work closes each month before the next begins</td></tr>
+      <tr><td>50% deposit + 50%</td><td>Voice-over, voice artist, voice talent</td><td>Fast turnaround; a voice-tagged draft allows approval before release</td></tr>
+      <tr><td>Day rate, invoiced after</td><td>Photography, commercial talent, short acting, canvas makeup</td><td>Whole-day commitments are billed by day, not by piece</td></tr>
+    </tbody>
+  </table>
+
+  <h3>9.3 Pricing structure</h3>
+  <p>Pricing is expressed as a base figure plus transparent percentage add-ons: raw unedited footage
+  (+50%), rush turnaround (+30–60%), posting on the creator's own channels (+10% paid in advance),
+  building and handing over a new account (+15%), in-person attendance in Peninsular Malaysia
+  (+50–80%), a reduced +30–50% for Kelantan and Kuala Lumpur, and +10–15% for last-minute on-site bookings. A worked
+  example shows how these stack.</p>
+
+  <h3>9.4 Protective terms</h3>
+  <p>Three mechanisms protect both parties. Work is first delivered <strong>watermarked</strong>, so
+  the client can review the full piece before paying the balance while the creator retains leverage.
+  <strong>Usage rights</strong> are tiered, so organic posting is free but paid advertising is
+  priced by term and territory. <strong>Cancellation terms work in both directions</strong> — the
+  deposit is retained if the client withdraws, but a full refund including the deposit is given if
+  the creator cannot deliver.</p>
+  <div class="note"><strong>Design insight.</strong> Terms written only to protect one side read as
+  defensive and make cautious clients hesitate. Stating clearly what happens when the creator is at
+  fault makes the non-refundable clause easier to accept, at no practical cost.</div>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 10</span></div>
+</section>
+
+<!-- 10 - 11 -->
+<section class="page">
+  <h2><span class="n">10</span> Printable business documents</h2>
+  <p>Three documents extend the site beyond presentation into transaction.</p>
+  <ul>
+    <li><strong>Booking Agreement</strong> — thirteen clauses in plain language covering scope,
+    price and add-ons, payment schedule, timeline, delivery, usage rights, revisions, in-person
+    attendance, cancellation, late payment, confidentiality, liability limits and governing law,
+    followed by signature blocks for both parties plus optional witness and company stamp.</li>
+    <li><strong>Invoice</strong> — branded letterhead, invoice numbering, from and bill-to blocks,
+    a five-row line-item table, totals with a highlighted amount due, an add-on checklist, and
+    payment instructions with the DuitNow QR code embedded directly in the file.</li>
+    <li><strong>Receipt</strong> — payment confirmation with a stamp, method and reference,
+    running balance, and a checklist of what happens next in the project.</li>
+  </ul>
+  <p>Each document is also produced as a <strong>self-contained file</strong> with the stylesheet
+  and QR image embedded as data, so it can be emailed or opened offline with nothing attached.</p>
+
+  <h2><span class="n">11</span> Testing and verification</h2>
+  <p>Testing focused on failures that are invisible to casual inspection.</p>
+  <table>
+    <thead><tr><th>Test</th><th>Method</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td>Link integrity</td><td>Automated crawl of every <code>href</code> and <code>src</code> across 18 pages, plus anchor-target matching</td><td>0 broken links or anchors</td></tr>
+      <tr><td>Animation safety</td><td>Programmatic scroll through each page recording peak opacity of all 163 animated elements</td><td>1 element found stuck at 68%; fixed and re-verified</td></tr>
+      <tr><td>Contrast</td><td>Computed colour values extracted and contrast ratios calculated</td><td>19.3:1 and 7.6:1 — both exceed AAA</td></tr>
+      <tr><td>Carousel logic</td><td>Track offset and active indicator measured at each of six positions</td><td>Correct at all positions</td></tr>
+      <tr><td>Media loading</td><td>Audio duration read from the loaded element</td><td>All 22 tracks load and play</td></tr>
+      <tr><td>Colour accuracy</td><td>Stylesheet scanned for unintended 8-digit hex values</td><td>1 transparency bug found and corrected</td></tr>
+      <tr><td>No-JavaScript compliance</td><td>Search for <code>&lt;script&gt;</code>, <code>javascript:</code> and inline handlers</td><td>0 occurrences across all files</td></tr>
+      <tr><td>PDF output</td><td>PDF content streams inspected for non-greyscale colour operators</td><td>Brand colours confirmed present</td></tr>
+    </tbody>
+  </table>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 11</span></div>
+</section>
+
+<!-- 12 -->
+<section class="page">
+  <h2><span class="n">12</span> Challenges and solutions</h2>
+
+  <h3>12.1 Content left invisible by animation</h3>
+  <p>Scroll-driven animations begin at zero opacity. If an element never completes its animation
+  range, it stays invisible permanently — a silent failure that a quick visual check would miss.
+  A scripted test scrolled each page in small increments and recorded the peak opacity of every
+  animated element. Of 163 elements, one was found reaching only 68%: a block inside the hero that
+  is already on screen at load and therefore never traverses its entry range. The fix was to exclude
+  above-the-fold content from scroll-driven reveals.</p>
+
+  <h3>12.2 An accidentally transparent colour</h3>
+  <p>The deep sections appeared washed out. The cause was a mistyped eight-digit hexadecimal value,
+  <code>#34112449</code>, in which the final two characters set 28% opacity. The page beneath showed
+  through. Detected by inspecting the computed background rather than by eye, and corrected to
+  <code>#341124</code>.</p>
+
+  <h3>12.3 Operating-system controls ignoring page styling</h3>
+  <p>Dropdown option lists are drawn by the operating system, not the page, so they do not inherit
+  the site's colours. Placing the form on a dark background therefore produced unreadable menus.
+  Resolved architecturally by giving the form its own light card.</p>
+
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 12</span></div>
+</section>
+
+<section class="page">
+  <h3>12.4 Print output discarding the design</h3>
+  <p>Saving a document as PDF initially produced plain black-and-white output. Two causes: browsers
+  strip backgrounds when printing by default, and the print stylesheet had been written to force
+  monochrome for ink economy. Both were corrected — <code>print-color-adjust: exact</code> was added
+  and the monochrome override removed — after determining that a client-facing invoice should carry
+  the brand rather than save ink.</p>
+
+  <h3>12.5 Language persistence without scripting</h3>
+  <p>A CSS-only toggle cannot remember a choice across page loads. Solved by architecture rather
+  than code: mirrored pages with counterpart-aware links.</p>
+
+  <h3>12.6 Balancing decorative and commercial goals</h3>
+  <p>The visual brief and the business purpose conflicted at several points. The resolution adopted
+  throughout was that <strong>where decoration and clarity compete, clarity wins</strong> — most
+  visibly in the booking form, which was deliberately made plainer than the surrounding design.</p>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 13</span></div>
+</section>
+
+<!-- 13-15 -->
+<section class="page">
+  <h2><span class="n">13</span> Limitations</h2>
+  <p>The project has genuine constraints, stated plainly:</p>
+  <ul>
+    <li><strong>Form submission.</strong> Without scripting or a server, the booking form opens the
+    visitor's email client rather than posting to an inbox. Some browsers block this. A WhatsApp
+    route with a pre-filled checklist is provided as a fallback, but this is the weakest point of
+    the build.</li>
+    <li><strong>Unpopulated media.</strong> Twenty video and twelve photography slots are prepared and
+    styled but not yet filled, since the media files were not available during development.</li>
+    <li><strong>Browser support for scroll animation.</strong> <code>animation-timeline</code> is
+    supported in Chromium browsers but not yet universally. The feature degrades safely, but is not
+    seen by every visitor.</li>
+    <li><strong>Duplicate maintenance.</strong> Two language versions must be updated in parallel;
+    an edit in one is not reflected in the other.</li>
+    <li><strong>No content management.</strong> Updating text requires editing HTML directly.</li>
+  </ul>
+
+  <h2><span class="n">14</span> Future enhancements</h2>
+  <ol>
+    <li>A form-handling service so submissions arrive reliably without scripting on the page.</li>
+    <li>A booking calendar reflecting genuine availability.</li>
+    <li>Sequential invoice numbering with a record of issued documents.</li>
+    <li>A content management layer allowing text edits without touching code.</li>
+    <li>Analytics to identify which services generate enquiries.</li>
+    <li>A shared template system to remove duplicate maintenance between languages.</li>
+  </ol>
+
+  <h2><span class="n">15</span> Conclusion</h2>
+  <p>The project delivers a working bilingual portfolio and booking platform built entirely in HTML
+  and CSS. It presents work across three media types, states commercial terms in enough detail to
+  prevent disputes, captures a complete brief in a single submission, and produces the contract,
+  invoice and receipt needed to complete a transaction.</p>
+  <p>The constraint that initially appeared limiting — no JavaScript — proved instructive. Features
+  normally reached for reflexively with a script were achievable declaratively, and the resulting
+  site is faster, more robust and more accessible than a scripted equivalent would have been. There
+  is no code that can throw an error at runtime.</p>
+  <p>The more significant lesson concerned priorities. The most attractive version of the booking
+  form was, on measurement, unusable. Deciding that clarity should outrank decoration wherever the
+  two conflict shaped the final build more than any technical choice, and reflects the underlying
+  purpose: a portfolio that looks beautiful but loses a booking has not succeeded.</p>
+
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 14</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">A</span> Appendix — File inventory</h2>
+  <table>
+    <thead><tr><th>Group</th><th>Files</th><th>Count</th></tr></thead>
+    <tbody>
+      <tr><td>English pages</td><td>index, voice, work, book, contact, payment, contract, invoice, receipt</td><td>9</td></tr>
+      <tr><td>Bahasa Melayu pages</td><td>as above, suffixed <code>-bm</code></td><td>9</td></tr>
+      <tr><td>Stylesheet</td><td><code>style.css</code> — 1,925 lines</td><td>1</td></tr>
+      <tr><td>Audio</td><td>Voice demo tracks (.m4a)</td><td>22</td></tr>
+      <tr><td>Standalone documents</td><td>Self-contained HTML and PDF versions</td><td>12</td></tr>
+    </tbody>
+  </table>
+  <div class="pagefoot"><span>Nova Badzlina Global — Project Report</span><span>Page 15</span></div>
+</section>
+
+</body>
+</html>

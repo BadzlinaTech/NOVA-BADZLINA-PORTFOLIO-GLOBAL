@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Canvas UGC &mdash; NOVA BADZLINA GLOBAL</title>
+<meta name="description" content="Canvas UGC at Nova Badzlina Global. A brand-new account, built from zero and handed to you. Rates in MYR, USD and GBP." />
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9.4pt; line-height:1.6; }
+.page{
+  position:relative; overflow:hidden;
+  /* bottom padding clears the absolutely-positioned footer */
+  width:210mm; min-height:297mm; margin:0 auto; padding:15mm 15mm 34mm 18mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+  page-break-after:always; break-after:page;
+}
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+/* orchid bloom, top right */
+.page::after{
+  content:""; position:absolute; right:-30mm; top:-30mm; width:95mm; height:95mm;
+  border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(109,40,217,.10), rgba(194,68,122,.05) 55%, transparent 72%);
+}
+.top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:9mm; }
+.brand{ display:flex; align-items:center; gap:3mm; }
+.mark{
+  display:inline-grid; place-items:center; width:11mm; height:11mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:8pt;
+}
+.brand b{ font-family:var(--serif); font-size:9.6pt; letter-spacing:.1em; color:var(--deep); display:block; }
+.brand span{ font-family:var(--script); font-size:9.5pt; color:var(--rose); }
+.no{
+  font-family:var(--sans); font-size:6.4pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); text-align:right;
+}
+.script{ font-family:var(--script); font-size:15pt; color:var(--rosegold); margin:0 0 1mm; }
+h1{ font-family:var(--serif); font-size:29pt; line-height:1.06; margin:0; color:var(--deep); letter-spacing:-.008em; }
+.promise{
+  font-family:var(--serif); font-size:13pt; font-style:italic;
+  color:var(--rose-deep); margin:3mm 0 0; max-width:58ch;
+}
+.rule{ height:1px; margin:4mm 0 4mm;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+h2{
+  font-family:var(--sans); font-size:6.6pt; font-weight:700; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold-deep); margin:0 0 2.5mm;
+}
+.cols{ display:grid; grid-template-columns:1.15fr 1fr; gap:8mm; }
+.cols p{ margin:0; color:var(--ink-soft); font-size:9.2pt; }
+ul{ margin:0; padding:0; list-style:none; }
+li{ position:relative; padding-left:5mm; margin-bottom:2mm; font-size:8.9pt; color:var(--ink-soft); }
+li::before{ content:"\2767"; position:absolute; left:0; top:0; color:var(--rosegold); font-size:8pt; }
+table{ width:100%; border-collapse:collapse; font-size:8.9pt; margin-top:1mm; }
+thead th{
+  text-align:left; padding:2mm 2.5mm; font-size:6.4pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); white-space:nowrap;
+}
+thead th:not(:first-child){ text-align:right; width:23mm; }
+tbody td{ padding:1.7mm 2.5mm; border-bottom:1px solid var(--wash); }
+tbody td:not(:first-child){ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+.myr{ font-weight:700; color:var(--deep); }
+.spread{ color:var(--rose-deep); font-weight:700; }
+.facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin-top:4mm; }
+.fact{ border:1px solid var(--rosegold-soft); border-radius:2mm; background:var(--wash); padding:2.5mm 3.5mm; }
+.fact dt{ font-size:6.2pt; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold-deep); margin-bottom:1.2mm; }
+.fact dd{ margin:0; font-size:8.6pt; color:var(--ink); }
+.fact dd small{ display:block; color:var(--ink-faint); font-size:7.6pt; margin-top:.8mm; line-height:1.45; }
+.addons{
+  margin-top:3mm; padding:2.5mm 4mm; border-radius:2mm;
+  border:1px dashed var(--rosegold); background:rgba(249,239,233,.5);
+  font-size:8.4pt; color:var(--ink-soft);
+}
+.addons b{ color:var(--gold-deep); font-size:6.4pt; letter-spacing:.2em;
+  text-transform:uppercase; display:block; margin-bottom:1.2mm; }
+.extra{
+  margin-top:3mm; padding:2.8mm 4mm; border-radius:2mm; font-size:8.1pt; line-height:1.5;
+  border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rose);
+  background:var(--wash); font-size:8.4pt; color:var(--ink-soft);
+}
+.extra strong{ color:var(--deep); }
+.foot{
+  position:absolute; left:18mm; right:15mm; bottom:9mm;
+  border-top:1px solid var(--wash); padding-top:3mm;
+  display:flex; justify-content:space-between; align-items:flex-end; gap:5mm;
+}
+.foot .c{ font-size:8.2pt; color:var(--ink-soft); }
+.foot .c b{ color:var(--deep); display:block; font-size:8.6pt; }
+.foot .t{ font-family:var(--script); font-size:11pt; color:var(--rose); text-align:right; white-space:nowrap; }
+@media print{
+  @page{ size:A4; margin:0; }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important; }
+  html,body{ background:#fff; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="mark">NB</span>
+      <div><b>NOVA BADZLINA GLOBAL</b><span>Where creators become talent.</span></div>
+    </div>
+    <div class="no">Service 02 of 24<br />Rate card 2026</div>
+  </div>
+
+  <p class="script">The Blank Canvas</p>
+  <h1>Canvas UGC</h1>
+  <p class="promise">A brand-new account, built from zero and handed to you.</p>
+  <div class="rule"></div>
+
+  <div class="cols">
+    <div>
+      <h2>What it is</h2>
+      <p>The rarest thing I offer, and one very few Malaysian creators do at all. I build a brand-new TikTok or Instagram account for your brand from nothing, post to it daily for 30 days in a raw and real format that never reads as an ad, then hand the whole account over to you. You end up owning a seasoned channel rather than renting a placement.</p>
+    </div>
+    <div>
+      <h2>What you get</h2>
+      <ul><li>A new account created and set up from scratch</li><li>30 daily posts across the month, made and scheduled by me</li><li>Captions, hashtags and posting handled end to end</li><li>Full account handover &mdash; logins, content and audience</li><li>A channel with real history, not a cold start</li></ul>
+    </div>
+  </div>
+
+  <div style="margin-top:5mm">
+    <h2>Starting rates</h2>
+    <table>
+      <thead><tr><th>Deliverable</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+      <tbody><tr><td>One platform &middot; 30 daily posts</td><td class="myr">RM&nbsp;3,500</td><td>$1,200</td><td>&pound;950</td></tr><tr><td>Two platforms &middot; 30 posts &middot; handover</td><td class="myr">RM&nbsp;5,500</td><td>$1,900</td><td>&pound;1,500</td></tr><tr><td>Each additional month</td><td colspan="3" class="spread">Same rate, billed in the monthly window</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><dt>Turnaround</dt><dd>30 days, running daily</dd></div>
+    <div class="fact"><dt>Payment</dt><dd>Monthly window, 28th&ndash;31st<small>Billed in full inside the 28th&ndash;31st window of each month.</small></dd></div>
+    <div class="fact"><dt>Availability</dt><dd>Remote worldwide. Limited slots &mdash; usually one or two brands at a time.</dd></div>
+  </div>
+
+  <div class="addons"><b>Add-ons that apply</b>Account I build and hand over +15% &middot; Rush +30&ndash;60%</div>
+  
+
+  <div class="foot">
+    <div class="c">
+      <b>Ara Aranya &middot; Nova Badzlina Global</b>
+      +60 18-278 0523 &middot; badzlinaraziugc@gmail.com &middot; novabadzlinaglobal@gmail.com<br />
+      Starting rates only. Complexity, usage and turnaround move the figure &mdash;
+      every quote is written down before anything is agreed.
+    </div>
+    <div class="t">Scarred but sacred.</div>
+  </div>
+</section>
+</body>
+</html>

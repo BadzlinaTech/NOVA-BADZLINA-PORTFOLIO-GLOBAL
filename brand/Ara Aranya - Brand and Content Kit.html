@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ara Aranya — Brand &amp; Content Kit</title>
+<meta name="description" content="Brand and content kit for Ara Aranya of Nova Badzlina Global — bios, logo, business card, first video scripts and a 30-day content calendar." />
+<meta name="author" content="Ara Aranya (Nur Badzlina Razi)" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230b1233%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb;
+  --deep:#0b1233; --deep2:#141d47;
+  --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --rosegold:#c88a72; --rosegold-soft:#f0d8cc;
+  --orchid:#6d28d9;
+  --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wash:#f9efe9;
+  --foil:linear-gradient(100deg,#7a5210 0%,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,
+          #6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210 100%);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --script:"Pinyon Script","Monotype Corsiva","Lucida Handwriting","Segoe Script",cursive;
+  --sans:"Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#e9e4ee; }
+body{ font-family:var(--sans); color:var(--ink); font-size:9.3pt; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+.page{
+  position:relative; overflow:hidden;
+  width:210mm; min-height:297mm; margin:0 auto 8mm; padding:15mm 16mm 26mm 19mm;
+  background:var(--cream); box-shadow:0 6px 26px rgba(0,0,0,.16);
+  page-break-after:always; break-after:page;
+}
+.page:last-of-type{ page-break-after:auto; break-after:auto; margin-bottom:0; }
+.page::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3mm;
+  background:linear-gradient(180deg, var(--rose-deep) 0%, var(--rose) 18%,
+    var(--rose-soft) 34%, var(--rosegold) 54%, var(--gold) 76%, var(--gold-light) 100%);
+}
+.page::after{
+  content:""; position:absolute; right:-30mm; top:-30mm; width:95mm; height:95mm;
+  border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(109,40,217,.10), rgba(194,68,122,.05) 55%, transparent 72%);
+}
+
+h1,h2,h3,h4{ font-family:var(--serif); margin:0; color:var(--deep); }
+h2{ font-size:19pt; line-height:1.14; }
+h3{ font-size:12pt; margin:5mm 0 1.5mm; }
+h4{ font-size:10pt; margin:3.5mm 0 1mm; }
+.eyebrow{ font-family:var(--sans); font-size:6.6pt; font-weight:700; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--gold-deep); margin:0 0 2mm; }
+.script{ font-family:var(--script); font-size:14pt; color:var(--rose); margin:0 0 1mm; }
+.note{ font-size:8.2pt; color:var(--ink-faint); margin:0 0 2mm; line-height:1.5; }
+p{ margin:0 0 2.5mm; }
+.rule{ height:1px; margin:3mm 0 4mm;
+  background:linear-gradient(90deg, var(--rose-deep), var(--rosegold) 26%, var(--gold) 52%, rgba(0,0,0,0)); }
+
+.box{ border:1px solid var(--rosegold-soft); border-left:2.5mm solid var(--rosegold);
+  background:var(--wash); border-radius:2mm; padding:3mm 4mm; margin:3mm 0 0;
+  font-size:8.5pt; color:var(--ink-soft); }
+.box--rose{ border-left-color:var(--rose); }
+.box strong{ color:var(--deep); }
+.box p{ margin:0; } .box p + p{ margin-top:2mm; }
+
+.copyblock{
+  border:1px dashed var(--rosegold); border-radius:2mm; background:#fff;
+  padding:3mm 4mm; margin:0 0 3mm; font-size:8.8pt; white-space:pre-wrap;
+  font-family:var(--sans); color:var(--ink);
+}
+.copyblock .cap{ display:block; font-size:6.2pt; font-weight:700; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold-deep); margin-bottom:1.5mm; white-space:normal; }
+
+table{ width:100%; border-collapse:collapse; font-size:8.5pt; margin:1mm 0 0; }
+thead th{ text-align:left; padding:1.8mm 2.5mm; font-size:6.2pt; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+  border-bottom:1.6px solid var(--gold); }
+tbody td{ padding:1.6mm 2.5mm; border-bottom:1px solid var(--wash); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:rgba(249,239,233,.55); }
+tbody tr:last-child td{ border-bottom:none; }
+td.day{ font-weight:700; color:var(--deep); white-space:nowrap; width:16mm; }
+td.pill span{ display:inline-block; font-size:6.2pt; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; padding:.8mm 2mm; border-radius:99px;
+  background:rgba(194,68,122,.12); color:var(--rose-deep); white-space:nowrap; }
+
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; }
+
+/* shot table for the scripts */
+.shots td:first-child{ width:17mm; font-weight:700; color:var(--rose-deep); white-space:nowrap; }
+.shots td:nth-child(2){ width:47mm; }
+
+/* ---- cover ---- */
+.cover{ display:flex; flex-direction:column; justify-content:space-between; }
+.mark{ display:inline-grid; place-items:center; width:17mm; height:17mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:12pt; }
+.cover h1{ font-size:38pt; line-height:1.03; margin:7mm 0 0; }
+.cover h1 span{ display:block; background:var(--foil);
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+.cover__tag{ font-family:var(--script); font-size:16pt; color:var(--rose); margin:4mm 0 0; }
+.who{ border-top:1px solid var(--rosegold-soft); padding-top:4mm; margin-top:5mm;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:5mm; font-size:8.3pt; }
+.who dt{ font-size:6.2pt; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold-deep); margin-bottom:1mm; }
+.who dd{ margin:0; }
+
+/* ---- logo lockups ---- */
+.logos{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin-top:2mm; }
+.logotile{ border:1px solid var(--rosegold-soft); border-radius:2mm; padding:6mm 4mm;
+  text-align:center; background:#fff; }
+.logotile--dark{ background:var(--deep); border-color:var(--deep2); }
+.logotile small{ display:block; margin-top:3mm; font-size:6pt; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-faint); }
+.logotile--dark small{ color:rgba(255,255,255,.5); }
+
+/* ---- business card ---- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; margin-top:3mm; }
+.bcard{
+  position:relative; overflow:hidden;
+  width:100%; aspect-ratio:85.6/53.98; border-radius:2.5mm;
+  box-shadow:0 3px 14px rgba(0,0,0,.22);
+}
+.bcard--front{ background:linear-gradient(150deg,#0b1233,#1b1350 55%,#0b1233); color:#fff;
+  padding:6mm 7mm; display:flex; flex-direction:column; justify-content:space-between; }
+.bcard--front::after{
+  content:""; position:absolute; right:-14mm; top:-14mm; width:44mm; height:44mm; border-radius:50%;
+  background:radial-gradient(circle, rgba(168,85,247,.55), transparent 68%);
+}
+.bcard__name{ font-family:var(--serif); font-size:15pt; line-height:1.05; position:relative; z-index:1;
+  background:var(--foil); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.bcard__role{ font-size:5.6pt; letter-spacing:.22em; text-transform:uppercase;
+  color:#f0b3c9; margin-top:1.5mm; position:relative; z-index:1; }
+.bcard__tag{ font-family:var(--script); font-size:9.5pt; color:#e9b8a4; position:relative; z-index:1; }
+.bcard__meta{ font-size:6.2pt; line-height:1.7; color:rgba(255,255,255,.88); position:relative; z-index:1; }
+.bcard--back{ background:var(--cream); padding:6mm 7mm; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; border:1px solid var(--rosegold-soft); }
+.bcard--back .mk{ width:13mm; height:13mm; display:grid; place-items:center; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-weight:700; font-size:9pt; }
+.bcard--back b{ font-family:var(--serif); font-size:9.5pt; letter-spacing:.14em; color:var(--deep);
+  margin-top:3mm; display:block; }
+.bcard--back .svc{ font-size:5.4pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-faint); margin-top:2mm; line-height:1.8; }
+
+.swatches{ display:grid; grid-template-columns:repeat(6,1fr); gap:2.5mm; margin-top:2mm; }
+.sw{ border-radius:1.5mm; overflow:hidden; border:1px solid var(--rosegold-soft); }
+.sw i{ display:block; height:13mm; }
+.sw span{ display:block; font-size:5.6pt; letter-spacing:.1em; padding:1.2mm; text-align:center;
+  color:var(--ink-faint); background:#fff; }
+
+.pagefoot{
+  position:absolute; left:19mm; right:16mm; bottom:8mm;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:6.4pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint);
+  border-top:1px solid var(--wash); padding-top:2.5mm;
+}
+.pagefoot .mk{ display:inline-grid; place-items:center; width:5mm; height:5mm; border-radius:50%;
+  background:var(--foil); color:#3a2a05; font-family:var(--serif); font-size:4.6pt;
+  font-weight:700; margin-right:2mm; vertical-align:middle; }
+
+.printhint{ max-width:210mm; margin:8mm auto 4mm; padding:3mm 4mm; border-radius:2mm;
+  background:#fffdfb; border:1px dashed var(--rosegold); font-size:8.6pt;
+  color:var(--ink-soft); text-align:center; }
+.printhint kbd{ font-weight:700; background:#fff; border:1px solid var(--rosegold-soft);
+  border-bottom-width:2px; border-radius:1.4mm; padding:.4mm 1.6mm; color:var(--deep); }
+
+@media print{
+  @page{ size:A4; margin:0; }
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important; color-adjust:exact !important; }
+  html,body{ background:#fff; }
+  .printhint{ display:none !important; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="printhint">
+  Press <kbd>Ctrl</kbd> + <kbd>P</kbd> to save as PDF. Choose <strong>A4</strong>,
+  margins <strong>None</strong>, and tick <strong>Background graphics</strong>.
+</div>
+
+<!-- ══════════ PAGE 1 — COVER ══════════ -->
+<section class="page cover">
+  <div>
+    <span class="mark">NB</span>
+    <p class="script" style="margin-top:7mm;font-size:17pt">A star that is a gift from Allah</p>
+    <h1>ARA<br /><span>ARANYA</span></h1>
+    <p class="cover__tag">Scarred but sacred; a beautiful gift rising above the storm.</p>
+
+    <div class="box" style="margin-top:8mm">
+      <p><strong>What this document is.</strong> Your brand and content kit &mdash; the bios you
+      copy and paste, your logo and business card, the script for your very first video as Ara
+      Aranya, and a thirty-day content calendar you can actually keep up with while studying and
+      raising your daughter.</p>
+    </div>
+  </div>
+
+  <div>
+    <dl class="who">
+      <div>
+        <dt>Public name</dt>
+        <dd>Ara Aranya<br />
+          <span style="color:var(--ink-faint);font-size:7.4pt">Alias &mdash; Arasselly Salsabella Mashel<br />
+          Legal &mdash; Nur Badzlina Razi</span></dd>
+      </div>
+      <div>
+        <dt>Business</dt>
+        <dd>Nova Badzlina Global<br />
+          <span style="color:var(--ink-faint);font-size:7.4pt">@novabadzlinaglobal</span></dd>
+      </div>
+      <div>
+        <dt>Based</dt>
+        <dd>Kota Bharu, Kelantan<br />
+          <span style="color:var(--ink-faint);font-size:7.4pt">Kuala Lumpur for university<br />
+          Remote worldwide</span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>01</span></div>
+</section>
+
+<!-- ══════════ PAGE 2 — BIOS ══════════ -->
+<section class="page">
+  <p class="eyebrow">Section one</p>
+  <h2>Your bios, ready to paste</h2>
+  <div class="rule"></div>
+  <p class="note">Each block below is sized for where it goes. Copy the whole block, including the
+  line breaks and symbols.</p>
+
+  <h3>Instagram &amp; TikTok &mdash; your main bio</h3>
+  <div class="copyblock"><span class="cap">Use as-is · fits the 150-character limit</span>✧ 𝐀𝐫𝐚 𝐀𝐫𝐚𝐧𝐲𝐚 ✧
+🎨 CANVAS MAKEUP | KOL • KOC • Model
+👩‍💻 IT Student | Solo Mom | Commercial Talent
+🌿 Real talk on BPD/PDD, growth &amp; motivation
+📩 Booking: @novabadzlinaglobal</div>
+
+  <h3>A softer variant &mdash; leads with the story</h3>
+  <div class="copyblock"><span class="cap">Swap in when you want reach over conversion</span>✧ 𝐀𝐫𝐚 𝐀𝐫𝐚𝐧𝐲𝐚 ✧
+Scarred but sacred 🤍 rising above the storm
+🎨 Canvas Makeup | UGC • KOL • KOC • Talent
+👩‍💻 IT student &amp; solo mom, doing both anyway
+📩 @novabadzlinaglobal</div>
+
+  <h3>A business-first variant &mdash; leads with what you sell</h3>
+  <div class="copyblock"><span class="cap">Swap in during a campaign push</span>✧ 𝐀𝐫𝐚 𝐀𝐫𝐚𝐧𝐲𝐚 ✧
+UGC • Canvas UGC • Tech UGC • Mom UGC
+🎬 Video editing | 🎙 Voice-over | 📸 Product photo
+🌏 Remote worldwide · In person from Kelantan
+📩 Booking: @novabadzlinaglobal</div>
+
+  <h3>Email signature</h3>
+  <div class="copyblock"><span class="cap">For every email you send a brand</span>Ara Aranya
+Creator &amp; Commercial Talent · Nova Badzlina Global
+Where creators become talent.
+Kota Bharu, Kelantan, Malaysia
+
++60 18-278 0523
+badzlinaraziugc@gmail.com — UGC enquiries
+novabadzlinaglobal@gmail.com — everything else
+Remote worldwide · In person from Kota Bharu, Kelantan</div>
+
+  <h3>One-line introduction &mdash; for a pitch or a media kit</h3>
+  <div class="copyblock"><span class="cap">When someone asks "so what do you do?"</span>Ara Aranya is a Malaysian creator and commercial talent working in UGC, Canvas UGC, beauty and voice-over — an IT student and solo mother who builds ad-ready content from her own home studio in Kelantan, in Bahasa Melayu and English.</div>
+
+  <h3>The long bio &mdash; for your website and press</h3>
+  <div class="copyblock"><span class="cap">About page, media kit, brand submissions</span>Ara Aranya is the public name of Nur Badzlina Razi, the creator behind Nova Badzlina Global.
+
+She works across UGC, Canvas UGC, Tech UGC and Mom UGC, alongside beauty and canvas makeup content, KOL and KOC campaigns, voice acting, product photography and commercial talent work. Everything is written, filmed, performed and edited by her, in Bahasa Melayu and English, from her own home studio.
+
+She is also an IT student and a solo mother, which is not a footnote to the work but the reason it lands: she makes content about products people actually live with, from a life she is actually living.
+
+Her rarest offering is Canvas UGC — building a brand-new account from zero, posting to it daily for thirty days, and handing the whole channel over.
+
+She is based in Kota Bharu, Kelantan, is in Kuala Lumpur regularly for university, and works remotely worldwide.</div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>02</span></div>
+</section>
+
+<!-- ══════════ PAGE 3 — LOGO & CARD ══════════ -->
+<section class="page">
+  <p class="eyebrow">Section two</p>
+  <h2>Logo, card &amp; colours</h2>
+  <div class="rule"></div>
+
+  <h3>The mark</h3>
+  <p class="note">A gold medallion holding your initials, ringed in rose gold. It reads at any size,
+  works on light and dark, and survives being printed in one colour.</p>
+
+  <div class="logos">
+    <div class="logotile">
+      <svg viewBox="0 0 120 120" width="86" height="86" role="img" aria-label="Nova Badzlina Global monogram">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7a5210"/><stop offset="26%" stop-color="#e8cd83"/>
+            <stop offset="52%" stop-color="#8a5f14"/><stop offset="74%" stop-color="#f0dba6"/>
+            <stop offset="100%" stop-color="#9c7526"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="46" fill="url(#g1)"/>
+        <circle cx="60" cy="60" r="53" fill="none" stroke="#c88a72" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="57" fill="none" stroke="#c2447a" stroke-width="0.8" opacity=".6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Didot,Bodoni MT,Georgia,serif"
+              font-size="34" font-weight="700" fill="#2a1d05">NB</text>
+      </svg>
+      <small>Primary — on light</small>
+    </div>
+    <div class="logotile logotile--dark">
+      <svg viewBox="0 0 120 120" width="86" height="86" role="img" aria-label="Monogram on midnight">
+        <circle cx="60" cy="60" r="46" fill="url(#g1)"/>
+        <circle cx="60" cy="60" r="53" fill="none" stroke="#f0b3c9" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="57" fill="none" stroke="#a855f7" stroke-width="0.8" opacity=".7"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Didot,Bodoni MT,Georgia,serif"
+              font-size="34" font-weight="700" fill="#2a1d05">NB</text>
+      </svg>
+      <small>On midnight</small>
+    </div>
+    <div class="logotile">
+      <svg viewBox="0 0 120 120" width="86" height="86" role="img" aria-label="Single colour monogram">
+        <circle cx="60" cy="60" r="46" fill="none" stroke="#0b1233" stroke-width="2.5"/>
+        <circle cx="60" cy="60" r="53" fill="none" stroke="#0b1233" stroke-width="1"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Didot,Bodoni MT,Georgia,serif"
+              font-size="34" font-weight="700" fill="#0b1233">NB</text>
+      </svg>
+      <small>One colour — stamps, fax, embroidery</small>
+    </div>
+  </div>
+
+  <h3>Business card</h3>
+  <p class="note">Standard 85.6 &times; 54&nbsp;mm. Front is midnight with an orchid bloom; back is
+  cream so people can write on it.</p>
+
+  <div class="cards">
+    <div class="bcard bcard--front">
+      <div>
+        <div class="bcard__name">Ara Aranya</div>
+        <div class="bcard__role">Creator &middot; Commercial Talent &middot; Voice</div>
+      </div>
+      <div class="bcard__tag">Where creators become talent.</div>
+      <div class="bcard__meta">
+        NOVA BADZLINA GLOBAL &nbsp;·&nbsp; Kota Bharu, Kelantan<br />
+        +60 18-278 0523 &nbsp;·&nbsp; @novabadzlinaglobal<br />
+        novabadzlinaglobal@gmail.com
+      </div>
+    </div>
+    <div class="bcard bcard--back">
+      <span class="mk">NB</span>
+      <b>NOVA BADZLINA GLOBAL</b>
+      <div class="svc">
+        UGC &middot; Canvas UGC &middot; Tech UGC &middot; Mom UGC<br />
+        Canvas Makeup &middot; KOL &middot; KOC &middot; Voice-Over<br />
+        Product Photography &middot; Commercial Talent
+      </div>
+    </div>
+  </div>
+
+  <h3>Colours</h3>
+  <div class="swatches">
+    <div class="sw"><i style="background:#0b1233"></i><span>#0B1233<br>Midnight</span></div>
+    <div class="sw"><i style="background:#6d28d9"></i><span>#6D28D9<br>Orchid</span></div>
+    <div class="sw"><i style="background:#c2447a"></i><span>#C2447A<br>Dark pink</span></div>
+    <div class="sw"><i style="background:#f0b3c9"></i><span>#F0B3C9<br>Soft pink</span></div>
+    <div class="sw"><i style="background:#c88a72"></i><span>#C88A72<br>Rose gold</span></div>
+    <div class="sw"><i style="background:#bf8f2c"></i><span>#BF8F2C<br>Gold</span></div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>03</span></div>
+</section>
+
+<!-- ══════════ PAGE 4 — FIRST VIDEO ══════════ -->
+<section class="page">
+  <p class="eyebrow">Section three &middot; Video one</p>
+  <h2>Becoming Ara Aranya</h2>
+  <p class="script" style="margin-top:2mm">The canvas makeup transformation</p>
+  <div class="rule"></div>
+
+  <p class="note"><strong>Format:</strong> 60&ndash;75 seconds, vertical 9:16 &middot;
+  <strong>Sound:</strong> a slow build that lifts around 0:35 &middot;
+  <strong>Gear:</strong> phone on the Onsmo tripod, Hollyland Lark A1 clipped on, ring light at 45&deg;.</p>
+
+  <table class="shots">
+    <thead><tr><th>Time</th><th>What you shoot</th><th>What is said or shown</th></tr></thead>
+    <tbody>
+      <tr><td>0:00&ndash;0:05</td><td>Bare face, no makeup, looking straight down the lens. Do not smile.</td>
+          <td><strong>On screen:</strong> "They knew me by the name my father gave me."<br />
+          <em>No voice. Let it sit in silence.</em></td></tr>
+      <tr><td>0:05&ndash;0:12</td><td>Hands entering frame, picking up the first product. Close on the hands, not the face.</td>
+          <td><strong>Voice:</strong> "I was named after a man who left. I carried it for twenty years."</td></tr>
+      <tr><td>0:12&ndash;0:25</td><td>Base and skin. Speed this up &mdash; 3&times; or 4&times;. Keep the audio underneath at normal speed.</td>
+          <td><strong>Voice:</strong> "I carried a lot of things. Things that happened when I was small. Things that happened when I was grown. A diagnosis with letters I had to learn to say out loud."</td></tr>
+      <tr><td>0:25&ndash;0:35</td><td>Slow right down. Eyes only. One long unbroken shot of the liner going on.</td>
+          <td><strong>On screen:</strong> "PDD. BPD."<br />
+          <strong>Voice:</strong> "Persistent depressive disorder. Borderline personality disorder. Not an excuse. Just a map of why some days cost me more than they cost you."</td></tr>
+      <tr><td>0:35&ndash;0:45</td><td>The lift. Colour arrives &mdash; blush, the pink, the shimmer. Match your cuts to the beat.</td>
+          <td><strong>Voice:</strong> "And then I had a daughter. And I understood that she would learn what a woman is worth by watching what I accepted."</td></tr>
+      <tr><td>0:45&ndash;0:55</td><td>Lips last. Then a beat of stillness before you look up.</td>
+          <td><strong>Voice:</strong> "So I chose my own name."</td></tr>
+      <tr><td>0:55&ndash;1:05</td><td>Look up. Full face. Smile only if it is real &mdash; if it is not, don't.</td>
+          <td><strong>On screen, in gold script:</strong> Ara Aranya<br />
+          <strong>Voice:</strong> "Ara Aranya. A star that is a gift from Allah."</td></tr>
+      <tr><td>1:05&ndash;1:15</td><td>Hold. Slow push in, or just stay still.</td>
+          <td><strong>On screen:</strong> "Scarred but sacred; a beautiful gift rising above the storm."<br />
+          <strong>Voice:</strong> "I am not healed. I am rising. There is a difference, and the difference is that rising is something you can do today."</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Caption</h4>
+  <div class="copyblock">My name is Nur Badzlina Razi. You can call me Ara Aranya — a star that is a gift from Allah.
+
+I chose it myself, which is the first thing in a long time that has been entirely mine.
+
+I live with PDD and BPD. I am an IT student. I am a solo mom. Some days I do all three badly and I still get up the next morning, because there is a little girl who is watching how I do it.
+
+Scarred but sacred; a beautiful gift rising above the storm. 🤍
+
+If you are in the storm right now — I am not on the other side of it. I am in it with you, just facing a different way.
+
+#AraAranya #NovaBadzlinaGlobal #CanvasMakeup #BPDAwareness #PDD #MentalHealthMalaysia #SoloMom #MakeupTransformation #GRWM #KelantanCreator #MalaysianCreator #UGCCreatorMalaysia</div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>04</span></div>
+</section>
+
+<!-- ══════════ PAGE 5 — VIDEOS 2 & 3 ══════════ -->
+<section class="page">
+  <p class="eyebrow">Section three &middot; Videos two and three</p>
+  <h2>The two that follow</h2>
+  <div class="rule"></div>
+  <p class="note">Post video one, then these within the same week. One introduces you; these two prove
+  you are a person worth following rather than a single good post.</p>
+
+  <h3>Video two &mdash; the POV</h3>
+  <p class="note"><strong>Format:</strong> 20&ndash;30 seconds &middot; trending audio &middot;
+  minimal editing. This one is meant to be fast and cheap to make.</p>
+  <table class="shots">
+    <thead><tr><th>Time</th><th>Shot</th><th>Text on screen</th></tr></thead>
+    <tbody>
+      <tr><td>0:00&ndash;0:04</td><td>You, sitting on the floor, tired, phone propped low.</td>
+          <td>"POV: you have a 9am class, a toddler with a fever, and a brain that is lying to you today."</td></tr>
+      <tr><td>0:04&ndash;0:10</td><td>Quick cuts: books, her shoes, your coffee, the mirror.</td>
+          <td>"You do it anyway."</td></tr>
+      <tr><td>0:10&ndash;0:18</td><td>Getting dressed, one-handed. Let it look real and unglamorous.</td>
+          <td>"Not because you are strong. Because she is watching."</td></tr>
+      <tr><td>0:18&ndash;0:26</td><td>You, ready, looking into the lens. Small nod.</td>
+          <td>"Rising is not a feeling. It is a decision you make before you feel like it."</td></tr>
+      <tr><td>0:26&ndash;0:30</td><td>Hold.</td><td>Ara Aranya &middot; Scarred but sacred 🤍</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Video three &mdash; the real talk</h3>
+  <p class="note"><strong>Format:</strong> 45&ndash;60 seconds &middot; one static shot, talking to
+  camera &middot; no music, or something very quiet underneath. This is the one that builds trust.</p>
+  <table class="shots">
+    <thead><tr><th>Beat</th><th>What you say</th><th>Why it works</th></tr></thead>
+    <tbody>
+      <tr><td>Hook</td><td>"Nobody tells you that the hardest part of BPD is not the feeling. It is the apologising afterwards."</td>
+          <td>Specific and true. Anyone who has it stops scrolling immediately.</td></tr>
+      <tr><td>Turn</td><td>"You feel something at ten out of ten. You act on it. And then it drains away and you are sitting in the wreckage of a mood that has already left the building."</td>
+          <td>Names the experience without self-pity.</td></tr>
+      <tr><td>Honesty</td><td>"I have lost people that way. Some of them deserved to go. Some of them did not, and I have to live with that."</td>
+          <td>Accountability is what separates this from a victim narrative.</td></tr>
+      <tr><td>Lift</td><td>"What is helping is not positivity. It is the gap. Learning to put ten seconds between the feeling and the doing. Ten seconds is not much. It is enough."</td>
+          <td>Gives the viewer one concrete, usable thing.</td></tr>
+      <tr><td>Close</td><td>"I am not better. I am building the gap. And if you are building it too — I see you."</td>
+          <td>Community, not guru.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box--rose">
+    <p><strong>Protect yourself while you post.</strong> Your divorce is live. Anything you publish
+    can be screenshotted and used. Three rules that cost you nothing:</p>
+    <p>&nbsp;&nbsp;<strong>1.</strong> Never name or show your husband, your in-laws, or your father.
+    Speak about what happened to you, never about who did it. Your story stays yours; their names
+    stay out.</p>
+    <p>&nbsp;&nbsp;<strong>2.</strong> Post from scars, not open wounds. If it happened this week and
+    you are still shaking, write it down privately and post it in a month. It will be better content
+    and it will cost you less.</p>
+    <p>&nbsp;&nbsp;<strong>3.</strong> Decide once about your daughter &mdash; face shown, or never
+    shown &mdash; and hold that line permanently. Changing your mind later does not un-publish anything.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>05</span></div>
+</section>
+
+<!-- ══════════ PAGE 6 — CALENDAR ══════════ -->
+<section class="page">
+  <p class="eyebrow">Section four</p>
+  <h2>Thirty days, built for a real life</h2>
+  <div class="rule"></div>
+  <p class="note">Five posts a week, two days off. Every Sunday you batch-film the week ahead in one
+  sitting, so on a bad day there is always something already in the folder. If you miss a day, skip
+  it &mdash; do not try to catch up.</p>
+
+  <table>
+    <thead><tr><th>Day</th><th>Pillar</th><th>What you post</th></tr></thead>
+    <tbody>
+      <tr><td class="day">Day 1</td><td class="pill"><span>Identity</span></td><td><strong>Becoming Ara Aranya</strong> &mdash; the transformation video from page 4</td></tr>
+      <tr><td class="day">Day 2</td><td class="pill"><span>Real talk</span></td><td>The POV video &mdash; a 9am class, a sick toddler, a lying brain</td></tr>
+      <tr><td class="day">Day 3</td><td class="pill"><span>Craft</span></td><td>Canvas makeup close-up: one eye, start to finish, no talking</td></tr>
+      <tr><td class="day">Day 4</td><td class="pill"><span>Real talk</span></td><td>The BPD "ten second gap" video from page 5</td></tr>
+      <tr><td class="day">Day 5</td><td class="pill"><span>Business</span></td><td>"What UGC actually is" &mdash; explain your job to your own audience</td></tr>
+      <tr><td class="day">Day 8</td><td class="pill"><span>Mom</span></td><td>Morning routine with a toddler, sped up, no narration</td></tr>
+      <tr><td class="day">Day 9</td><td class="pill"><span>Craft</span></td><td>Three lip products, one face, which one wins</td></tr>
+      <tr><td class="day">Day 10</td><td class="pill"><span>Identity</span></td><td>"Why I chose the name Aranya" &mdash; 30 seconds, straight to camera</td></tr>
+      <tr><td class="day">Day 11</td><td class="pill"><span>Tech</span></td><td>An AI tool that actually helps a student &mdash; screen plus face</td></tr>
+      <tr><td class="day">Day 12</td><td class="pill"><span>Business</span></td><td>Your home studio tour &mdash; the ring light, the box, the mic</td></tr>
+      <tr><td class="day">Day 15</td><td class="pill"><span>Real talk</span></td><td>"Things people say to solo moms that they think are helpful"</td></tr>
+      <tr><td class="day">Day 16</td><td class="pill"><span>Craft</span></td><td>Canvas makeup: a full look to a trending sound</td></tr>
+      <tr><td class="day">Day 17</td><td class="pill"><span>Mom</span></td><td>What is in my bag when I bring her everywhere</td></tr>
+      <tr><td class="day">Day 18</td><td class="pill"><span>Tech</span></td><td>Editing a UGC video in under ten minutes &mdash; sped up</td></tr>
+      <tr><td class="day">Day 19</td><td class="pill"><span>Identity</span></td><td>Answer your comments on camera &mdash; the first real one you got</td></tr>
+      <tr><td class="day">Day 22</td><td class="pill"><span>Real talk</span></td><td>"A day my brain won" &mdash; honest, no lesson at the end</td></tr>
+      <tr><td class="day">Day 23</td><td class="pill"><span>Business</span></td><td>Your first product photography set &mdash; before and after</td></tr>
+      <tr><td class="day">Day 24</td><td class="pill"><span>Craft</span></td><td>Recreate a look a follower asked for</td></tr>
+      <tr><td class="day">Day 25</td><td class="pill"><span>Mom</span></td><td>Studying at 1am &mdash; a real clip, no filter, no caption but the time</td></tr>
+      <tr><td class="day">Day 26</td><td class="pill"><span>Business</span></td><td>"How to book me" &mdash; point at your website and rate card</td></tr>
+      <tr><td class="day">Day 29</td><td class="pill"><span>Identity</span></td><td>Thirty days as Ara Aranya &mdash; what changed, what did not</td></tr>
+      <tr><td class="day">Day 30</td><td class="pill"><span>Real talk</span></td><td>Read out the kindest message you received this month</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:4mm">
+    <div class="box" style="margin:0">
+      <p><strong>The six pillars.</strong> Identity, Real talk, Craft, Mom, Tech, Business. Rotate
+      them. Never post two Real talk videos back to back &mdash; it flattens both.</p>
+    </div>
+    <div class="box" style="margin:0">
+      <p><strong>The one rule.</strong> Business posts only land once people trust you. Five parts
+      story to one part selling, for the first ninety days. Then you can shift it.</p>
+    </div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Brand &amp; Content Kit</span><span>06</span></div>
+</section>
+
+</body>
+</html>

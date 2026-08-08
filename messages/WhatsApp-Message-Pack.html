@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WhatsApp Message Pack — Nova Badzlina Global</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c0c21%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#2c0c21; --ink:#22091b; --ink-soft:#54344c; --ink-faint:#8a7183;
+  --rose:#e5477f; --rose-deep:#a3245a; --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0;
+  --wa:#128c4a;
+  --foil:linear-gradient(100deg,#7a5210,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,#6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{ background:#ddd4d9; font-family:var(--sans); color:var(--ink); font-size:10pt; line-height:1.55; }
+.page{ width:210mm; min-height:291mm; margin:0 auto 8mm; padding:15mm 16mm; background:var(--cream); position:relative; page-break-after:always; }
+.page:last-child{ page-break-after:auto; }
+
+.cover{
+  background:
+    radial-gradient(58% 50% at 12% 6%, rgba(201,143,155,.42), transparent 68%),
+    radial-gradient(54% 46% at 90% 14%, rgba(156,98,112,.48), transparent 68%),
+    linear-gradient(170deg,#46182f,#341124 40%,var(--deep) 70%,#250b1c);
+  color:#fdf2f7; display:flex; flex-direction:column; justify-content:center;
+}
+.cover h1{ font-family:var(--serif); font-size:32pt; line-height:1.1; color:#fdf2f7; }
+.cover .grad{ background:linear-gradient(100deg,#a97b23,#e0bd6a 14%,#fff3d0 28%,#d9b25f 42%,#a97b23 56%,#f2d896 72%,#fff8e4 84%,#c79a3e); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.cover p{ color:#dcbcd0; }
+.cover .badge{ align-self:flex-start; padding:2mm 5mm; margin-bottom:8mm; border-radius:20mm;
+  border:1px solid rgba(240,217,160,.5); background:rgba(255,255,255,.08);
+  font-size:8.5pt; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-light); }
+.cover .rule{ width:80mm; height:2px; margin:6mm 0; background:linear-gradient(90deg,var(--gold-light),transparent); }
+.cover dl{ margin-top:12mm; display:grid; grid-template-columns:32mm 1fr; gap:2.5mm 6mm; font-size:10pt; }
+.cover dt{ font-size:8pt; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:800; padding-top:.8mm; }
+.cover dd{ color:#fdf2f7; }
+
+h2{ font-family:var(--serif); font-size:15pt; margin:0 0 3mm; padding-bottom:2mm;
+  border-bottom:1.5px solid var(--gold); display:flex; gap:4mm; align-items:baseline; }
+h2 .n{ font-family:var(--sans); font-size:9pt; font-weight:800; color:#3d2a08;
+  background:var(--foil); padding:1mm 3mm; border-radius:10mm; flex:none; }
+p{ margin-bottom:2.5mm; }
+
+.howto{ margin:0 0 6mm; padding:4mm 5mm; border-radius:3mm;
+  border-left:3px solid var(--wa); background:rgba(18,140,74,.07); font-size:9.2pt; }
+.howto strong{ color:var(--wa); }
+.howto ol{ margin:2mm 0 0; counter-reset:s; list-style:none; }
+.howto li{ position:relative; padding-left:6mm; margin-bottom:1.2mm; }
+.howto li::before{ counter-increment:s; content:counter(s) "."; position:absolute; left:0; color:var(--wa); font-weight:800; }
+
+pre{
+  font-family:var(--sans); font-size:8.8pt; line-height:1.5;
+  white-space:pre-wrap; word-wrap:break-word;
+  padding:4mm 4.5mm; border-radius:3mm;
+  background:#fff; border:1px solid rgba(191,143,44,.35);
+  page-break-inside:avoid;
+}
+.tag{ font-size:7.5pt; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold-deep); margin-bottom:1.5mm; }
+.tag--bm{ color:var(--rose-deep); }
+
+.msgcols{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+
+.qr{ margin-bottom:5mm; page-break-inside:avoid; }
+.qr__head{ display:flex; align-items:baseline; gap:3mm; margin-bottom:2mm;
+  padding-bottom:1.5mm; border-bottom:1px solid rgba(191,143,44,.4); }
+.qr__head .sc{ font-family:Consolas,monospace; font-size:9.5pt; font-weight:700;
+  background:var(--deep); color:var(--gold-light); padding:.8mm 2.5mm; border-radius:2mm; }
+.qr__head .lbl{ font-size:9pt; font-weight:700; color:var(--ink-soft); }
+.qr__cols{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+
+.pagefoot{ position:absolute; left:16mm; right:16mm; bottom:8mm;
+  display:flex; justify-content:space-between; font-size:7.5pt;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); font-weight:700;
+  border-top:.5px solid rgba(191,143,44,.4); padding-top:2mm; }
+
+@page{ size:A4; margin:0; }
+@media print{
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  body{ background:none; }
+  .page{ margin:0; }
+}
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <span class="badge">WhatsApp Business · Message Pack</span>
+  <h1>Greeting, Away<br />&amp; <span class="grad">Quick Replies</span></h1>
+  <div class="rule"></div>
+  <p style="font-size:12pt;font-family:var(--serif);font-style:italic;color:#f9aecb">
+    Ready-to-paste messages in English and Bahasa Melayu
+  </p>
+  <dl>
+    <dt>Business</dt><dd><strong>NOVA BADZLINA GLOBAL</strong></dd>
+    <dt>Known as</dt><dd>Ara Aranya</dd>
+    <dt>Artist name</dt><dd>Arasselly Salsabella Mashel</dd>
+    <dt>Legal name</dt><dd>Nur Badzlina Razi</dd>
+    <dt>Contains</dt><dd>1 greeting · 1 away message · 29 quick replies<br />each written in both languages</dd>
+  </dl>
+</section>
+
+<section class="page">
+  <h2><span class="n">1</span> Greeting message</h2>
+  <div class="howto">
+    <strong>Where this goes.</strong> WhatsApp Business sends this automatically the first time
+    someone messages you, and again after 14 days of no contact.
+    <ol>
+      <li>Open WhatsApp Business</li>
+      <li>Settings &rarr; Business tools &rarr; Greeting message</li>
+      <li>Turn it on and paste the text below</li>
+      <li>Set recipients to <em>Everyone</em></li>
+    </ol>
+  </div>
+  <div class="msgcols">
+    <div><p class="tag">English</p><pre>Hi, thank you for messaging NOVA BADZLINA GLOBAL ✦
+
+I'm Ara Aranya — UGC creator, voice artist and commercial talent.
+
+So I can help you faster, just tell me:
+1. Your name or brand
+2. What you need (UGC, video, voice-over, photo, review)
+3. Your deadline
+
+I reply within 24 hours on working days.
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+    <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Hai, terima kasih kerana menghubungi NOVA BADZLINA GLOBAL ✦
+
+Saya Ara Aranya — UGC creator, voice artist dan commercial talent.
+
+Supaya saya boleh bantu dengan lebih cepat, boleh kongsikan:
+1. Nama anda atau nama brand
+2. Apa yang anda perlukan (UGC, video, voice-over, gambar, review)
+3. Tarikh akhir anda
+
+Saya balas dalam masa 24 jam pada hari bekerja.
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+  </div>
+
+  <h2 style="margin-top:9mm"><span class="n">2</span> Away message</h2>
+  <div class="howto">
+    <strong>Where this goes.</strong> Sent automatically when someone messages outside your working hours.
+    <ol>
+      <li>Settings &rarr; Business tools &rarr; Away message</li>
+      <li>Turn it on and paste the text below</li>
+      <li>Choose <em>Custom schedule</em> to match your real working hours</li>
+    </ol>
+  </div>
+  <div class="msgcols">
+    <div><p class="tag">English</p><pre>Thank you for your message ✦
+
+I'm away from my phone at the moment — filming, in a recording session, or with my family.
+
+I'll reply within 24 hours on working days.
+
+If it's urgent, send your message again with the word URGENT and I'll prioritise it.
+
+While you wait, feel free to send me your brand, what you need and your deadline — that way I can quote you straight away when I'm back.
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+    <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Terima kasih atas mesej anda ✦
+
+Saya tiada di telefon buat masa ini — sedang shooting, dalam sesi rakaman, atau bersama keluarga.
+
+Saya akan balas dalam masa 24 jam pada hari bekerja.
+
+Kalau ia mendesak, hantar semula mesej anda dengan perkataan URGENT dan saya akan utamakan.
+
+Sementara menunggu, boleh terus hantar nama brand, apa yang anda perlukan dan tarikh akhir anda — supaya saya boleh terus beri sebut harga sebaik saya kembali.
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+  </div>
+  <div class="pagefoot"><span>Nova Badzlina Global — WhatsApp Message Pack</span><span>Page 2</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">3</span> Quick replies</h2>
+  <div class="howto">
+    <strong>Where these go.</strong> Settings &rarr; Business tools &rarr; Quick replies.
+    Add each one, paste the message, and set the shortcut shown in the dark box.
+    In any chat, type <strong>/</strong> then the shortcut to insert it instantly.
+    <ol>
+      <li>Use the English version for English chats, Bahasa Melayu for Malay chats</li>
+      <li>For the Malay set you can rename the shortcut, e.g. <em>/harga</em> instead of <em>/price</em></li>
+      <li>Square brackets <em>[&nbsp;&nbsp;&nbsp;]</em> mean fill this in before sending</li>
+    </ol>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/hello</span><span class="lbl">Warm opener &nbsp;·&nbsp; Pembuka mesra</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Hi! Thanks so much for reaching out ✦
+
+I'm Ara Aranya from NOVA BADZLINA GLOBAL. Happy to help.
+
+Could you tell me a little about your brand and what you have in mind? Once I know the deliverables and your deadline, I can send you a quote.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Hai! Terima kasih banyak kerana menghubungi ✦
+
+Saya Ara Aranya dari NOVA BADZLINA GLOBAL. Saya sedia membantu.
+
+Boleh kongsikan sedikit tentang brand anda dan apa yang anda rancangkan? Sebaik saya tahu deliverable dan tarikh akhir anda, saya boleh hantar sebut harga.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/services</span><span class="lbl">What I offer &nbsp;·&nbsp; Perkhidmatan saya</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Here's what I do ✦
+
+• UGC — Creator, Canvas, Tech, Mom
+• Content creator — lifestyle, travel, wedding
+• KOL &amp; KOC campaigns
+• Product photography (light box studio)
+• Photo editing
+• Video editing
+• Voice acting / voice-over (BM &amp; English)
+• Paid review &amp; movie review
+• Commercial talent &amp; short acting
+• Brand ambassador
+
+Not every service is open at every moment, so just tell me what you need and I will confirm availability straight away.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Ini yang saya tawarkan ✦
+
+• UGC — Creator, Canvas, Tech, Mom
+• Content creator — lifestyle, travel, wedding
+• Kempen KOL &amp; KOC
+• Fotografi produk (studio light box)
+• Editing gambar
+• Editing video
+• Voice acting / voice-over (BM &amp; Inggeris)
+• Paid review &amp; review filem
+• Commercial talent &amp; lakonan pendek
+• Brand ambassador
+
+Bukan semua perkhidmatan terbuka pada setiap masa, jadi beritahu sahaja apa yang anda perlukan dan saya akan sahkan ketersediaan dengan segera.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/price</span><span class="lbl">How pricing works &nbsp;·&nbsp; Cara harga dikira</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Happy to quote you ✦
+
+Pricing depends on the service, the length and how you'll use it — so I quote per brief rather than a fixed price list.
+
+Videos run 15 to 120 seconds. Add-ons if you need them: raw unedited footage +50%, rush job +30–60%.
+
+Send me these and I'll come back with a figure:
+1. What you need
+2. How many
+3. Your deadline
+4. Where it will run (organic, paid ads, or both)</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Boleh, saya sedia beri sebut harga ✦
+
+Harga bergantung pada jenis perkhidmatan, panjang dan cara penggunaan — jadi saya sebut harga ikut brief, bukan senarai harga tetap.
+
+Video antara 15 hingga 120 saat. Caj tambahan jika perlu: footage mentah +50%, kerja segera +30–60%.
+
+Hantar maklumat ini dan saya akan beri harganya:
+1. Apa yang anda perlukan
+2. Berapa banyak
+3. Tarikh akhir anda
+4. Di mana ia akan disiarkan (organik, paid ads, atau kedua-duanya)</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/ugc</span><span class="lbl">UGC explained &nbsp;·&nbsp; Penjelasan UGC</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>I make four kinds of UGC ✦
+
+• UGC Creator — ad-ready content your team can use straight away
+• Canvas UGC — I build a brand-new TikTok or IG account for you and post daily for 30 days, in a raw format that never looks like an ad
+• Tech UGC — AI tools, apps and gadgets explained simply
+• Mom UGC — real routine, real product, parent-to-parent
+
+Which lane suits your brand?</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Saya buat empat jenis UGC ✦
+
+• UGC Creator — kandungan siap iklan yang boleh terus digunakan pasukan anda
+• Canvas UGC — saya bina akaun TikTok atau IG baharu untuk anda dan post setiap hari selama 30 hari, dalam format mentah yang tak nampak macam iklan
+• Tech UGC — AI tools, aplikasi dan gajet dijelaskan dengan mudah
+• Mom UGC — rutin sebenar, produk sebenar, dari ibu kepada ibu
+
+Yang mana sesuai untuk brand anda?</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/voice</span><span class="lbl">Voice-over &nbsp;·&nbsp; Voice-over</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>I do voice-over in Bahasa Melayu and English ✦
+
+Styles: commercial, corporate, trailer, character, audiobook, ASMR, IVR and jingle.
+
+I have 22 demo tracks you can listen to before deciding.
+
+Voice work is 50% deposit to start, then 50% before I release the clean master. Send me the script, the language and your deadline and I'll quote it.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Saya buat voice-over dalam Bahasa Melayu dan Inggeris ✦
+
+Gaya: komersial, korporat, trailer, karakter, audiobook, ASMR, IVR dan jingle.
+
+Saya ada 22 trek demo yang boleh anda dengar dahulu sebelum membuat keputusan.
+
+Kerja suara ialah 50% deposit untuk mula, kemudian 50% sebelum saya lepaskan master bersih. Hantar skrip, bahasa dan tarikh akhir anda dan saya akan sebut harga.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/book</span><span class="lbl">How to book &nbsp;·&nbsp; Cara menempah</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Booking works like this ✦
+
+1. You send me the brief — brand, deliverables, deadline, where it will run
+2. I send you a quote and available dates
+3. You approve it, we both sign a short written agreement
+4. You pay the deposit (10%–50%, your choice)
+5. I produce the work and send you a watermarked draft
+6. You settle the balance, I send the clean final files
+
+Nothing is charged until we've agreed everything in writing.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Cara tempahan berjalan ✦
+
+1. Anda hantar brief — brand, deliverable, tarikh akhir, di mana ia akan disiarkan
+2. Saya hantar sebut harga dan tarikh yang tersedia
+3. Anda luluskan, kita berdua tandatangan perjanjian bertulis ringkas
+4. Anda bayar deposit (10%–50%, pilihan anda)
+5. Saya hasilkan kerja dan hantar draf berwatermark
+6. Anda jelaskan baki, saya hantar fail akhir yang bersih
+
+Tiada caj dikenakan sebelum kita bersetuju semuanya secara bertulis.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/payment</span><span class="lbl">Payment methods &nbsp;·&nbsp; Kaedah pembayaran</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>You can pay by ✦
+
+• FPX / Online Banking
+• Debit Card
+• QR Pay (DuitNow)
+• Stripe — I'll issue a secure link
+• Payoneer — I'll issue an invoice
+
+(PayPal is coming soon.)
+
+Currencies: MYR, USD or GBP.
+
+Just let me know which suits you and I'll send the details.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Anda boleh bayar melalui ✦
+
+• FPX / Online Banking
+• Kad Debit
+• QR Pay (DuitNow)
+• Stripe — saya akan hantar pautan selamat
+• Payoneer — saya akan hantar invois
+
+(PayPal akan datang.)
+
+Mata wang: MYR, USD atau GBP.
+
+Beritahu saya yang mana sesuai dan saya hantar butirannya.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/bank</span><span class="lbl">Bank details &nbsp;·&nbsp; Butiran bank</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Here are my payment details ✦
+
+Bank: Maybank
+Name: NUR BADZLINA RAZI BINTI MOHAMED GAZALI
+Account: 1651 2543 2269
+
+Please put your name or brand name as the reference, then send me the receipt so I can match it to your booking.
+
+This is my only account — I'll never ask you to pay a different name or bank.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Ini butiran pembayaran saya ✦
+
+Bank: Maybank
+Nama: NUR BADZLINA RAZI BINTI MOHAMED GAZALI
+Akaun: 1651 2543 2269
+
+Sila letakkan nama anda atau nama brand sebagai rujukan, kemudian hantar resit supaya saya boleh padankan dengan tempahan anda.
+
+Ini satu-satunya akaun saya — saya tidak akan sesekali minta anda bayar ke nama atau bank lain.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/deposit</span><span class="lbl">Deposit &nbsp;·&nbsp; Deposit</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>To confirm your booking I take a deposit of 10% to 50% — you choose the level ✦
+
+The balance is due on delivery, before I release the clean files.
+
+Once the booking is confirmed the deposit is non-refundable, because I hold the slot and turn other work away. If I ever have to cancel from my side, you get a full refund including the deposit.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Untuk sahkan tempahan, saya ambil deposit 10% hingga 50% — anda pilih kadarnya ✦
+
+Baki dibayar semasa penghantaran, sebelum saya lepaskan fail bersih.
+
+Setelah tempahan disahkan, deposit tidak boleh dikembalikan, kerana saya simpan slot itu dan tolak kerja lain. Kalau saya pula yang terpaksa batalkan, anda dapat bayaran balik penuh termasuk deposit.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/delivery</span><span class="lbl">How you receive files &nbsp;·&nbsp; Cara terima fail</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Here's how delivery works ✦
+
+First I send you a watermarked draft — full length, full quality — so you can review it and ask for changes.
+
+Once the balance is settled, I remove the watermark and send the clean final files.
+
+You choose how: WeTransfer, Blip, or Google Drive.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Ini cara penghantaran berjalan ✦
+
+Mula-mula saya hantar draf berwatermark — panjang penuh, kualiti penuh — supaya anda boleh semak dan minta perubahan.
+
+Setelah baki dijelaskan, saya tanggalkan watermark dan hantar fail akhir yang bersih.
+
+Anda pilih caranya: WeTransfer, Blip, atau Google Drive.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/revision</span><span class="lbl">Revisions &nbsp;·&nbsp; Pembetulan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Revisions included ✦
+
+1 round for a single video, 2 rounds per deliverable for bundles.
+
+A revision means adjusting what we agreed — trimming, captions, colour, pacing, swapping a take.
+
+A new script, concept, hook or product after approval is new work and I'd quote that separately.
+
+Please send revision requests within 7 days of the draft.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Pembetulan yang termasuk ✦
+
+1 pusingan untuk video tunggal, 2 pusingan setiap deliverable untuk bundle.
+
+Pembetulan bermaksud melaraskan apa yang kita persetujui — potong, sarikata, warna, rentak, tukar take.
+
+Skrip, konsep, hook atau produk baharu selepas kelulusan adalah kerja baharu dan akan saya sebut harga berasingan.
+
+Sila hantar permintaan pembetulan dalam 7 hari selepas draf.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/usage</span><span class="lbl">Usage rights &nbsp;·&nbsp; Hak penggunaan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>About usage rights ✦
+
+Organic use is included free — you can post it on your own brand channels with no time limit.
+
+Paid advertising is quoted separately, by term (3, 6 or 12 months) and territory.
+
+Whitelisting / Spark Ads through my handle is quoted per month.
+
+Just tell me how you plan to use it and I'll include the right licence in your quote.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Tentang hak penggunaan ✦
+
+Penggunaan organik termasuk percuma — anda boleh siarkan di channel brand anda sendiri tanpa had masa.
+
+Pengiklanan berbayar disebut harga berasingan, ikut tempoh (3, 6 atau 12 bulan) dan wilayah.
+
+Whitelisting / Spark Ads melalui handle saya disebut harga sebulan.
+
+Beritahu saya rancangan penggunaan anda dan saya masukkan lesen yang betul dalam sebut harga.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/location</span><span class="lbl">Where I work &nbsp;·&nbsp; Lokasi kerja saya</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Where I work ✦
+
+Remote worldwide — this is my standard, and there's no extra charge. Everything is produced from my home studio.
+
+In person: I attend 1–2 day events across Peninsular Malaysia. I am based in Kota Bharu, Kelantan and I am in Kuala Lumpur regularly for university. Kelantan and KL add 30–50%; elsewhere in the Peninsula adds 50–80%. Sabah and Sarawak are quoted separately.
+
+Outside Malaysia is remote only.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Lokasi kerja saya ✦
+
+Remote seluruh dunia — ini standard saya, dan tiada caj tambahan. Semuanya dihasilkan dari studio rumah saya.
+
+Hadir sendiri: saya terima event 1–2 hari di seluruh Semenanjung Malaysia. Saya berpangkalan di Kota Bharu, Kelantan dan kerap ke Kuala Lumpur untuk universiti. Kelantan dan KL tambah 30–50%; tempat lain di Semenanjung tambah 50–80%. Sabah dan Sarawak diquote berasingan.
+
+Di luar Malaysia adalah remote sahaja.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/timeline</span><span class="lbl">Turnaround &nbsp;·&nbsp; Tempoh siap</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>On timing ✦
+
+Tell me your deadline and I'll tell you honestly whether I can meet it.
+
+If you need it faster than my normal schedule allows, a rush job adds 30–60% depending on how tight it is.
+
+To keep your deadline safe, I'll need the product at least 5 days before, and your feedback on the draft within 3 working days.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Tentang masa ✦
+
+Beritahu tarikh akhir anda dan saya akan beritahu dengan jujur sama ada saya boleh capai.
+
+Kalau anda perlukan lebih cepat daripada jadual biasa saya, kerja segera tambah 30–60% bergantung pada betapa ketatnya.
+
+Untuk pastikan tarikh akhir anda selamat, saya perlukan produk sekurang-kurangnya 5 hari awal, dan maklum balas anda dalam 3 hari bekerja.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/portfolio</span><span class="lbl">Send portfolio &nbsp;·&nbsp; Hantar portfolio</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Have a look at my work ✦
+
+Video &amp; photography: my portfolio page
+Voice: 22 demo tracks in BM and English
+Socials:
+• UGC work — @badzlinaraziugc
+• Everything else — @novabadzlinaglobal
+(TikTok, Instagram and Threads)
+
+Let me know which style you like and I'll shape the brief around it.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Boleh lihat hasil kerja saya ✦
+
+Video &amp; fotografi: halaman portfolio saya
+Suara: 22 trek demo dalam BM dan Inggeris
+Media sosial:
+• Kerja UGC — @badzlinaraziugc
+• Selain UGC — @novabadzlinaglobal
+(TikTok, Instagram dan Threads)
+
+Beritahu gaya mana yang anda suka dan saya bentuk brief mengikutnya.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/quote</span><span class="lbl">Sending a quote &nbsp;·&nbsp; Menghantar sebut harga</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Here's your quote ✦
+
+Service:
+Deliverables:
+Length:
+Add-ons:
+TOTAL:
+Deposit to confirm:
+Delivery date:
+
+If you're happy with this, I'll send the booking agreement for us both to sign, and the payment details. Anything you'd like changed, just say — it's all still free to adjust at this stage.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Ini sebut harga anda ✦
+
+Perkhidmatan:
+Deliverable:
+Panjang:
+Caj tambahan:
+JUMLAH:
+Deposit untuk sahkan:
+Tarikh penghantaran:
+
+Kalau anda berpuas hati, saya akan hantar surat perjanjian untuk kita berdua tandatangan, dan butiran pembayaran. Kalau ada apa-apa nak diubah, beritahu sahaja — pada peringkat ini semuanya masih percuma untuk dilaraskan.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/confirmed</span><span class="lbl">Booking confirmed &nbsp;·&nbsp; Tempahan disahkan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Your booking is confirmed ✦
+
+Thank you so much — I've received your deposit and your slot is locked in.
+
+What happens next:
+1. I start production
+2. You'll receive a watermarked draft by [date]
+3. You send feedback within 3 working days
+4. Balance settled, clean files delivered
+
+I'll keep you updated along the way. Excited to work on this!</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Tempahan anda telah disahkan ✦
+
+Terima kasih banyak — saya telah terima deposit anda dan slot anda sudah dikunci.
+
+Apa yang berlaku seterusnya:
+1. Saya mula produksi
+2. Anda akan terima draf berwatermark sebelum [tarikh]
+3. Anda hantar maklum balas dalam 3 hari bekerja
+4. Baki dijelaskan, fail bersih dihantar
+
+Saya akan kemas kini anda sepanjang proses. Teruja nak mula!</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/draft</span><span class="lbl">Sending the draft &nbsp;·&nbsp; Menghantar draf</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Your draft is ready ✦
+
+I've attached the watermarked version — full length and full quality, so you can review it properly.
+
+Have a look and let me know if you'd like any adjustments. Please send everything in one message if you can, and within 7 days.
+
+Once you're happy and the balance is settled, I'll remove the watermark and send the clean files.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Draf anda sudah siap ✦
+
+Saya lampirkan versi berwatermark — panjang penuh dan kualiti penuh, supaya anda boleh semak dengan betul.
+
+Sila tengok dan beritahu kalau ada apa-apa nak dilaraskan. Kalau boleh hantar semuanya dalam satu mesej, dan dalam tempoh 7 hari.
+
+Setelah anda berpuas hati dan baki dijelaskan, saya akan tanggalkan watermark dan hantar fail bersih.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/received</span><span class="lbl">Payment received &nbsp;·&nbsp; Bayaran diterima</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Payment received — thank you ✦
+
+I've confirmed it on my side and I'll send your receipt shortly.
+
+Your clean final files are on the way now.
+
+It's been a pleasure working with you. If you need anything else, I'm just a message away.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Bayaran diterima — terima kasih ✦
+
+Saya sudah sahkan di pihak saya dan akan hantar resit anda sebentar lagi.
+
+Fail akhir yang bersih sedang dihantar sekarang.
+
+Seronok dapat bekerjasama dengan anda. Kalau perlukan apa-apa lagi, mesej saya bila-bila.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/followup</span><span class="lbl">Gentle follow-up &nbsp;·&nbsp; Susulan lembut</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Hi, just following up on this ✦
+
+No rush at all — I know things get busy. I'm holding your dates for now, but if the timeline has shifted just let me know and we can move things around.
+
+Happy to answer any questions if anything's unclear.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Hai, saya susuli sedikit tentang ini ✦
+
+Tak perlu tergesa-gesa — saya faham semua orang sibuk. Buat masa ini saya masih simpan tarikh anda, tapi kalau jadual berubah, beritahu sahaja dan kita boleh susun semula.
+
+Saya sedia jawab sebarang soalan kalau ada yang kurang jelas.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/overdue</span><span class="lbl">Payment reminder &nbsp;·&nbsp; Peringatan bayaran</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Hi, a gentle reminder about the outstanding balance ✦
+
+Invoice no: [   ]
+Amount: [   ]
+Due: [   ]
+
+Once it's settled I'll release the clean final files the same day.
+
+If there's anything holding it up, just tell me and we'll sort it out together.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Hai, peringatan lembut tentang baki tertunggak ✦
+
+No. invois: [   ]
+Jumlah: [   ]
+Tarikh akhir: [   ]
+
+Setelah dijelaskan, saya akan lepaskan fail akhir yang bersih pada hari yang sama.
+
+Kalau ada apa-apa yang menghalang, beritahu sahaja dan kita selesaikan bersama.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/busy</span><span class="lbl">Politely declining &nbsp;·&nbsp; Menolak dengan sopan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Thank you so much for thinking of me ✦
+
+Unfortunately my schedule is full for that period, so I wouldn't be able to give your project the attention it deserves.
+
+If your timeline is flexible, my next opening is around [date] — I'd love to work with you then.
+
+Do keep me in mind for future campaigns.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Terima kasih banyak kerana ingat kepada saya ✦
+
+Malangnya jadual saya penuh untuk tempoh tersebut, jadi saya tak dapat beri perhatian sepenuhnya kepada projek anda.
+
+Kalau tempoh anda fleksibel, slot kosong saya yang seterusnya sekitar [tarikh] — saya sangat berbesar hati untuk bekerjasama ketika itu.
+
+Simpan nama saya untuk kempen akan datang, ya.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/thanks</span><span class="lbl">Closing thank-you &nbsp;·&nbsp; Ucapan terima kasih</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Thank you again for working with me ✦
+
+It's been a real pleasure. If you ever need more content, voice work or anything else, you know where to find me.
+
+And if you were happy with the result, a kind word or a referral means the world to a creator like me 🤍
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Terima kasih sekali lagi kerana bekerjasama dengan saya ✦
+
+Sangat seronok sepanjang projek ini. Kalau nanti perlukan lagi kandungan, kerja suara atau apa-apa sahaja, anda tahu di mana nak cari saya.
+
+Dan kalau anda berpuas hati dengan hasilnya, sepatah kata baik atau cadangan kepada orang lain amat bermakna buat kreator seperti saya 🤍
+
+— Ara Aranya
+NOVA BADZLINA GLOBAL</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/rates</span><span class="lbl">Starting rates &nbsp;·&nbsp; Kadar permulaan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>My starting rates ✦
+
+UGC video (you post it):
+• 15–30s — RM400 / $150 / £120
+• 31–60s — RM650 / $240 / £190
+• 61–120s — RM950 / $350 / £280
+Bundle of 3: −10%  ·  Bundle of 5: −15%
+
+Canvas UGC, 30 days: from RM3,500 / $1,200 / £950
+Creator day (lifestyle/travel/wedding): from RM700 / $280 / £220
+Product photography: from RM60 / $25 / £20 per edited image
+Voice-over: from RM200 / $85 / £68 per script
+
+These are starting rates — usage, turnaround and complexity move the figure. Send me your brief and I'll give you a firm number.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Kadar permulaan saya ✦
+
+Video UGC (anda yang siarkan):
+• 15–30s — RM400 / $150 / £120
+• 31–60s — RM650 / $240 / £190
+• 61–120s — RM950 / $350 / £280
+Bundle 3: −10%  ·  Bundle 5: −15%
+
+Canvas UGC, 30 hari: dari RM3,500 / $1,200 / £950
+Creator day (lifestyle/travel/wedding): dari RM700 / $280 / £220
+Fotografi produk: dari RM60 / $25 / £20 setiap gambar siap edit
+Voice-over: dari RM200 / $85 / £68 setiap skrip
+
+Ini kadar permulaan — hak penggunaan, tempoh siap dan kerumitan akan mengubah angkanya. Hantar brief anda dan saya beri angka yang tepat.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/photo</span><span class="lbl">Product photography &nbsp;·&nbsp; Fotografi produk</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Product photography ✦
+
+I shoot in my own 60×60×60cm light box with a rotating display stand, so I can do clean white for marketplace listings or styled shots for campaigns — and full 360° spin sets.
+
+From RM60 / $25 / £20 per edited image, or RM500 / $200 / £160 for a set of 10.
+
+Just post me the product. Please check availability with me first, as this depends on my schedule.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Fotografi produk ✦
+
+Saya rakam dalam light box 60×60×60cm saya sendiri dengan pemutar paparan, jadi saya boleh buat latar putih bersih untuk penyenaraian marketplace atau gambar bergaya untuk kempen — termasuk set putaran 360° penuh.
+
+Dari RM60 / $25 / £20 setiap gambar siap edit, atau RM500 / $200 / £160 untuk set 10 gambar.
+
+Hantar sahaja produk kepada saya. Sila semak ketersediaan dengan saya dahulu, kerana ia bergantung pada jadual saya.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/travel</span><span class="lbl">Travel content &nbsp;·&nbsp; Kandungan travel</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Travel content ✦
+
+I travel with my daughter, so what I make is the honest family version — what actually works with a child, what's worth the effort, what to skip. It's a perspective family brands rarely get authentically.
+
+Travel day rate from RM1,500 / $600 / £480, plus travel and accommodation.
+
+Please ask early — travel work depends on my calendar and how far the location is.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Kandungan travel ✦
+
+Saya mengembara bersama anak perempuan saya, jadi apa yang saya hasilkan ialah versi keluarga yang jujur — mana yang praktikal dengan anak kecil, mana yang berbaloi, mana yang boleh dilangkau. Perspektif yang jarang diperoleh brand keluarga secara tulen.
+
+Kadar harian travel dari RM1,500 / $600 / £480, tambah kos perjalanan dan penginapan.
+
+Sila tanya awal — kerja travel bergantung pada kalendar saya dan jarak lokasi.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/wedding</span><span class="lbl">Wedding content &nbsp;·&nbsp; Kandungan wedding</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Wedding content ✦
+
+I make the social-first version — vertical, same-day, emotional. The cut you can post while the day is still happening, which is not what a traditional videographer produces.
+
+Wedding social package from RM1,800 / $700 / £560, including a same-day edit.
+
+Send me your date early so I can check availability.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Kandungan wedding ✦
+
+Saya hasilkan versi untuk media sosial — menegak, siap hari sama, penuh emosi. Potongan yang boleh anda siarkan semasa majlis masih berlangsung, yang bukan hasil kerja videografer tradisional.
+
+Pakej wedding sosial dari RM1,800 / $700 / £560, termasuk suntingan siap hari sama.
+
+Hantar tarikh anda awal supaya saya boleh semak ketersediaan.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/available</span><span class="lbl">Availability check &nbsp;·&nbsp; Semakan ketersediaan</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>Thanks for asking ✦
+
+Not every service is open at every moment — some depend on my equipment being free, my schedule, or the shoot type. Travel and wedding work especially need early notice.
+
+Tell me:
+1. What you need
+2. Your dates
+3. Where it takes place
+
+and I'll tell you honestly and straight away whether I can take it.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Terima kasih kerana bertanya ✦
+
+Bukan semua perkhidmatan terbuka pada setiap masa — sesetengahnya bergantung pada peralatan saya, jadual saya, atau jenis penggambaran. Kerja travel dan wedding terutamanya perlukan notis awal.
+
+Beritahu saya:
+1. Apa yang anda perlukan
+2. Tarikh anda
+3. Di mana ia berlangsung
+
+dan saya akan beritahu dengan jujur dan segera sama ada saya boleh terima.</pre></div>
+    </div>
+  </div>
+  <div class="qr">
+    <div class="qr__head"><span class="sc">/kit</span><span class="lbl">My equipment &nbsp;·&nbsp; Peralatan saya</span></div>
+    <div class="qr__cols">
+      <div><p class="tag">English</p><pre>What I shoot with ✦
+
+Audio — Hollyland Lark A1 wireless, Amgrass magnetic lavalier, Onsmo PM-1 podcast mic
+Tracking — Onsmo Bobot 360 and SF180 AI face-tracking holders with LED
+Support — magnetic neck bracket, FL-1X foldable flat-lay tripod
+Lighting — 60×60×60cm folding studio light box, 20cm rotating display stand
+
+Everything is owned, not rented — so there's no equipment line on your invoice and no waiting on a hire schedule.</pre></div>
+      <div><p class="tag tag--bm">Bahasa Melayu</p><pre>Peralatan yang saya guna ✦
+
+Audio — Hollyland Lark A1 wireless, Amgrass lavalier magnetik, Onsmo PM-1 mikrofon podcast
+Penjejakan — Onsmo Bobot 360 dan SF180 pemegang penjejak wajah AI dengan LED
+Sokongan — pendakap leher magnetik, tripod flat-lay FL-1X boleh lipat
+Pencahayaan — light box studio lipat 60×60×60cm, pemutar paparan 20cm
+
+Semuanya milik sendiri, bukan sewa — jadi tiada baris peralatan dalam invois anda dan tiada menunggu jadual sewaan.</pre></div>
+    </div>
+  </div>
+  <div class="pagefoot"><span>Nova Badzlina Global — WhatsApp Message Pack</span><span>Page 3</span></div>
+</section>
+
+</body>
+</html>

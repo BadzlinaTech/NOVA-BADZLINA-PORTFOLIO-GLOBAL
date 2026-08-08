@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nova Badzlina Global — Business Catalogue</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c0c21%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2730%27 font-weight=%27bold%27 fill=%27%23e8c77e%27 text-anchor=%27middle%27%3ENB%3C/text%3E%3C/svg%3E" />
+<style>
+:root{
+  --cream:#fffdfb; --deep:#0b1233; --deep2:#141d47;
+  --ink:#0d1435; --ink-soft:#44507a; --ink-faint:#7b83a8;
+  --rose:#c2447a; --rose-deep:#8e2f5c; --rose-soft:#f0b3c9;
+  --orchid:#6d28d9; --rosegold:#c88a72; --orchid:#6d28d9; --rosegold:#c88a72; --gold:#bf8f2c; --gold-deep:#7a5810; --gold-light:#f0d9a0; --gold-bright:#fff5da;
+  --dusty:#c88a72; --dusty-wash:#f9efe9;
+  --foil:linear-gradient(100deg,#a97b23,#e0bd6a 14%,#fff3d0 28%,#d9b25f 42%,#a97b23 56%,#f2d896 72%,#fff8e4 84%,#c79a3e);
+  --foil-dark:linear-gradient(100deg,#7a5210,#b8892a 12%,#e8cd83 24%,#8a5f14 36%,#6b470c 48%,#c9a13c 62%,#f0dba6 74%,#9c7526 88%,#7a5210);
+  --serif:"Didot","Bodoni MT","Playfair Display",Cambria,Georgia,serif;
+  --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{ background:#ddd4d9; font-family:var(--sans); color:var(--ink); font-size:9.8pt; line-height:1.6; }
+
+.page{
+  width:210mm; min-height:291mm; margin:0 auto 8mm;
+  padding:16mm 16mm 14mm; background:var(--cream);
+  position:relative; overflow:hidden;
+  page-break-after:always; break-after:page;
+}
+.page:last-child{ page-break-after:auto; }
+.page--deep{
+  background:
+    radial-gradient(58% 48% at 12% 6%, rgba(201,143,155,.40), transparent 68%),
+    radial-gradient(54% 44% at 90% 12%, rgba(156,98,112,.46), transparent 68%),
+    radial-gradient(50% 44% at 55% 98%, rgba(191,143,44,.30), transparent 70%),
+    linear-gradient(170deg,var(--deep2),#341124 40%,var(--deep) 70%,#250b1c);
+  color:#fdf2f7;
+}
+.page--deep h1,.page--deep h2,.page--deep h3{ color:#fdf2f7; }
+.page--deep p,.page--deep li{ color:#dcbcd0; }
+.page--deep .eyebrow{ color:var(--gold-light); }
+.page--deep strong{ color:#fff; }
+
+.sparkle{ position:absolute; inset:0; pointer-events:none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 14% 18%, rgba(240,217,160,.75), transparent 60%),
+    radial-gradient(1.2px 1.2px at 82% 26%, rgba(249,174,203,.7), transparent 60%),
+    radial-gradient(1.8px 1.8px at 66% 78%, rgba(240,217,160,.6), transparent 60%),
+    radial-gradient(1.2px 1.2px at 30% 88%, rgba(255,245,218,.6), transparent 60%); }
+
+.eyebrow{ font-size:8pt; font-weight:800; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--rose-deep); margin-bottom:4mm; }
+.eyebrow::before{ content:"✦ "; color:var(--gold); }
+h1{ font-family:var(--serif); font-size:34pt; line-height:1.06; letter-spacing:-.02em; }
+h2{ font-family:var(--serif); font-size:20pt; line-height:1.14; margin-bottom:3mm; }
+h3{ font-family:var(--serif); font-size:13pt; margin-bottom:1.5mm; }
+p{ margin-bottom:2.5mm; }
+.lead{ font-size:11pt; color:var(--ink-soft); }
+.grad{ background:var(--foil-dark); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.page--deep .grad{ background-image:var(--foil); }
+
+.rule{ width:52mm; height:1.5px; margin:4mm 0 5mm;
+  background:linear-gradient(90deg,var(--gold),transparent); }
+.page--deep .rule{ background:linear-gradient(90deg,var(--gold-light),transparent); }
+
+/* ---------- service card ---------- */
+.svc{ display:grid; grid-template-columns:52mm 1fr; gap:6mm; margin-bottom:6mm;
+  page-break-inside:avoid; align-items:stretch; }
+.svc__art{ position:relative; border-radius:4mm; overflow:hidden; min-height:38mm;
+  border:1px solid rgba(191,143,44,.4); }
+.svc__art svg{ position:absolute; inset:0; width:100%; height:100%; }
+.svc__body h3{ margin-bottom:1mm; }
+.svc__tag{ font-size:7.2pt; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--gold-deep); margin-bottom:1.5mm; }
+.svc__body p{ font-size:9.2pt; margin-bottom:2mm; }
+.chips{ display:flex; flex-wrap:wrap; gap:1.5mm; margin-top:2mm; }
+.chips span{ font-size:7pt; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:.9mm 2.4mm; border-radius:8mm; background:rgba(229,71,127,.12); color:var(--rose-deep); }
+.page--deep .chips span{ background:rgba(249,174,203,.16); color:#ffc4da; }
+
+/* ---------- misc ---------- */
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:5mm; }
+.box{ padding:5mm; border-radius:4mm; border:1px solid rgba(191,143,44,.35);
+  background:rgba(255,255,255,.7); page-break-inside:avoid; }
+.page--deep .box{ background:rgba(255,255,255,.07); border-color:rgba(240,217,160,.3); }
+
+table{ width:100%; border-collapse:collapse; font-size:8.6pt; page-break-inside:avoid; }
+th{ text-align:left; padding:2mm 2.5mm; font-size:7.4pt; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--gold-deep); border-bottom:1.5px solid var(--gold); font-weight:800; }
+td{ padding:1.9mm 2.5mm; border-bottom:.5px solid rgba(191,143,44,.28); vertical-align:top; }
+.page--deep th{ color:var(--gold-light); }
+.page--deep td{ border-bottom-color:rgba(240,217,160,.22); }
+
+ul{ list-style:none; }
+li{ position:relative; padding-left:5.5mm; margin-bottom:1.4mm; }
+li::before{ content:"✦"; position:absolute; left:0; color:var(--gold); font-size:8pt; }
+
+.steps{ counter-reset:s; list-style:none; }
+.steps li{ padding-left:8mm; margin-bottom:2.5mm; }
+.steps li::before{ counter-increment:s; content:counter(s);
+  position:absolute; left:0; top:.2mm; width:5.5mm; height:5.5mm;
+  display:grid; place-items:center; border-radius:50%;
+  background:var(--foil); color:#3d2a08; font-size:7pt; font-weight:900; }
+
+.pagefoot{ position:absolute; left:16mm; right:16mm; bottom:8mm;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:7.2pt; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-faint); font-weight:700; }
+.page--deep .pagefoot{ color:#a98ea0; }
+.pagefoot .mk{ display:inline-grid; place-items:center; width:5.5mm; height:5.5mm;
+  border-radius:50%; background:var(--foil); color:#3d2a08;
+  font-family:var(--serif); font-size:6.5pt; font-weight:700; margin-right:1.5mm; }
+
+/* cover art */
+.coverart{ position:absolute; inset:0; pointer-events:none; }
+.portrait{ width:44mm; height:56mm; border-radius:22mm 22mm 4mm 4mm; overflow:hidden;
+  border:1.5px solid rgba(240,217,160,.6); float:right; margin:0 0 4mm 6mm; }
+.portrait img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
+
+@page{ size:A4; margin:0; }
+@media print{
+  *,*::before,*::after{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  body{ background:none; }
+  .page{ margin:0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page page--deep" style="display:flex;flex-direction:column;justify-content:center">
+  <svg class="coverart" viewBox="0 0 210 291" preserveAspectRatio="none">
+    <circle cx="172" cy="44" r="46" fill="#c2447a" opacity=".16"/>
+    <circle cx="196" cy="76" r="34" fill="#bf8f2c" opacity=".14"/>
+    <circle cx="24" cy="252" r="52" fill="#c88a72" opacity=".14"/>
+    <circle cx="60" cy="276" r="30" fill="#f0d9a0" opacity=".10"/>
+    <g stroke="#f0d9a0" stroke-width=".35" opacity=".5" fill="none">
+      <circle cx="172" cy="44" r="58"/><circle cx="172" cy="44" r="70"/>
+      <circle cx="24" cy="252" r="64"/>
+    </g>
+    <g fill="#f0d9a0">
+      <circle cx="150" cy="120" r=".9" opacity=".8"/><circle cx="42" cy="66" r=".7" opacity=".7"/>
+      <circle cx="188" cy="176" r="1" opacity=".65"/><circle cx="70" cy="196" r=".8" opacity=".6"/>
+      <circle cx="120" cy="240" r=".7" opacity=".7"/>
+    </g>
+  </svg>
+
+  <div style="position:relative">
+    <p style="font-size:8.5pt;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);margin-bottom:9mm">
+      Business Catalogue &nbsp;·&nbsp; 2026
+    </p>
+    <h1 style="font-size:40pt">NOVA BADZLINA<br /><span class="grad">GLOBAL</span></h1>
+    <div style="width:80mm;height:2px;margin:6mm 0;background:linear-gradient(90deg,var(--gold-light),transparent)"></div>
+    <p style="font-family:var(--serif);font-style:italic;font-size:15pt;color:#f9aecb;margin-bottom:8mm">
+      Where creators become talent.
+    </p>
+    <p style="font-size:11pt;max-width:130mm">
+      Fourteen services across content, video, photography and voice —
+      produced remotely for brands anywhere in the world, and in person across Malaysia.
+    </p>
+    <p style="margin-top:14mm;font-size:10pt">
+      <strong>Ara Aranya</strong><br />
+      <span style="font-size:9pt;color:#c39fb4">Arasselly Salsabella Mashel · Nur Badzlina Razi</span>
+    </p>
+    <p style="margin-top:5mm;font-size:9.5pt;color:#c39fb4">
+      +60 18-278 0523 &nbsp;·&nbsp; novabadzlinaglobal@gmail.com
+    </p>
+  </div>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="page">
+  <p class="eyebrow">Welcome</p>
+  <h2>One creator.<br />The whole production line.</h2>
+  <div class="rule"></div>
+
+  <figure class="portrait">
+    <img src="../media/photo/profile.jpg" alt="Ara Aranya" />
+  </figure>
+
+  <p class="lead">I'm Ara Aranya — the creator behind Nova Badzlina Global.</p>
+  <p>I make content that feels like a recommendation from a friend rather than an advertisement.
+  Whether it's a twenty-second hook for TikTok, a thirty-day account build, a film review or a
+  voice-over session, the job is always the same: make people stop, watch, and trust.</p>
+  <p>Everything in this catalogue is produced from my own studio — I write, film, perform, edit and
+  deliver each piece myself. That means no coordination between three vendors, no version drift, and
+  one point of contact from brief to final file.</p>
+  <p>For brands who need me physically present, I attend one and two-day events across Peninsular
+  Malaysia, from my base in Kota Bharu, Kelantan. Everywhere else in the world, the work is
+  delivered remotely — and nothing is lost, because the deliverables are identical.</p>
+
+  <div style="clear:both"></div>
+
+  <div class="grid3" style="margin-top:7mm">
+    <div class="box" style="text-align:center">
+      <p style="font-family:var(--serif);font-size:22pt;color:var(--rose-deep);line-height:1">14</p>
+      <p style="font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:800;margin:0">Services</p>
+    </div>
+    <div class="box" style="text-align:center">
+      <p style="font-family:var(--serif);font-size:22pt;color:var(--rose-deep);line-height:1">2</p>
+      <p style="font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:800;margin:0">Languages</p>
+    </div>
+    <div class="box" style="text-align:center">
+      <p style="font-family:var(--serif);font-size:22pt;color:var(--rose-deep);line-height:1">48h</p>
+      <p style="font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:800;margin:0">Typical draft</p>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:6mm">
+    <p style="margin:0;font-size:9pt"><strong>How to read this catalogue.</strong> Each service shows
+    what it is, what you receive, and who it suits. Pricing is quoted per brief — the structure is
+    explained on page 9, and the booking process on page 10.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Nova Badzlina Global</span><span>02</span></div>
+</section>
+
+<!-- ============ UGC ============ -->
+<section class="page">
+  <p class="eyebrow">Section one</p>
+  <h2>User-Generated Content</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:6mm">Native content that doesn't read as advertising — four
+  distinct lanes, each built for a different audience.</p>
+
+  <!-- UGC Creator -->
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f7bcd2,#c2447a)">
+      <svg viewBox="0 0 100 76">
+        <rect x="14" y="12" width="20" height="52" rx="3" fill="#fff" opacity=".26"/>
+        <rect x="40" y="7"  width="20" height="62" rx="3" fill="#fff" opacity=".40"/>
+        <rect x="66" y="12" width="20" height="52" rx="3" fill="#fff" opacity=".26"/>
+        <path d="M46 32 l10 6 -10 6 z" fill="#fff" opacity=".9"/>
+        <circle cx="24" cy="22" r="1.4" fill="#fff" opacity=".8"/>
+        <circle cx="76" cy="54" r="1.2" fill="#fff" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Ad-ready</p>
+      <h3>UGC Creator</h3>
+      <p>The core offering. Scroll-stopping content your team can drop straight into paid advertising
+      or organic social — hook, demonstration, verdict, call to action. Filmed, edited and captioned
+      in-house, delivered in every ratio you need.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>You receive:</strong> finished video in
+      9:16, 1:1 and 16:9 · burned-in captions · multiple hook variants for testing</p>
+      <div class="chips"><span>15–120 sec</span><span>Multi-hook</span><span>Repurposable</span></div>
+    </div>
+  </div>
+
+  <!-- Canvas UGC -->
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#e0c9f5,#8b5fc4)">
+      <svg viewBox="0 0 100 76">
+        <g fill="#fff">
+          <rect x="16" y="16" width="10" height="10" rx="1.6" opacity=".5"/>
+          <rect x="29" y="16" width="10" height="10" rx="1.6" opacity=".35"/>
+          <rect x="42" y="16" width="10" height="10" rx="1.6" opacity=".5"/>
+          <rect x="55" y="16" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="68" y="16" width="10" height="10" rx="1.6" opacity=".45"/>
+          <rect x="16" y="29" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="29" y="29" width="10" height="10" rx="1.6" opacity=".55"/>
+          <rect x="42" y="29" width="10" height="10" rx="1.6" opacity=".35"/>
+          <rect x="55" y="29" width="10" height="10" rx="1.6" opacity=".5"/>
+          <rect x="68" y="29" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="16" y="42" width="10" height="10" rx="1.6" opacity=".45"/>
+          <rect x="29" y="42" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="42" y="42" width="10" height="10" rx="1.6" opacity=".55"/>
+          <rect x="55" y="42" width="10" height="10" rx="1.6" opacity=".35"/>
+          <rect x="68" y="42" width="10" height="10" rx="1.6" opacity=".5"/>
+          <rect x="16" y="55" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="29" y="55" width="10" height="10" rx="1.6" opacity=".45"/>
+          <rect x="42" y="55" width="10" height="10" rx="1.6" opacity=".3"/>
+          <rect x="55" y="55" width="10" height="10" rx="1.6" opacity=".55"/>
+          <rect x="68" y="55" width="10" height="10" rx="1.6" opacity=".35"/>
+        </g>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Rare in Malaysia</p>
+      <h3>Canvas UGC <span style="font-family:var(--sans);font-size:8pt;color:var(--ink-faint)">(Blank Canvas)</span></h3>
+      <p>I build a brand-new TikTok or Instagram account for you from zero and post every day for
+      thirty days, in a raw, real format that never looks like an ad. At the end you own a warmed-up
+      channel with genuine audience signal — not a rented placement.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>You receive:</strong> 30 daily posts ·
+      a seasoned account handed over to you · month-by-month extension available</p>
+      <div class="chips"><span>New account</span><span>30 days</span><span>Handed over</span></div>
+    </div>
+  </div>
+
+  <!-- Tech UGC -->
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#cfe3f7,#5b7fc4)">
+      <svg viewBox="0 0 100 76">
+        <g stroke="#fff" stroke-width=".9" opacity=".55" fill="none">
+          <path d="M22 54 L38 34 L54 46 L70 22"/>
+          <path d="M22 30 L40 52 L62 30 L78 48"/>
+        </g>
+        <g fill="#fff">
+          <circle cx="22" cy="54" r="3" opacity=".85"/><circle cx="38" cy="34" r="2.4" opacity=".7"/>
+          <circle cx="54" cy="46" r="2.4" opacity=".7"/><circle cx="70" cy="22" r="3" opacity=".85"/>
+          <circle cx="40" cy="52" r="2" opacity=".6"/><circle cx="62" cy="30" r="2" opacity=".6"/>
+          <circle cx="78" cy="48" r="2.6" opacity=".75"/>
+        </g>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Explainer</p>
+      <h3>Tech UGC</h3>
+      <p>AI tools, applications and gadgets explained so everyday Malaysian audiences actually
+      understand them — no jargon, no gatekeeping. The deliverable is the moment a viewer thinks
+      "oh, I could actually use that."</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>You receive:</strong> screen capture
+      with on-camera presence · walkthrough pacing · Bahasa Melayu or English</p>
+      <div class="chips"><span>AI tools</span><span>Apps</span><span>Gadgets</span></div>
+    </div>
+  </div>
+
+  <!-- Mom UGC -->
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f9d3c2,#e8907a)">
+      <svg viewBox="0 0 100 76">
+        <g fill="none" stroke="#fff" stroke-width="1">
+          <circle cx="50" cy="38" r="10" opacity=".8"/>
+          <circle cx="50" cy="38" r="18" opacity=".55"/>
+          <circle cx="50" cy="38" r="26" opacity=".35"/>
+          <circle cx="50" cy="38" r="34" opacity=".2"/>
+        </g>
+        <circle cx="50" cy="38" r="4" fill="#fff" opacity=".9"/>
+        <circle cx="72" cy="20" r="1.5" fill="#fff" opacity=".8"/>
+        <circle cx="28" cy="58" r="1.2" fill="#fff" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Lived, not scripted</p>
+      <h3>Mom UGC</h3>
+      <p>What I genuinely use and how I manage to juggle everything. Parents can tell the difference
+      between lived and performed within about two seconds — this is the lived one, and that is
+      precisely why it converts.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>You receive:</strong> day-in-the-life
+      framing · product in real use · honest verdict</p>
+      <div class="chips"><span>Real routine</span><span>Parent trust</span><span>In-use footage</span></div>
+    </div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>User-Generated Content</span><span>03</span></div>
+</section>
+
+<!-- ============ INFLUENCE ============ -->
+<section class="page page--deep">
+  <div class="sparkle"></div>
+  <p class="eyebrow">Section two</p>
+  <h2>Influence &amp; Review</h2>
+  <div class="rule"></div>
+  <p class="lead" style="color:#dcbcd0;margin-bottom:6mm">Content that moves a purchase decision —
+  because it reads as a recommendation, not a placement.</p>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#bf8f2c,#f0d9a0)">
+      <svg viewBox="0 0 100 76">
+        <g fill="none" stroke="#3d2a08" stroke-width="1" opacity=".5">
+          <path d="M56 38 a14 14 0 0 1 0 0"/>
+          <path d="M60 26 a20 20 0 0 1 0 24" />
+          <path d="M66 20 a28 28 0 0 1 0 36" />
+          <path d="M72 14 a36 36 0 0 1 0 48" />
+        </g>
+        <path d="M22 30 h12 l16 -12 v40 l-16 -12 h-12 z" fill="#3d2a08" opacity=".55"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Campaign lead</p>
+      <h3>KOL — Key Opinion Leader</h3>
+      <p>Brand-led campaigns carrying authority and reach. Launch pushes, cross-platform storytelling
+      and community-driven influence, run as a coordinated campaign rather than a one-off post.</p>
+      <div class="chips"><span>Launches</span><span>Cross-platform</span><span>Storytelling</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f0b3c9,#8e2f5c)">
+      <svg viewBox="0 0 100 76">
+        <rect x="26" y="20" width="48" height="36" rx="4" fill="#fff" opacity=".28"/>
+        <path d="M34 46 l10 -12 8 8 8 -14 8 18 z" fill="#fff" opacity=".55"/>
+        <circle cx="66" cy="30" r="4" fill="#fff" opacity=".7"/>
+        <path d="M50 62 l2.4 5 5.4.8 -3.9 3.8.9 5.4 -4.8 -2.5 -4.8 2.5.9 -5.4 -3.9 -3.8 5.4 -.8z" fill="#fff" opacity=".85" transform="translate(0,-6)"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Consumer voice</p>
+      <h3>KOC — Key Opinion Consumer</h3>
+      <p>Genuine product trials with honest verdicts. The consumer voice carries a credibility that a
+      polished brand message cannot buy — trialled properly, reviewed plainly, with conversion-ready
+      framing.</p>
+      <div class="chips"><span>Product trial</span><span>Honest verdict</span><span>Affiliate CTA</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f0d9a0,#c79a3e)">
+      <svg viewBox="0 0 100 76">
+        <g fill="#3d2a08" opacity=".55">
+          <path d="M50 14 l4.6 9.6 10.4 1.5 -7.6 7.4 1.8 10.5 -9.2 -4.9 -9.2 4.9 1.8 -10.5 -7.6 -7.4 10.4 -1.5z"/>
+        </g>
+        <g fill="#3d2a08" opacity=".3">
+          <path d="M26 46 l3 6.2 6.8 1 -4.9 4.8 1.2 6.8 -6.1 -3.2 -6.1 3.2 1.2 -6.8 -4.9 -4.8 6.8 -1z"/>
+          <path d="M74 46 l3 6.2 6.8 1 -4.9 4.8 1.2 6.8 -6.1 -3.2 -6.1 3.2 1.2 -6.8 -4.9 -4.8 6.8 -1z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Disclosed</p>
+      <h3>Paid Review</h3>
+      <p>Structured, disclosure-compliant sponsored reviews. Brief, deliverables and usage rights are
+      agreed in writing before we begin, so the review is credible to your audience and safe for
+      your brand.</p>
+      <div class="chips"><span>Video + written</span><span>Disclosed</span><span>Usage rights</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#8b8fd8,#3f4478)">
+      <svg viewBox="0 0 100 76">
+        <rect x="18" y="22" width="64" height="32" rx="2.5" fill="#fff" opacity=".22"/>
+        <g fill="#fff" opacity=".55">
+          <rect x="21" y="25" width="5" height="5" rx="1"/><rect x="21" y="34" width="5" height="5" rx="1"/>
+          <rect x="21" y="43" width="5" height="5" rx="1"/>
+          <rect x="74" y="25" width="5" height="5" rx="1"/><rect x="74" y="34" width="5" height="5" rx="1"/>
+          <rect x="74" y="43" width="5" height="5" rx="1"/>
+        </g>
+        <path d="M46 31 l11 7 -11 7 z" fill="#fff" opacity=".85"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Retention-first</p>
+      <h3>Movie Review</h3>
+      <p>Spoiler-safe film and series reviews with sharp editing and genuine opinions. Built for
+      watch-time retention — the format that keeps an audience to the final frame.</p>
+      <div class="chips"><span>Short reviews</span><span>Rankings</span><span>Reactions</span></div>
+    </div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Influence &amp; Review</span><span>04</span></div>
+</section>
+
+<!-- ============ PRODUCTION ============ -->
+<section class="page">
+  <p class="eyebrow">Section three</p>
+  <h2>Production</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:6mm">From concept to finished asset — or just the part you're
+  missing.</p>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f9c9dd,#c06590)">
+      <svg viewBox="0 0 100 76">
+        <path d="M50 12 a24 24 0 0 1 24 24 v28 h-48 v-28 a24 24 0 0 1 24 -24z" fill="#fff" opacity=".3"/>
+        <path d="M50 22 a14 14 0 0 1 14 14 v28 h-28 v-28 a14 14 0 0 1 14 -14z" fill="#fff" opacity=".4"/>
+        <circle cx="50" cy="40" r="5" fill="#fff" opacity=".8"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · End to end</p>
+      <h3>Content Creation</h3>
+      <p>Complete concept-to-delivery content built around your campaign goal. Hook-first scripting,
+      filming, editing, captions, and export in every ratio you need — a single brief in, finished
+      assets out.</p>
+      <div class="chips"><span>Concept</span><span>Script</span><span>Film</span><span>Edit</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#a8e0d4,#2f8f7c)">
+      <svg viewBox="0 0 100 76">
+        <g fill="#fff">
+          <rect x="14" y="26" width="26" height="7" rx="2" opacity=".55"/>
+          <rect x="44" y="26" width="16" height="7" rx="2" opacity=".35"/>
+          <rect x="64" y="26" width="22" height="7" rx="2" opacity=".5"/>
+          <rect x="14" y="38" width="18" height="7" rx="2" opacity=".35"/>
+          <rect x="36" y="38" width="30" height="7" rx="2" opacity=".55"/>
+          <rect x="70" y="38" width="16" height="7" rx="2" opacity=".3"/>
+          <rect x="14" y="50" width="22" height="7" rx="2" opacity=".45"/>
+          <rect x="40" y="50" width="20" height="7" rx="2" opacity=".3"/>
+          <rect x="64" y="50" width="22" height="7" rx="2" opacity=".5"/>
+        </g>
+        <rect x="54" y="18" width="1.6" height="46" fill="#fff" opacity=".9"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · You send footage</p>
+      <h3>Video Editing</h3>
+      <p>Send me your raw footage and I return a finished piece — cut, coloured, captioned and
+      sound-designed. Short-form pacing with a retention-first structure, because the first three
+      seconds decide the rest.</p>
+      <div class="chips"><span>Cut &amp; pacing</span><span>Captions</span><span>Colour</span><span>Sound</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#c2447a,#7a1a42)">
+      <svg viewBox="0 0 100 76">
+        <rect x="24" y="16" width="52" height="46" rx="3" fill="none" stroke="#fff" stroke-width="1.2" opacity=".65"/>
+        <path d="M24 30 h52 M38 16 v46 M62 16 v46" stroke="#fff" stroke-width=".5" opacity=".3" fill="none"/>
+        <ellipse cx="50" cy="52" rx="15" ry="4" fill="#fff" opacity=".35"/>
+        <rect x="42" y="34" width="16" height="16" rx="2" fill="#fff" opacity=".7"/>
+        <g stroke="#fff" stroke-width=".8" opacity=".5" fill="none">
+          <path d="M32 24 l4 -4 M68 24 l-4 -4"/>
+        </g>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Ask about availability</p>
+      <h3>Product Photography</h3>
+      <p>Studio-quality product shots taken in my own 60&times;60&times;60cm light box, with a rotating
+      display stand for full 360&deg; sets. Clean white for marketplace listings, or styled and lit for
+      campaign imagery. You ship the product, I shoot it.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>You receive:</strong> edited stills in
+      web and print resolution &middot; consistent lighting across the set &middot; 360&deg; spin sets on request</p>
+      <div class="chips"><span>Light box studio</span><span>360&deg; sets</span><span>E-commerce ready</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f0d8cc,#a8737f)">
+      <svg viewBox="0 0 100 76">
+        <rect x="20" y="22" width="60" height="36" rx="5" fill="#fff" opacity=".26"/>
+        <circle cx="50" cy="40" r="13" fill="none" stroke="#fff" stroke-width="1.4" opacity=".7"/>
+        <circle cx="50" cy="40" r="7" fill="#fff" opacity=".5"/>
+        <rect x="60" y="26" width="9" height="4" rx="1.5" fill="#fff" opacity=".6"/>
+        <circle cx="30" cy="29" r="1.6" fill="#fff" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Ask about availability</p>
+      <h3>Photo Editing</h3>
+      <p>Send me your own images and I will finish them &mdash; colour grading, exposure, retouching,
+      background clean-up and export at the sizes each platform actually needs. Useful when you have
+      the shots but not the hours.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>Three levels:</strong> basic (crop,
+      colour, exposure) &middot; standard (retouch, background clean) &middot; advanced (composite, heavy retouch)</p>
+      <div class="chips"><span>Colour</span><span>Retouch</span><span>Background</span><span>Export sizes</span></div>
+    </div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Production</span><span>05</span></div>
+</section>
+
+<!-- ============ CREATOR LANES ============ -->
+<section class="page">
+  <p class="eyebrow">Section three &middot; b</p>
+  <h2>Content Creator Lanes</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:6mm">Beyond a single UGC brief &mdash; ongoing creative
+  territory where the content is built around a life, not just a product.</p>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#d8ecdf,#6fae90)">
+      <svg viewBox="0 0 100 76">
+        <path d="M28 60 q6 -26 22 -30 q16 4 22 30z" fill="#fff" opacity=".25"/>
+        <path d="M50 30 v30" stroke="#fff" stroke-width="1" opacity=".55"/>
+        <path d="M50 42 q-9 -3 -13 -12 q10 1 13 12z" fill="#fff" opacity=".45"/>
+        <path d="M50 50 q9 -3 13 -12 q-10 1 -13 12z" fill="#fff" opacity=".38"/>
+        <circle cx="50" cy="20" r="3" fill="#fff" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Ask about availability</p>
+      <h3>Lifestyle Creator</h3>
+      <p>Content built around how a product actually lives inside a day &mdash; the morning routine,
+      the home, the small rituals, the self-care moment. Warm and unhurried, and easy for an audience
+      to picture themselves inside.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>Best for:</strong> beauty, home,
+      wellness, food, fashion &mdash; anything bought for how it makes someone feel</p>
+      <div class="chips"><span>Day-in-life</span><span>Home &amp; self-care</span><span>Soft-sell</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#bcd9f2,#4f7fb8)">
+      <svg viewBox="0 0 100 76">
+        <circle cx="50" cy="38" r="21" fill="none" stroke="#fff" stroke-width="1.1" opacity=".6"/>
+        <path d="M29 38 h42 M50 17 q10 21 0 42 M50 17 q-10 21 0 42" stroke="#fff" stroke-width=".7" opacity=".45" fill="none"/>
+        <path d="M20 52 l24 -12 22 -18 6 4 -18 22 -12 24 -4 -8 -4 -4z" fill="#fff" opacity=".55"/>
+        <circle cx="72" cy="20" r="2" fill="#fff" opacity=".85"/>
+        <circle cx="26" cy="26" r="1.4" fill="#fff" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">New &middot; Ask about availability</p>
+      <h3>Travel Creator</h3>
+      <p>Travel content from a mother who takes her daughter everywhere &mdash; which is a genuinely
+      different film to the one a solo traveller makes. Where actually works with a child in tow,
+      what is worth the effort, and what to quietly skip.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>Best for:</strong> hotels and resorts,
+      family attractions, travel gear, airlines, tourism boards wanting the family segment honestly</p>
+      <div class="chips"><span>Family travel</span><span>Mother &amp; child</span><span>Honest guides</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f6d9e4,#c17a99)">
+      <svg viewBox="0 0 100 76">
+        <path d="M50 58 c-14 -9 -22 -17 -22 -26 a9 9 0 0 1 18 -4 a9 9 0 0 1 18 4 c0 9 -8 17 -22 26z" fill="#fff" opacity=".4" transform="translate(4,2)"/>
+        <circle cx="38" cy="22" r="5" fill="none" stroke="#fff" stroke-width="1.3" opacity=".75"/>
+        <circle cx="48" cy="22" r="5" fill="none" stroke="#fff" stroke-width="1.3" opacity=".75"/>
+        <g fill="#fff" opacity=".7">
+          <circle cx="72" cy="30" r="1.4"/><circle cx="78" cy="42" r="1"/><circle cx="66" cy="48" r="1.2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">New &middot; Ask about availability</p>
+      <h3>Wedding Creator</h3>
+      <p>Social-first wedding content &mdash; the vertical, same-day, emotional cut that a traditional
+      videographer does not produce. Made for the couple to post while the day is still happening,
+      not filed away for an anniversary.</p>
+      <p style="color:var(--ink-faint);font-size:8.6pt"><strong>Best for:</strong> couples, planners,
+      venues and bridal brands who want content that lives on social rather than a shelf</p>
+      <div class="chips"><span>Same-day edit</span><span>Vertical 9:16</span><span>Social-first</span></div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:4mm">
+    <p style="margin:0;font-size:9pt"><strong>Please ask before planning around these.</strong>
+    Travel and wedding work depends on my calendar, my daughter's schedule and how far the location is.
+    Message me early with your dates and I will tell you honestly whether I can take it.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Creator Lanes</span><span>06</span></div>
+</section>
+
+<!-- ============ VOICE ============ -->
+<section class="page page--deep">
+  <div class="sparkle"></div>
+  <p class="eyebrow">Section four</p>
+  <h2>The Voice</h2>
+  <div class="rule"></div>
+
+  <div style="margin-bottom:6mm">
+    <div style="height:34mm;border-radius:4mm;overflow:hidden;position:relative;border:1px solid rgba(240,217,160,.4);background:linear-gradient(120deg,#341124,#5c1f3c 50%,#341124)">
+      <svg viewBox="0 0 200 60" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+        <g fill="#f0d9a0">
+          <rect x="6"   y="26" width="2.4" height="8"  rx="1.2" opacity=".45"/>
+          <rect x="13"  y="21" width="2.4" height="18" rx="1.2" opacity=".55"/>
+          <rect x="20"  y="14" width="2.4" height="32" rx="1.2" opacity=".7"/>
+          <rect x="27"  y="8"  width="2.4" height="44" rx="1.2" opacity=".85"/>
+          <rect x="34"  y="17" width="2.4" height="26" rx="1.2" opacity=".6"/>
+          <rect x="41"  y="24" width="2.4" height="12" rx="1.2" opacity=".45"/>
+          <rect x="48"  y="12" width="2.4" height="36" rx="1.2" opacity=".75"/>
+          <rect x="55"  y="5"  width="2.4" height="50" rx="1.2" opacity=".95"/>
+          <rect x="62"  y="16" width="2.4" height="28" rx="1.2" opacity=".65"/>
+          <rect x="69"  y="23" width="2.4" height="14" rx="1.2" opacity=".5"/>
+          <rect x="76"  y="10" width="2.4" height="40" rx="1.2" opacity=".8"/>
+          <rect x="83"  y="19" width="2.4" height="22" rx="1.2" opacity=".6"/>
+          <rect x="90"  y="25" width="2.4" height="10" rx="1.2" opacity=".45"/>
+          <rect x="97"  y="7"  width="2.4" height="46" rx="1.2" opacity=".9"/>
+          <rect x="104" y="15" width="2.4" height="30" rx="1.2" opacity=".7"/>
+          <rect x="111" y="22" width="2.4" height="16" rx="1.2" opacity=".5"/>
+          <rect x="118" y="11" width="2.4" height="38" rx="1.2" opacity=".78"/>
+          <rect x="125" y="20" width="2.4" height="20" rx="1.2" opacity=".6"/>
+          <rect x="132" y="26" width="2.4" height="8"  rx="1.2" opacity=".42"/>
+          <rect x="139" y="13" width="2.4" height="34" rx="1.2" opacity=".72"/>
+          <rect x="146" y="6"  width="2.4" height="48" rx="1.2" opacity=".92"/>
+          <rect x="153" y="18" width="2.4" height="24" rx="1.2" opacity=".62"/>
+          <rect x="160" y="24" width="2.4" height="12" rx="1.2" opacity=".48"/>
+          <rect x="167" y="14" width="2.4" height="32" rx="1.2" opacity=".7"/>
+          <rect x="174" y="21" width="2.4" height="18" rx="1.2" opacity=".55"/>
+          <rect x="181" y="27" width="2.4" height="6"  rx="1.2" opacity=".4"/>
+          <rect x="188" y="19" width="2.4" height="22" rx="1.2" opacity=".58"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <h3 style="font-size:15pt">Voice Acting · Voice Artist · Voice-Over</h3>
+  <p>Twenty-two demo tracks, ten read styles, two languages. Every track recorded and mastered in my
+  own home setup and delivered as broadcast-ready audio.</p>
+  <p style="color:#c39fb4;font-size:9pt">Bahasa Melayu and English. Voice work is billed as 50%
+  deposit to begin, then 50% before the clean master is released — you approve a voice-tagged draft
+  in between.</p>
+
+  <table style="margin-top:5mm">
+    <thead><tr><th>Read style</th><th>Character</th><th>Typical use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Commercial — Beauty</strong></td><td>Warm, intimate, close-mic</td><td>Skincare and cosmetics — sells a routine, not a product</td></tr>
+      <tr><td><strong>Commercial — Tech</strong></td><td>Bright, confident, modern</td><td>Apps, AI tools and gadgets</td></tr>
+      <tr><td><strong>Corporate</strong></td><td>Neutral, trustworthy, clear</td><td>Company profiles, training, explainers</td></tr>
+      <tr><td><strong>UGC / Social</strong></td><td>Casual, real, unscripted feel</td><td>TikTok and Reels that land as recommendations</td></tr>
+      <tr><td><strong>Trailer</strong></td><td>Weighted, dramatic</td><td>Cinematic promos designed to sit under a score</td></tr>
+      <tr><td><strong>Character</strong></td><td>Playful, expressive, varied</td><td>Animation, mascots, games, brand personalities</td></tr>
+      <tr><td><strong>Audiobook</strong></td><td>Sustained, even</td><td>Long-form narration and documentary</td></tr>
+      <tr><td><strong>ASMR</strong></td><td>Close, soft, intimate</td><td>Relaxation, sleep audio, soft-sell beauty</td></tr>
+      <tr><td><strong>IVR / On-hold</strong></td><td>Precise, friendly</td><td>Phone menus, greetings, hold messaging</td></tr>
+      <tr><td><strong>Jingle</strong></td><td>Melodic, catchy</td><td>Five-second brand stings and end cards</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>The Voice</span><span>07</span></div>
+</section>
+
+<!-- ============ TALENT ============ -->
+<section class="page">
+  <p class="eyebrow">Section five</p>
+  <h2>On Camera</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:6mm">Performance, presence and partnership.</p>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#ffd9a8,#d1893f)">
+      <svg viewBox="0 0 100 76">
+        <path d="M50 6 L82 70 H18 Z" fill="#fff" opacity=".22"/>
+        <path d="M50 6 L68 70 H32 Z" fill="#fff" opacity=".3"/>
+        <circle cx="50" cy="10" r="6" fill="#fff" opacity=".8"/>
+        <ellipse cx="50" cy="66" rx="18" ry="4" fill="#fff" opacity=".45"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote or in person</p>
+      <h3>Commercial Talent &amp; Short Acting</h3>
+      <p>On-camera performance for brand skits, micro-drama and commercial-style spots. Comfortable
+      with scripted direction, brand guidelines and multiple takes — expressive when the piece needs
+      it, restrained when it doesn't.</p>
+      <div class="chips"><span>Brand skits</span><span>Micro-drama</span><span>Scene reads</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f6c6d8,#c4527c)">
+      <svg viewBox="0 0 100 76">
+        <circle cx="50" cy="34" r="14" fill="#fff" opacity=".35"/>
+        <path d="M32 66 a18 18 0 0 1 36 0z" fill="#fff" opacity=".28"/>
+        <g fill="none" stroke="#fff" stroke-width=".9" opacity=".55">
+          <path d="M26 30 q-8 -14 6 -20"/><path d="M74 30 q8 -14 -6 -20"/>
+        </g>
+        <circle cx="50" cy="34" r="5" fill="#fff" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Remote · Beauty content</p>
+      <h3>Beauty &amp; Canvas Makeup Content</h3>
+      <p>Beauty content with the makeup applied and filmed by me — application demonstrations,
+      close-up texture work and full before-and-after sequences, shot with the lighting that beauty
+      products actually need.</p>
+      <div class="chips"><span>Application demo</span><span>Close-up</span><span>Before / after</span></div>
+    </div>
+  </div>
+
+  <div class="svc">
+    <div class="svc__art" style="background:linear-gradient(150deg,#f0d9a0,#a97b23)">
+      <svg viewBox="0 0 100 76">
+        <g fill="none" stroke="#3d2a08" stroke-width="1.2" opacity=".5">
+          <path d="M34 56 q-10 -18 4 -32 M66 56 q10 -18 -4 -32"/>
+        </g>
+        <g fill="#3d2a08" opacity=".35">
+          <ellipse cx="32" cy="44" rx="4" ry="2.4" transform="rotate(-30 32 44)"/>
+          <ellipse cx="36" cy="36" rx="4" ry="2.4" transform="rotate(-30 36 36)"/>
+          <ellipse cx="41" cy="28" rx="4" ry="2.4" transform="rotate(-30 41 28)"/>
+          <ellipse cx="68" cy="44" rx="4" ry="2.4" transform="rotate(30 68 44)"/>
+          <ellipse cx="64" cy="36" rx="4" ry="2.4" transform="rotate(30 64 36)"/>
+          <ellipse cx="59" cy="28" rx="4" ry="2.4" transform="rotate(30 59 28)"/>
+        </g>
+        <path d="M50 26 l3.4 7 7.6 1.1 -5.5 5.4 1.3 7.6 -6.8 -3.6 -6.8 3.6 1.3 -7.6 -5.5 -5.4 7.6 -1.1z" fill="#3d2a08" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="svc__body">
+      <p class="svc__tag">Long-term · Remote</p>
+      <h3>Brand Ambassador</h3>
+      <p>Open to long-term ambassadorship on a work-from-anywhere basis — ongoing content, community
+      presence and genuine brand advocacy. Quoted by term length and monthly output, and billed on
+      the monthly payment window.</p>
+      <div class="chips"><span>Long-term</span><span>Monthly output</span><span>Community</span></div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:5mm">
+    <h3 style="font-size:11pt;margin-bottom:2mm">Availability</h3>
+    <p style="margin:0;font-size:9pt"><strong>Remote worldwide</strong> is the standard and carries no
+    surcharge — every service in this catalogue works this way. <strong>In person</strong>, I attend
+    one and two-day events across Peninsular Malaysia, from my base in Kota Bharu, Kelantan. Anywhere
+    outside Malaysia is remote only.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>On Camera</span><span>08</span></div>
+</section>
+
+<!-- ============ WHY ME ============ -->
+<section class="page page--deep">
+  <div class="sparkle"></div>
+  <p class="eyebrow">The case</p>
+  <h2>Why brands choose <span class="grad">Ara Aranya</span></h2>
+  <div class="rule"></div>
+
+  <div class="grid2" style="margin-top:5mm">
+    <div class="box">
+      <h3 style="font-size:11.5pt">Ad-ready from day one</h3>
+      <p style="margin:0;font-size:9pt">Content your team can repurpose directly into paid advertising
+      and organic social — no re-edit, no re-shoot, no waiting on an agency.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">The whole chain, one invoice</h3>
+      <p style="margin:0;font-size:9pt">Concept, filming, editing, voice-over and delivery all come
+      from me. One point of contact and no version drift between vendors.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Two languages, one voice</h3>
+      <p style="margin:0;font-size:9pt">Bahasa Melayu and English, on camera and on microphone. Both-language
+      versions of the same deliverable are available.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Zero logistics for you</h3>
+      <p style="margin:0;font-size:9pt">No studio booking, no crew, no travel budget, no call sheet.
+      You send the brief and the product; I send back the assets.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Rare in this market</h3>
+      <p style="margin:0;font-size:9pt">Canvas UGC — building and running a brand-new account for
+      thirty days — is offered by very few Malaysian creators.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Terms in writing, always</h3>
+      <p style="margin:0;font-size:9pt">Price, add-ons, deposit, usage rights, revisions and
+      cancellation are all agreed in a signed document before a single frame is shot.</p>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:6mm;border-color:rgba(240,217,160,.5)">
+    <p style="margin:0;font-family:var(--serif);font-style:italic;font-size:13pt;text-align:center;color:#f9aecb">
+      "Whether you need a creator to build your brand's social presence, review your product,
+      create ad-ready content or perform on camera — let's create assets that elevate your brand's
+      trust and scale your conversions."
+    </p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>The Case</span><span>09</span></div>
+</section>
+
+<!-- ============ EQUIPMENT ============ -->
+<section class="page page--deep">
+  <div class="sparkle"></div>
+  <p class="eyebrow">The kit</p>
+  <h2>What I shoot with</h2>
+  <div class="rule"></div>
+  <p class="lead" style="color:#dcbcd0;margin-bottom:6mm">Everything is owned, not rented &mdash; which
+  is why there is no equipment line on your invoice and no waiting on a hire schedule.</p>
+
+  <div class="grid3">
+    <div class="box">
+      <div style="height:20mm;margin:-1mm -1mm 3mm;border-radius:3mm;overflow:hidden;background:linear-gradient(140deg,#c79a3e,#7a5210);position:relative">
+        <svg viewBox="0 0 100 40" style="position:absolute;inset:0;width:100%;height:100%">
+          <g fill="#fff" opacity=".55">
+            <rect x="18" y="14" width="2" height="12" rx="1"/><rect x="24" y="9" width="2" height="22" rx="1"/>
+            <rect x="30" y="5" width="2" height="30" rx="1"/><rect x="36" y="12" width="2" height="16" rx="1"/>
+            <rect x="42" y="7" width="2" height="26" rx="1"/><rect x="48" y="16" width="2" height="8" rx="1"/>
+            <rect x="54" y="10" width="2" height="20" rx="1"/><rect x="60" y="4" width="2" height="32" rx="1"/>
+            <rect x="66" y="13" width="2" height="14" rx="1"/><rect x="72" y="8" width="2" height="24" rx="1"/>
+            <rect x="78" y="15" width="2" height="10" rx="1"/>
+          </g>
+        </svg>
+      </div>
+      <h3 style="font-size:11pt">Audio</h3>
+      <ul style="margin:0;font-size:8.6pt">
+        <li>Hollyland Lark A1 wireless microphone</li>
+        <li>Amgrass magnetic air lavalier</li>
+        <li>Onsmo PM-1 podcast microphone</li>
+      </ul>
+      <p style="margin:2.5mm 0 0;font-size:8pt;color:#a98ea0">Clean, broadcast-usable sound on location
+      and a dedicated desk mic for voice-over and podcast work.</p>
+    </div>
+
+    <div class="box">
+      <div style="height:20mm;margin:-1mm -1mm 3mm;border-radius:3mm;overflow:hidden;background:linear-gradient(140deg,#c2447a,#7a1a42);position:relative">
+        <svg viewBox="0 0 100 40" style="position:absolute;inset:0;width:100%;height:100%">
+          <circle cx="50" cy="20" r="11" fill="none" stroke="#fff" stroke-width="1.2" opacity=".7"/>
+          <circle cx="50" cy="20" r="4" fill="#fff" opacity=".7"/>
+          <path d="M50 4 a16 16 0 0 1 0 32" fill="none" stroke="#fff" stroke-width=".8" opacity=".45"/>
+          <path d="M50 36 a16 16 0 0 1 0 -32" fill="none" stroke="#fff" stroke-width=".8" opacity=".45"/>
+          <path d="M64 8 l4 -4 M36 32 l-4 4" stroke="#fff" stroke-width="1" opacity=".6"/>
+        </svg>
+      </div>
+      <h3 style="font-size:11pt">Camera support &amp; tracking</h3>
+      <ul style="margin:0;font-size:8.6pt">
+        <li>Onsmo Bobot 360 AI face-tracking holder</li>
+        <li>Onsmo SF180 AI tracking selfie stick with LED</li>
+        <li>Onsmo 360 rotation smart holder</li>
+        <li>Onsmo magnetic phone neck bracket</li>
+        <li>Onsmo FL-1X foldable flat-lay tripod</li>
+      </ul>
+      <p style="margin:2.5mm 0 0;font-size:8pt;color:#a98ea0">Face tracking means I can shoot alone and
+      still stay perfectly framed while demonstrating a product with both hands.</p>
+    </div>
+
+    <div class="box">
+      <div style="height:20mm;margin:-1mm -1mm 3mm;border-radius:3mm;overflow:hidden;background:linear-gradient(140deg,#f0d9a0,#a97b23);position:relative">
+        <svg viewBox="0 0 100 40" style="position:absolute;inset:0;width:100%;height:100%">
+          <rect x="32" y="8" width="36" height="26" rx="2" fill="none" stroke="#3d2a08" stroke-width="1.2" opacity=".6"/>
+          <ellipse cx="50" cy="30" rx="10" ry="3" fill="#3d2a08" opacity=".35"/>
+          <rect x="44" y="17" width="12" height="11" rx="1.5" fill="#3d2a08" opacity=".5"/>
+          <g stroke="#3d2a08" stroke-width=".9" opacity=".5"><path d="M24 12 l6 4 M76 12 l-6 4"/></g>
+        </svg>
+      </div>
+      <h3 style="font-size:11pt">Lighting &amp; product</h3>
+      <ul style="margin:0;font-size:8.6pt">
+        <li>Tony Lamp 2026 folding studio light box, 60&times;60&times;60&nbsp;cm</li>
+        <li>20&nbsp;cm motorised rotating display stand</li>
+      </ul>
+      <p style="margin:2.5mm 0 0;font-size:8pt;color:#a98ea0">A proper light box is what separates a
+      product photo that looks professional from one that looks like a phone snap on a table.</p>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:6mm">
+    <p style="margin:0;font-size:9pt"><strong>Why this matters to you.</strong> The kit is modest by
+    studio standards and deliberately so &mdash; it is chosen to produce content that looks native to
+    social media rather than staged for television. The light box is the exception: for product work
+    it delivers genuinely studio-grade results, which is why product photography is priced by the set
+    rather than the hour.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>The Kit</span><span>10</span></div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="page">
+  <p class="eyebrow">Investment</p>
+  <h2>How pricing works</h2>
+  <div class="rule"></div>
+  <p class="lead">A base price for the service, then only the add-ons you choose. Every figure below is
+  a percentage of that base, and the full breakdown appears in the quote you approve.</p>
+
+  <h3 style="margin-top:6mm;font-size:12pt">Step one — the base</h3>
+  <p>Set by service, length and quantity. Every video runs between <strong>15 and 120 seconds</strong>.
+  Voice work is priced per script; photography and on-camera days are priced per day.</p>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Step two — add-ons</h3>
+  <table>
+    <thead><tr><th>Add-on</th><th>Rate</th><th>What it covers</th></tr></thead>
+    <tbody>
+      <tr><td>Raw / unedited footage</td><td><strong>+50%</strong></td><td>Raw material without my edit. Usage rights included.</td></tr>
+      <tr><td>Rush job</td><td><strong>+30–60%</strong></td><td>Set by how tight the deadline is and what is already scheduled.</td></tr>
+      <tr><td>Posted on my own socials</td><td><strong>+10%</strong></td><td>Paid before it goes live, since a live post cannot be un-posted.</td></tr>
+      <tr><td>New account I build &amp; hand over</td><td><strong>+15%</strong></td><td>Canvas UGC — account management, not just content.</td></tr>
+      <tr><td>In person, Peninsular Malaysia</td><td><strong>+50–80%</strong></td><td>1–2 day events. Travel, time on site, and displaced production days.</td></tr>
+      <tr><td>In person, Kelantan or Kuala Lumpur</td><td><strong>+30–50%</strong></td><td>My home state and my university city — no flights needed.</td></tr>
+      <tr><td>Last-minute in person</td><td><strong>+10–15%</strong></td><td>Short-notice on-site bookings requiring schedule changes.</td></tr>
+      <tr><td>Paid advertising usage</td><td>Quoted</td><td>By term (3, 6 or 12 months) and territory. Organic use is free.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Step three — when you pay</h3>
+  <table>
+    <thead><tr><th>Billing pattern</th><th>Applies to</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pay before each step</strong></td><td>Single video · Video editing · Photo editing</td></tr>
+      <tr><td><strong>Paid in full, 28th–31st</strong></td><td>Bundles · Canvas UGC · Ambassadorship · Retainers · Reviews</td></tr>
+      <tr><td><strong>50% deposit + 50%</strong></td><td>Voice-over · Voice artist · Voice talent</td></tr>
+      <tr><td><strong>Day rate, invoiced after</strong></td><td>Photography · Commercial talent · Short acting · Canvas makeup</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box" style="margin-top:5mm">
+    <p style="margin:0;font-size:9pt"><strong>Deposit</strong> 10%–50%, your choice ·
+    <strong>Currencies</strong> MYR, USD or GBP ·
+    <strong>Payment</strong> FPX, online banking, debit card, QR Pay, Stripe or Payoneer ·
+    <strong>Once confirmed</strong> a booking is non-refundable, though a full refund applies if I
+    ever have to cancel from my side.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Investment</span><span>11</span></div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="page page--deep">
+  <div class="sparkle"></div>
+  <p class="eyebrow">Working together</p>
+  <h2>From first message to final file</h2>
+  <div class="rule"></div>
+
+  <ol class="steps" style="margin-top:5mm">
+    <li><strong>You send the brief.</strong> Brand, deliverables, deadline, and where the content will
+    run. WhatsApp, email or the booking form on my website — whichever is easiest.</li>
+    <li><strong>I send a quote.</strong> Price, deliverables, timeline and usage rights, in writing.
+    Change anything you like at this stage — revisions to the brief are free.</li>
+    <li><strong>We both sign.</strong> A short written agreement covering the work, the payment
+    schedule, revisions, usage rights and what happens if either of us has to cancel.</li>
+    <li><strong>You pay the deposit.</strong> 10%–50%, your choice. The booking is confirmed and your
+    dates are held.</li>
+    <li><strong>I produce the work</strong> and send you a watermarked draft — full length, full
+    quality — so you can review it properly.</li>
+    <li><strong>You give feedback</strong> within three working days, consolidated into one message
+    where possible.</li>
+    <li><strong>You settle the balance</strong> and I release the clean, watermark-free final files
+    the same day.</li>
+    <li><strong>Delivery</strong> by WeTransfer, Blip or Google Drive — you choose which.</li>
+  </ol>
+
+  <div class="grid2" style="margin-top:7mm">
+    <div class="box">
+      <h3 style="font-size:11pt">What I need from you</h3>
+      <ul style="margin:0">
+        <li>The product at least 5 days before</li>
+        <li>Brand guidelines, must-say lines, no-go list</li>
+        <li>Feedback within 3 working days</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11pt">What you can expect from me</h3>
+      <ul style="margin:0">
+        <li>A reply within 24 hours on working days</li>
+        <li>A watermarked draft before any balance is due</li>
+        <li>Full refund if I ever have to cancel</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Working Together</span><span>12</span></div>
+</section>
+
+<!-- ============ RATE CARD 1 ============ -->
+<section class="page">
+  <p class="eyebrow">Rate card &middot; one of two</p>
+  <h2>Starting rates</h2>
+  <div class="rule"></div>
+  <p class="lead">Every figure below is a <strong>starting rate</strong> for the standard version of
+  that service, with organic usage included. Add-ons, licensing and travel are quoted on top.
+  Prices are shown in three currencies because they are priced to each market, not converted.</p>
+
+  <h3 style="margin-top:6mm;font-size:12pt">UGC video</h3>
+  <p style="font-size:8.6pt;color:var(--ink-faint);margin-bottom:2mm">You receive the file and post it
+  on your own channels. Concept, script, filming, editing and captions included.</p>
+  <table>
+    <thead><tr><th>Deliverable</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Single video, 15&ndash;30 seconds</td><td>RM&nbsp;400</td><td>$150</td><td>&pound;120</td></tr>
+      <tr><td>Single video, 31&ndash;60 seconds</td><td>RM&nbsp;650</td><td>$240</td><td>&pound;190</td></tr>
+      <tr><td>Single video, 61&ndash;120 seconds</td><td>RM&nbsp;950</td><td>$350</td><td>&pound;280</td></tr>
+      <tr><td>Bundle of 3 &mdash; same product</td><td colspan="3"><strong>&minus;10%</strong> on the combined total</td></tr>
+      <tr><td>Bundle of 5 &mdash; same product</td><td colspan="3"><strong>&minus;15%</strong> on the combined total</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Canvas UGC &mdash; 30 days</h3>
+  <p style="font-size:8.6pt;color:var(--ink-faint);margin-bottom:2mm">A brand-new account built, run
+  daily for a month, then handed over to you.</p>
+  <table>
+    <thead><tr><th>Package</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>One platform &middot; 30 daily posts</td><td>RM&nbsp;3,500</td><td>$1,200</td><td>&pound;950</td></tr>
+      <tr><td>Two platforms &middot; 30 daily posts &middot; account handover</td><td>RM&nbsp;5,500</td><td>$1,900</td><td>&pound;1,500</td></tr>
+      <tr><td>Each additional month</td><td colspan="3">Same rate, billed on the 28th&ndash;31st window</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Creator days &mdash; lifestyle, travel, wedding</h3>
+  <p style="font-size:8.6pt;color:var(--ink-faint);margin-bottom:2mm">Billed by the day. Travel and
+  accommodation quoted separately where the location requires it.</p>
+  <table>
+    <thead><tr><th>Session</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Half day &mdash; up to 4 hours</td><td>RM&nbsp;700</td><td>$280</td><td>&pound;220</td></tr>
+      <tr><td>Full day &mdash; up to 8 hours</td><td>RM&nbsp;1,200</td><td>$480</td><td>&pound;380</td></tr>
+      <tr><td>Travel day &mdash; on location</td><td>RM&nbsp;1,500</td><td>$600</td><td>&pound;480</td></tr>
+      <tr><td>Wedding &mdash; social package with same-day edit</td><td>RM&nbsp;1,800</td><td>$700</td><td>&pound;560</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Rate Card</span><span>13</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Rate card &middot; continued</p>
+  <h2>Photography &amp; editing</h2>
+  <div class="rule"></div>
+
+  <h3 style="font-size:12pt">Product photography</h3>
+  <table>
+    <thead><tr><th>Deliverable</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Per edited image</td><td>RM&nbsp;60</td><td>$25</td><td>&pound;20</td></tr>
+      <tr><td>Set of 10 edited images</td><td>RM&nbsp;500</td><td>$200</td><td>&pound;160</td></tr>
+      <tr><td>Set of 25 edited images</td><td>RM&nbsp;1,100</td><td>$440</td><td>&pound;350</td></tr>
+      <tr><td>360&deg; spin set &mdash; per product</td><td>RM&nbsp;350</td><td>$140</td><td>&pound;110</td></tr>
+      <tr><td>Half day in the light box</td><td>RM&nbsp;800</td><td>$320</td><td>&pound;250</td></tr>
+      <tr><td>Full day in the light box</td><td>RM&nbsp;1,400</td><td>$560</td><td>&pound;450</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Rate Card</span><span>14</span></div>
+</section>
+
+<!-- ============ RATE CARD 2 ============ -->
+<section class="page">
+  <p class="eyebrow">Rate card &middot; two of two</p>
+  <h2>Starting rates <span style="font-family:var(--sans);font-size:11pt;color:var(--ink-faint)">continued</span></h2>
+  <div class="rule"></div>
+
+  <h3 style="font-size:12pt">Photo editing &mdash; you supply the images</h3>
+  <table>
+    <thead><tr><th>Level</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Basic</strong> &mdash; crop, colour, exposure</td><td>RM&nbsp;15</td><td>$6</td><td>&pound;5</td></tr>
+      <tr><td><strong>Standard</strong> &mdash; retouch, background clean-up</td><td>RM&nbsp;35</td><td>$14</td><td>&pound;11</td></tr>
+      <tr><td><strong>Advanced</strong> &mdash; composite, heavy retouch</td><td>RM&nbsp;70</td><td>$28</td><td>&pound;22</td></tr>
+      <tr><td>50 images or more</td><td colspan="3"><strong>&minus;20%</strong> on the combined total</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Voice-over</h3>
+  <p style="font-size:8.6pt;color:var(--ink-faint);margin-bottom:2mm">Per script, clean master
+  delivered. Pickups within the agreed script are included.</p>
+  <table>
+    <thead><tr><th>Script length</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Up to 60 words</td><td>RM&nbsp;200</td><td>$85</td><td>&pound;68</td></tr>
+      <tr><td>61&ndash;150 words</td><td>RM&nbsp;350</td><td>$150</td><td>&pound;120</td></tr>
+      <tr><td>151&ndash;300 words</td><td>RM&nbsp;550</td><td>$230</td><td>&pound;185</td></tr>
+      <tr><td>Long-form &mdash; per finished minute</td><td>RM&nbsp;400</td><td>$170</td><td>&pound;135</td></tr>
+      <tr><td>Same script in both languages</td><td colspan="3"><strong>+60%</strong> rather than double</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Video editing &mdash; you supply the footage</h3>
+  <table>
+    <thead><tr><th>Finished length</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Up to 30 seconds</td><td>RM&nbsp;250</td><td>$100</td><td>&pound;80</td></tr>
+      <tr><td>31&ndash;60 seconds</td><td>RM&nbsp;400</td><td>$160</td><td>&pound;130</td></tr>
+      <tr><td>61&ndash;120 seconds</td><td>RM&nbsp;650</td><td>$260</td><td>&pound;210</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Rate Card</span><span>15</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Rate card &middot; continued</p>
+  <h2>Reviews, talent &amp; add-ons</h2>
+  <div class="rule"></div>
+
+  <h3 style="font-size:12pt">Reviews, on camera &amp; partnerships</h3>
+  <table>
+    <thead><tr><th>Service</th><th>MYR</th><th>USD</th><th>GBP</th></tr></thead>
+    <tbody>
+      <tr><td>Paid review &mdash; video</td><td>RM&nbsp;800</td><td>$320</td><td>&pound;255</td></tr>
+      <tr><td>Paid review &mdash; video and written</td><td>RM&nbsp;1,100</td><td>$440</td><td>&pound;350</td></tr>
+      <tr><td>Movie review &mdash; sponsored</td><td>RM&nbsp;500</td><td>$200</td><td>&pound;160</td></tr>
+      <tr><td>Canvas makeup content</td><td>RM&nbsp;600</td><td>$240</td><td>&pound;190</td></tr>
+      <tr><td>Commercial talent &mdash; half day</td><td>RM&nbsp;900</td><td>$360</td><td>&pound;290</td></tr>
+      <tr><td>Commercial talent &mdash; full day</td><td>RM&nbsp;1,600</td><td>$640</td><td>&pound;510</td></tr>
+      <tr><td>KOL / KOC campaign</td><td>from RM&nbsp;1,200</td><td>from $480</td><td>from &pound;380</td></tr>
+      <tr><td>Brand ambassador &mdash; per month</td><td>from RM&nbsp;3,000</td><td>from $1,200</td><td>from &pound;950</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:5mm;font-size:12pt">Add-ons applied to any of the above</h3>
+  <table>
+    <thead><tr><th>Add-on</th><th>Rate</th><th>Applies when</th></tr></thead>
+    <tbody>
+      <tr><td>Raw / unedited footage</td><td><strong>+50%</strong></td><td>You want the source files. Usage rights included.</td></tr>
+      <tr><td>Rush turnaround</td><td><strong>+30&ndash;60%</strong></td><td>Deadline is tighter than my normal queue allows.</td></tr>
+      <tr><td>Posted on my own channels</td><td><strong>+10%</strong></td><td>Paid before it goes live.</td></tr>
+      <tr><td>New account I build and hand over</td><td><strong>+15%</strong></td><td>Canvas UGC &mdash; account management, not just content.</td></tr>
+      <tr><td>In person, Peninsular Malaysia</td><td><strong>+50&ndash;80%</strong></td><td>1&ndash;2 day events.</td></tr>
+      <tr><td>In person, Kelantan or Kuala Lumpur</td><td><strong>+30–50%</strong></td><td>My home state and my university city.</td></tr>
+      <tr><td>Last-minute in person</td><td><strong>+10&ndash;15%</strong></td><td>Short-notice on-site booking.</td></tr>
+      <tr><td>Paid advertising licence</td><td>Quoted</td><td>By term (3, 6 or 12 months) and territory.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box" style="margin-top:4mm">
+    <p style="margin:0;font-size:8.8pt"><strong>These are starting rates, not a fixed price list.</strong>
+    Complexity, usage, exclusivity and turnaround all move the figure. Send me your brief and I will
+    give you a firm number before anything is agreed &mdash; and every quote is written down before a
+    single ringgit changes hands.</p>
+  </div>
+
+  <div class="pagefoot"><span><span class="mk">NB</span>Rate Card</span><span>16</span></div>
+</section>
+
+<!-- ============ BACK COVER ============ -->
+<section class="page page--deep" style="display:flex;flex-direction:column;justify-content:center">
+  <svg class="coverart" viewBox="0 0 210 291" preserveAspectRatio="none">
+    <circle cx="30" cy="40" r="44" fill="#c2447a" opacity=".14"/>
+    <circle cx="182" cy="248" r="50" fill="#bf8f2c" opacity=".13"/>
+    <g stroke="#f0d9a0" stroke-width=".35" opacity=".45" fill="none">
+      <circle cx="30" cy="40" r="56"/><circle cx="182" cy="248" r="62"/>
+    </g>
+  </svg>
+
+  <div style="position:relative;text-align:center">
+    <p style="font-size:8.5pt;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8mm">
+      Let's work together
+    </p>
+    <h2 style="font-size:26pt">Ready when your<br /><span class="grad">brief is.</span></h2>
+    <div style="width:60mm;height:2px;margin:6mm auto;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)"></div>
+
+    <p style="max-width:130mm;margin:0 auto 9mm">
+      Send the brand, the deliverables, the deadline and the usage rights you need — I'll come back
+      with a quote and available dates. Asking costs nothing.
+    </p>
+
+    <div class="grid2" style="max-width:150mm;margin:0 auto;text-align:left">
+      <div class="box">
+        <p style="font-size:7.4pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:800;margin-bottom:1.5mm">WhatsApp &amp; Phone</p>
+        <p style="margin:0;font-size:11pt;color:#fff"><strong>+60 18-278 0523</strong></p>
+      </div>
+      <div class="box">
+        <p style="font-size:7.4pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:800;margin-bottom:1.5mm">UGC enquiries</p>
+        <p style="margin:0;font-size:9pt;color:#fff">badzlinaraziugc@gmail.com<br />@badzlinaraziugc</p>
+      </div>
+      <div class="box">
+        <p style="font-size:7.4pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:800;margin-bottom:1.5mm">Everything else</p>
+        <p style="margin:0;font-size:9pt;color:#fff">novabadzlinaglobal@gmail.com<br />@novabadzlinaglobal</p>
+      </div>
+      <div class="box">
+        <p style="font-size:7.4pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:800;margin-bottom:1.5mm">Find me on</p>
+        <p style="margin:0;font-size:9pt;color:#fff">TikTok · Instagram · Threads</p>
+      </div>
+    </div>
+
+    <p style="margin-top:12mm;font-family:var(--serif);font-size:15pt;color:#f9aecb;font-style:italic">
+      Where creators become talent.
+    </p>
+    <p style="margin-top:3mm;font-size:8.5pt;letter-spacing:.2em;text-transform:uppercase;color:#a98ea0;font-weight:700">
+      Nova Badzlina Global &nbsp;·&nbsp; 2026
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
